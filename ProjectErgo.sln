@@ -3,25 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ProjectErgo", ".", "{E2C93B4B-8438-496C-877F-C2A8303CF2D4}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Project Ergo", ".", "{E2C93B4B-8438-496C-877F-C2A8303CF2D4}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_1960"
-		Debug.AspNetCompiler.PhysicalPath = "..\ProjectErgo\"
+		Debug.AspNetCompiler.PhysicalPath = "..\Project Ergo\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1960\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_1960"
-		Release.AspNetCompiler.PhysicalPath = "..\ProjectErgo\"
+		Release.AspNetCompiler.PhysicalPath = "..\Project Ergo\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1960\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "1960"
-		SlnRelativePath = "..\ProjectErgo\"
+		SlnRelativePath = "..\Project Ergo\"
 	EndProjectSection
 EndProject
 Global
