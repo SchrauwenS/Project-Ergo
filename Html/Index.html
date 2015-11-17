@@ -3,37 +3,17 @@
 <head>
     <title></title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
-    
+       
     <meta charset="utf-8" />
 
-    <script>
 
-
-        var app = angular.module("app", []);
-        app.controller("LoginVenster", function ($scope) {
-            $scope.changetext = function () {
-                $scope.InputText = $scope.InputText;
-                
-            };
-
-
-
-        });
-
-    </script>
 
 </head>
-<body ng-app="app">
-    <div ng-controller="LoginVenster">
-        <label>Username</label>
-        <input type="text" ng-model="InputText" name="Name" />
-        <label>paswoord</label>
-        <input type="password" ng-model="InputText" name="Username" />
-        <button ng-click="Login()"> Login</button>
-        <button ng-click="Register()"> Registreren</button>
-
-        
+<body>
+   
+    <div ng-controller="test">
 
     </div>
+
 </body>
 </html>
