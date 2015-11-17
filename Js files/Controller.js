@@ -2,15 +2,17 @@
 
 app.config(function ($routeProvider) {
     $routeProvider
-    .when('/', {
-        templateUrl:'login.html'
+    .when('/Html/', {
+        templateUrl: '/Html/'
     })
-    .when('/dasboard', {
-        templateUrl: 'login.html'
+    .when('/Html/dasboard', {
+        templateUrl: '/Html/'
     })
-    
+    .when('/Html/Index', {
+        templateUrl: '/Html/'
+    })
     .otherwhise({
-        redirectTo: '/'
+        redirectTo: '/Html/'
     });
 
 
@@ -23,9 +25,9 @@ app.controller('loginCtrl', function ($scope) {
         var password = $scope.password;
 
         if ($scope.username == 'admin' && $scope.password == 'admin') {
-            $location.path('/dashboard');
+            $location.path('Html/Index');
         }
 
     };
 
-})
+});
