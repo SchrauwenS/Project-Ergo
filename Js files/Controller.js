@@ -9,7 +9,16 @@
         })
             .when('/Questions',
         {
-            templateUrl: "/Questions.html"
+            resolve:{
+                "check": function ($location,$rootScope) {
+                    if (!$rootScope.LoggedIn) {
+                       
+                        $location.path('/')
+                         }
+                    
+                }
+            },
+            templateUrl: '/Questions.html'
         })
         .otherwise({
            redirectTo:'/'
@@ -17,13 +26,16 @@
 
     });
 
-    app.controller('loginCtrl', function ($scope,$location) {
+    app.controller('loginCtrl', function ($scope,$location,$rootScope) {
         $scope.submit = function () {
-            var uname = $scope.username;
-            var password = $scope.password;
+            
 
-            if ($scope.username == 'admin' && $scope.password =='admin') {
+            if ($scope.username == 'admin' && $scope.password == 'admin') {
+                $rootScope.LoggedIn = true;
                 $location.path('/Questions')
+            }
+            else {
+                alert('Foute gebruikersnaam/wachtwoord')
             }
         }
     })
