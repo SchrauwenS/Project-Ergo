@@ -12,7 +12,7 @@
         var app = angular.module("app", []);
         app.controller("LoginVenster", function ($scope) {
             $scope.changetext = function () {
-                $scope.text = $scope.InputText;
+                $scope.InputText = $scope.InputText;
                 
             };
 
@@ -31,6 +31,9 @@
         <input type="password" ng-model="InputText" name="Username" />
         <button ng-click="Login()"> Login</button>
         <button ng-click="Register()"> Registreren</button>
+
+        
+
     </div>
 </body>
 </html>
