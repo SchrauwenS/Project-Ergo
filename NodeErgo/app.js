@@ -10,7 +10,7 @@ var users = require('./routes/users');
 var app = express();
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('mongodb://<v4mirax>:<dbpassword>@ds055584.mongolab.com:55584/ergotherapie');
+var db = monk('mongodb://v4mirax:Bart0105@ds055584.mongolab.com:55584/ergotherapie');
 
 
 // Make our db accessible to our router
