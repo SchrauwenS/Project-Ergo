@@ -11,7 +11,7 @@ $(document).ready(function () {
     $('#userList table tbody').on('click', 'td a.linkshowuser', showUserInfo);
     
     // Add User button click
-    $('#btnAddUser').on('click', addUser);
+    $('#btnRegister').on('click', register);
     
     // Login User button click
     //$('#btnLogin').on('click', Register);
@@ -163,3 +163,8 @@ function deleteUser(event) {
 
 };
 
+function register(){
+
+    window.location.href = '/users/register';
+
+};
