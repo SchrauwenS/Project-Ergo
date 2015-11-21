@@ -1,7 +1,6 @@
 ﻿// Userlist data array for filling in info box
 var userListData = [];
 
-
 // DOM Ready =============================================================
 $(document).ready(function () {
     
@@ -10,11 +9,11 @@ $(document).ready(function () {
     // Username link click
     $('#userList table tbody').on('click', 'td a.linkshowuser', showUserInfo);
     
-    // Add User button click
+    // Register User button click
     $('#btnRegister').on('click', register);
     
-    // Login User button click
-    //$('#btnLogin').on('click', Register);
+    // Add User button click
+    $('#btnAddUser').on('click',addUser);
 
     // Delete User link click
     $('#userList table tbody').on('click', 'td a.linkdeleteuser', deleteUser);
@@ -74,10 +73,37 @@ function addUser(event) {
     
     // Super basic validation - increase errorCount variable if any fields are blank
     var errorCount = 0;
-    $('#addUser input').each(function (index, val) {
+    
+    
+    $.getJSON('/users/userlist', function (data) {
+        
+        // For each item in our JSON, add a table row and cells to the content string
+        // Stick our user data array into a userlist variable in the global object
+        userListData = data;
+        $.each(userListData, function () {
+            if (this.email === $('#addUser fieldset input#inputUserEmail')) {
+                errorCount++;
+                alert('Email allready in use');
+                errorCount++;
+            }
+            if (this.username === $('#addUser fieldset input#inputUserName').val()) {
+                errorCount++;
+                alert('Username allready in use');
+                errorCount++;
+            }
+                               
+                
+        });
+      
+    });
+    
+
+     $('#addUser input').each(function (index, val) {
         if ($(this).val() === '') { errorCount++; }
     });
-  
+    
+              
+    
     
     // Check and make sure errorCount's still at zero
     if (errorCount === 0) {

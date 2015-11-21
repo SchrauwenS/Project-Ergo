@@ -22,6 +22,7 @@ module.exports = router;
 router.post('/adduser', function (req, res) {
     var db = req.db;
     var collection = db.get('Users');
+    
     collection.insert(req.body, function (err, result) {
         res.send(
             (err === null) ? { msg: '' } : { msg: err }
