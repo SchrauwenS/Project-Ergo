@@ -18,7 +18,6 @@
   <ItemGroup>
     <Content Include="package.json" />
     <Compile Include="app.js" />
-    <Compile Include="public\javascripts\Controller.js" />
     <Compile Include="public\javascripts\global.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />

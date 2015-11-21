@@ -77,6 +77,7 @@ function addUser(event) {
     $('#addUser input').each(function (index, val) {
         if ($(this).val() === '') { errorCount++; }
     });
+  
     
     // Check and make sure errorCount's still at zero
     if (errorCount === 0) {
