@@ -72,41 +72,45 @@ function addUser(event) {
     event.preventDefault();
     
     // Super basic validation - increase errorCount variable if any fields are blank
-    var errorCount = 0;
+    var errorEmptyfield = 1;
+    var errorUser = false;
+    var errorEmail = false;
+    
+    $('#addUser input').each(function (index, val) {
+        if ($(this).val() === '') { errorEmptyfield++; }
+    });
     
     
-    $.getJSON('/users/userlist', function (data) {
+
+        $.getJSON('/users/userlist', function (data) {
         
         // For each item in our JSON, add a table row and cells to the content string
         // Stick our user data array into a userlist variable in the global object
         userListData = data;
         $.each(userListData, function () {
             if (this.email === $('#addUser fieldset input#inputUserEmail')) {
-                errorCount++;
-                alert('Email allready in use');
-                errorCount++;
+                errorEmail = true;
+                               
             }
             if (this.username === $('#addUser fieldset input#inputUserName').val()) {
-                errorCount++;
-                alert('Username allready in use');
-                errorCount++;
+                errorUser = true;
+                              
             }
                                
                 
         });
       
+                
+
     });
     
 
-     $('#addUser input').each(function (index, val) {
-        if ($(this).val() === '') { errorCount++; }
-    });
     
               
     
     
     // Check and make sure errorCount's still at zero
-    if (errorCount === 0) {
+    if (errorEmptyfield === 0 && errorUser === false && errorEmail === false) {
         
         // If it is, compile all user info into one object
         var newUser = {
@@ -145,9 +149,17 @@ function addUser(event) {
         });
     }
     else {
-        // If errorCount is more than 0, error out
-        alert('Please fill in all fields');
-        return false;
+        
+        if (errorUser === true ) {
+            alert('Username allready in use');
+        }
+        if (errorEmail === true) {
+            alert('Email allready in use');
+        }
+        if (errorEmptyfield != 0) {
+           alert('Please fill in all fields');
+        }
+          return false;
     }
 };
 
