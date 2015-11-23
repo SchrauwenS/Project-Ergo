@@ -10,12 +10,13 @@
     <script>
         function myctrl($scope)
         {
-
+            $scope.Stap2 = false;
 
 
             $scope.Submit = function ()
             {
                 $scope.ViewModel = $scope.checkboxModel
+                $scope.Stap2 = true;
             }
 
             $scope.initialize = function()            {
@@ -146,6 +147,15 @@
             <div ng-show="ViewModel.value1 == true" class="row">
                 <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value1" type="checkbox"></div>
                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Zorg dragen voor persoonlijke hygiëne en uzelf wassen</div>
+            </div>
+            <div ng-show="ViewModel.value1 == true && Stap2 == true">
+                <form>
+                    <label class="radio-inline"><input name="Q1" type="radio" >ALTIJD MINDER dan ik wil</label>
+                    <label class="radio-inline"><input name="Q1" type="radio">SOMS MINDER dan ik wil</label>
+                    <label class="radio-inline"><input name="Q1" type="radio">ONGEVEER IDEAAL voor mij</label>
+                    <label class="radio-inline"><input name="Q1" type="radio">SOMS MEER dan ik wil</label>
+                    <label class="radio-inline"><input name="Q1" type="radio"> ALTIJD MEER dan ik wil</label>
+                </form> 
             </div>
             <div ng-show="ViewModel.value2 == true" class="row">
                 <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value2" type="checkbox"></div>
