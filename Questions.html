@@ -11,119 +11,125 @@
         function myctrl($scope)
         {
 
-            $scope.checkboxModel = {
-                value1: false,
-                value2: false,
-                value3: false,
-                value4: false,
-                value5: false,
-                value6: false,
-                value7: false,
-                value8: false,
-                value9: false,
-                value10: false,
-                value11: false,
-                value12: false,
-                value13: false,
-                value14: false,
-                value15: false,
-                value16: false,
-                value17: false,
-                value18: false,
-                value19: false,
-                value20: false,
-                value21: false,
-                value22: false,
-                value23: false,
-                value24: false,
-                value25: false,
-                value26: false,
-                value27: false,
-                value28: false,
-                value29: false,
-                value30: false,
-                value31: false,
-                value32: false,
-                value33: false,
-                value34: false,
-                value35: false,
-                value36: false,
-                value37: false,
-                value38: false,
-                value39: false,
-                value40: false,
-                value41: false,
-                value42: false,
-                value43: false,
-                value44: false,
-                value45: false,
-                value46: false,
-                value47: false,
-                value48: false,
-                value49: false,
-                value50: false,
-                value51: false,
-                value52: false,
+
+
+            $scope.Submit = function ()
+            {
+                $scope.ViewModel = $scope.checkboxModel
+            }
+
+            $scope.initialize = function()            {
+                $scope.checkboxModel = {
+                    value1: false,
+                    value2: false,
+                    value3: false,
+                    value4: false,
+                    value5: false,
+                    value6: false,
+                    value7: false,
+                    value8: false,
+                    value9: false,
+                    value10: false,
+                    value11: false,
+                    value12: false,
+                    value13: false,
+                    value14: false,
+                    value15: false,
+                    value16: false,
+                    value17: false,
+                    value18: false,
+                    value19: false,
+                    value20: false,
+                    value21: false,
+                    value22: false,
+                    value23: false,
+                    value24: false,
+                    value25: false,
+                    value26: false,
+                    value27: false,
+                    value28: false,
+                    value29: false,
+                    value30: false,
+                    value31: false,
+                    value32: false,
+                    value33: false,
+                    value34: false,
+                    value35: false,
+                    value36: false,
+                    value37: false,
+                    value38: false,
+                    value39: false,
+                    value40: false,
+                    value41: false,
+                    value42: false,
+                    value43: false,
+                    value44: false,
+                    value45: false,
+                    value46: false,
+                    value47: false,
+                    value48: false,
+                    value49: false,
+                    value50: false,
+                    value51: false,
+                    value52: false,
                 };
-            $scope.ViewModel = {
-                value1: true,
-                value2: true,
-                value3: true,
-                value4: true,
-                value5: true,
-                value6: true,
-                value7: true,
-                value8: true,
-                value9: true,
-                value10: true,
-                value11: true,
-                value12: true,
-                value13: true,
-                value14: true,
-                value15: true,
-                value16: true,
-                value17: true,
-                value18: true,
-                value19: true,
-                value20: true,
-                value21: true,
-                value22: true,
-                value23: true,
-                value24: true,
-                value25: true,
-                value26: true,
-                value27: true,
-                value28: true,
-                value29: true,
-                value30: true,
-                value31: true,
-                value32: true,
-                value33: true,
-                value34: true,
-                value35: true,
-                value36: true,
-                value37: true,
-                value38: true,
-                value39: true,
-                value40: true,
-                value41: true,
-                value42: true,
-                value43: true,
-                value44: true,
-                value45: true,
-                value46: true,
-                value47: true,
-                value48: true,
-                value49: true,
-                value50: true,
-                value51: true,
-                value52: true,
-            };
+                $scope.ViewModel = {
+                    value1: true,
+                    value2: true,
+                    value3: true,
+                    value4: true,
+                    value5: true,
+                    value6: true,
+                    value7: true,
+                    value8: true,
+                    value9: true,
+                    value10: true,
+                    value11: true,
+                    value12: true,
+                    value13: true,
+                    value14: true,
+                    value15: true,
+                    value16: true,
+                    value17: true,
+                    value18: true,
+                    value19: true,
+                    value20: true,
+                    value21: true,
+                    value22: true,
+                    value23: true,
+                    value24: true,
+                    value25: true,
+                    value26: true,
+                    value27: true,
+                    value28: true,
+                    value29: true,
+                    value30: true,
+                    value31: true,
+                    value32: true,
+                    value33: true,
+                    value34: true,
+                    value35: true,
+                    value36: true,
+                    value37: true,
+                    value38: true,
+                    value39: true,
+                    value40: true,
+                    value41: true,
+                    value42: true,
+                    value43: true,
+                    value44: true,
+                    value45: true,
+                    value46: true,
+                    value47: true,
+                    value48: true,
+                    value49: true,
+                    value50: true,
+                    value51: true,
+                    value52: true,
+                };
+            }
 
-        $scope.Submit = function () {
-            $scope.ViewModel = $scope.checkboxModel
-        }
-
+            $scope.initialize();
         }
     </script>
 
@@ -131,230 +137,231 @@
 </head>
 <body ng-app id="questions">
     <div ng-controller="myctrl" class="container">
+            <div class="row">
+            <button ng-click="Submit()">Submit</button><button ng-click="initialize()">Initialize</button>
+            </div>
+            <h1>Gezondheid</h1>
+            <div ng-show="ViewModel.value1 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value1" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Zorg dragen voor persoonlijke hygiëne en uzelf wassen</div>
+            </div>
+            <div ng-show="ViewModel.value2 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value2" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Zorgen voor voldoende slaap</div>
+            </div>
+            <div ng-show="ViewModel.value3 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value3" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Ontspannen/rusten</div>
+            </div>
+            <div ng-show="ViewModel.value4 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value4" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Zorgen voor regelmatige beweging</div>
+            </div>
+            <div ng-show="ViewModel.value5 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value5" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Voedzaam eten</div>
+            </div>
+            <div ng-show="ViewModel.value6 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value6" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Zorgen voor eigen gezondheidsbehoeften</div>
+            </div>
 
-        <button ng-click="Submit()">jgvsfddcd,</button>
-        <h1>Gezondheid</h1>
-        <div ng-show="ViewModel.value1 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value1" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Zorg dragen voor persoonlijke hygiëne en uzelf wassen</div>
-        </div>
-        <div ng-show="ViewModel.value2 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value2" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Zorgen voor voldoende slaap</div>
-        </div>
-        <div ng-show="ViewModel.value3 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value3" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Ontspannen/rusten</div>
-        </div>
-        <div ng-show="ViewModel.value4 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value4" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Zorgen voor regelmatige beweging</div>
-        </div>
-        <div ng-show="ViewModel.value5 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value5" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Voedzaam eten</div>
-        </div>
-        <div ng-show="ViewModel.value6 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value6" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Zorgen voor eigen gezondheidsbehoeften</div>
-        </div>
-
-        <h1>Relaties</h1>
-        <div ng-show="ViewModel.value7 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value7" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Tijd spenderen met familieleden</div>
-        </div>
-        <div ng-show="ViewModel.value8 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value8" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Tijd spenderen met partner</div>
-        </div>
-        <div ng-show="ViewModel.value9 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value9" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Tijd spenderen met vrienden</div>
-        </div>
-        <div ng-show="ViewModel.value10 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value10" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Zorg dragen voor kinderen of familieleden</div>
-        </div>
-        <div ng-show="ViewModel.value11 == true"class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value11" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Sexueel actief zijn</div>
-        </div>
-        <div ng-show="ViewModel.value12 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value12" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Deelnemen aan groepen (verenigingen, cursussen etc.)</div>
-        </div>
-        <div ng-show="ViewModel.value13 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value13" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Nieuwe mensen ontmoeten</div>
-        </div>
-        <div ng-show="ViewModel.value14 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value14" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Huisdieren verzorgen</div>
-        </div>
-        <div ng-show="ViewModel.value15 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value15" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Sociale contacten hebben op het werk</div>
-        </div>
-        <div ng-show="ViewModel.value16 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value16" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Begeleiden van anderen (mentor)</div>
-        </div>
+            <h1>Relaties</h1>
+            <div ng-show="ViewModel.value7 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value7" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Tijd spenderen met familieleden</div>
+            </div>
+            <div ng-show="ViewModel.value8 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value8" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Tijd spenderen met partner</div>
+            </div>
+            <div ng-show="ViewModel.value9 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value9" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Tijd spenderen met vrienden</div>
+            </div>
+            <div ng-show="ViewModel.value10 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value10" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Zorg dragen voor kinderen of familieleden</div>
+            </div>
+            <div ng-show="ViewModel.value11 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value11" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Sexueel actief zijn</div>
+            </div>
+            <div ng-show="ViewModel.value12 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value12" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Deelnemen aan groepen (verenigingen, cursussen etc.)</div>
+            </div>
+            <div ng-show="ViewModel.value13 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value13" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Nieuwe mensen ontmoeten</div>
+            </div>
+            <div ng-show="ViewModel.value14 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value14" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Huisdieren verzorgen</div>
+            </div>
+            <div ng-show="ViewModel.value15 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value15" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Sociale contacten hebben op het werk</div>
+            </div>
+            <div ng-show="ViewModel.value16 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value16" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Begeleiden van anderen (mentor)</div>
+            </div>
 
 
-        <h1>Identiteit</h1>
-        <div ng-show="ViewModel.value17 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value17" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Zorg dragen voor uw uiterlijk</div>
-        </div>
-        <div ng-show="ViewModel.value18 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value18" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Uzelf ontwikkelen in uw job</div>
-        </div>
-        <div ng-show="ViewModel.value19 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value19" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Deelnemen aan formele religieuze activiteiten</div>
-        </div>
-        <div ng-show="ViewModel.value20 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value20" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Deelnemen aan festiviteiten, feestdagen vieren</div>
-        </div>
-        <div ng-show="ViewModel.value21 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value21" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Deelnemen aan mogelijkheden tot bijscholing</div>
-        </div>
-        <div ng-show="ViewModel.value22 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value22" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Deelnemen aan professionele organisaties</div>
-        </div>
-        <div ng-show="ViewModel.value23 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value23" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Vrijwilligerswerk uitvoeren in de gemeenschap</div>
-        </div>
-        <div ng-show="ViewModel.value24 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value24" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Deelnemen aan georganiseerde sport</div>
-        </div>
-        <div ng-show="ViewModel.value25 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value25" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Koken</div>
-        </div>
-        <div ng-show="ViewModel.value26 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value26" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Huishoudelijk werk uitvoeren</div>
-        </div>
-        <div ng-show="ViewModel.value27 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value27" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Gaan winkelen</div>
-        </div>
-        <div ng-show="ViewModel.value28 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value28" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Naar film, theater, sportieve evenementen gaan</div>
-        </div>
-        <div ng-show="ViewModel.value29 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value29" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Reflecteren of mediteren</div>
-        </div>
-        <div ng-show="ViewModel.value30 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value30" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Dagboek bijhouden</div>
-        </div>
-        <div ng-show="ViewModel.value31 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value31" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Componeren, schrijven (muziek, gedichten etc.)</div>
-        </div>
+            <h1>Identiteit</h1>
+            <div ng-show="ViewModel.value17 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value17" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Zorg dragen voor uw uiterlijk</div>
+            </div>
+            <div ng-show="ViewModel.value18 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value18" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Uzelf ontwikkelen in uw job</div>
+            </div>
+            <div ng-show="ViewModel.value19 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value19" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Deelnemen aan formele religieuze activiteiten</div>
+            </div>
+            <div ng-show="ViewModel.value20 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value20" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Deelnemen aan festiviteiten, feestdagen vieren</div>
+            </div>
+            <div ng-show="ViewModel.value21 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value21" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Deelnemen aan mogelijkheden tot bijscholing</div>
+            </div>
+            <div ng-show="ViewModel.value22 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value22" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Deelnemen aan professionele organisaties</div>
+            </div>
+            <div ng-show="ViewModel.value23 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value23" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Vrijwilligerswerk uitvoeren in de gemeenschap</div>
+            </div>
+            <div ng-show="ViewModel.value24 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value24" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Deelnemen aan georganiseerde sport</div>
+            </div>
+            <div ng-show="ViewModel.value25 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value25" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Koken</div>
+            </div>
+            <div ng-show="ViewModel.value26 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value26" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Huishoudelijk werk uitvoeren</div>
+            </div>
+            <div ng-show="ViewModel.value27 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value27" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Gaan winkelen</div>
+            </div>
+            <div ng-show="ViewModel.value28 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value28" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Naar film, theater, sportieve evenementen gaan</div>
+            </div>
+            <div ng-show="ViewModel.value29 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value29" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Reflecteren of mediteren</div>
+            </div>
+            <div ng-show="ViewModel.value30 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value30" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Dagboek bijhouden</div>
+            </div>
+            <div ng-show="ViewModel.value31 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value31" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Componeren, schrijven (muziek, gedichten etc.)</div>
+            </div>
 
-        <h1>uitdaging/intresse</h1>
-        <div ng-show="ViewModel.value32 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value32" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Buitenactiviteit doen</div>
-        </div>
-        <div ng-show="ViewModel.value33 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value33" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Tuinieren</div>
-        </div>
-        <div ng-show="ViewModel.value34 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value34" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Genieten van de natuur</div>
-        </div>
-        <div ng-show="ViewModel.value35 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value35" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Plannen en organiseren van evenementen</div>
-        </div>
-        <div ng-show="ViewModel.value36 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value36" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Decoreren en inrichten van ruimtes</div>
-        </div>
-        <div ng-show="ViewModel.value37 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value37" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Betaalde arbeid verrichten</div>
-        </div>
-        <div ng-show="ViewModel.value38 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value38" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Geld beheren (rekeningen/budget/investeringen)</div>
-        </div>
-        <div ng-show="ViewModel.value39 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value39" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Naar restaurant/café gaan</div>
-        </div>
-        <div ng-show="ViewModel.value40 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value40" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Hobby’s uitvoeren</div>
-        </div>
-        <div ng-show="ViewModel.value41 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value41" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Muziek maken</div>
-        </div>
-        <div ng-show="ViewModel.value42 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value42" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Artistiek bezig zijn</div>
-        </div>
-        <div ng-show="ViewModel.value43 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value43" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Onderhouden of repareren van materiaal</div>
-        </div>
-        <div ng-show="ViewModel.value44 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value44" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Naaien/naaldwerk</div>
-        </div>
-        <div ng-show="ViewModel.value45 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value45" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Lezen</div>
-        </div>
-        <div ng-show="ViewModel.value46 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value46" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Gebruik maken van computer, laptop, tablet, smartphone</div>
-        </div>
-        <div ng-show="ViewModel.value47 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value47" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Dansen, yoga etc.</div>
-        </div>
-        <div ng-show="ViewModel.value48 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value48" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Vaardigheidsspellen spelen</div>
-        </div>
-        <div ng-show="ViewModel.value49 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value49" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">TV kijken</div>
-        </div>
-        <div ng-show="ViewModel.value50 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value50" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Reizen (alle vorm van reizen)</div>
-        </div>
-        <div ng-show="ViewModel.value51 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value51" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Verhalen vertellen</div>
-        </div>
+            <h1>uitdaging/intresse</h1>
+            <div ng-show="ViewModel.value32 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value32" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Buitenactiviteit doen</div>
+            </div>
+            <div ng-show="ViewModel.value33 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value33" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Tuinieren</div>
+            </div>
+            <div ng-show="ViewModel.value34 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value34" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Genieten van de natuur</div>
+            </div>
+            <div ng-show="ViewModel.value35 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value35" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Plannen en organiseren van evenementen</div>
+            </div>
+            <div ng-show="ViewModel.value36 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value36" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Decoreren en inrichten van ruimtes</div>
+            </div>
+            <div ng-show="ViewModel.value37 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value37" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Betaalde arbeid verrichten</div>
+            </div>
+            <div ng-show="ViewModel.value38 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value38" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Geld beheren (rekeningen/budget/investeringen)</div>
+            </div>
+            <div ng-show="ViewModel.value39 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value39" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Naar restaurant/café gaan</div>
+            </div>
+            <div ng-show="ViewModel.value40 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value40" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Hobby’s uitvoeren</div>
+            </div>
+            <div ng-show="ViewModel.value41 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value41" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Muziek maken</div>
+            </div>
+            <div ng-show="ViewModel.value42 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value42" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Artistiek bezig zijn</div>
+            </div>
+            <div ng-show="ViewModel.value43 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value43" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Onderhouden of repareren van materiaal</div>
+            </div>
+            <div ng-show="ViewModel.value44 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value44" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Naaien/naaldwerk</div>
+            </div>
+            <div ng-show="ViewModel.value45 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value45" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Lezen</div>
+            </div>
+            <div ng-show="ViewModel.value46 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value46" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Gebruik maken van computer, laptop, tablet, smartphone</div>
+            </div>
+            <div ng-show="ViewModel.value47 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value47" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Dansen, yoga etc.</div>
+            </div>
+            <div ng-show="ViewModel.value48 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value48" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Vaardigheidsspellen spelen</div>
+            </div>
+            <div ng-show="ViewModel.value49 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value49" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">TV kijken</div>
+            </div>
+            <div ng-show="ViewModel.value50 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value50" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Reizen (alle vorm van reizen)</div>
+            </div>
+            <div ng-show="ViewModel.value51 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value51" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Verhalen vertellen</div>
+            </div>
 
-        <h1>Activiteiten van het dagelijks leven</h1>
-        <div ng-show="ViewModel.value52 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value52" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Rijden</div>
+            <h1>Activiteiten van het dagelijks leven</h1>
+            <div ng-show="ViewModel.value52 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value52" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Rijden</div>
+            </div>
+            <div ng-show="ViewModel.value53 == true" class="row">
+                <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value53" type="checkbox"></div>
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Gebruik maken van openbaar vervoer</div>
+            </div>
         </div>
-        <div ng-show="ViewModel.value53 == true" class="row">
-            <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value53" type="checkbox"></div>
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Gebruik maken van openbaar vervoer</div>
-        </div>
-    </div>
 </body>
 </html>
