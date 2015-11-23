@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+    <title>Ergo - Questions</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+    <script>
+        (function () {
+            var questions = [{
+                "questionTitle": "How you Know Our Services?",
+                "answerChoices": [
+                 {
+                     "answerChoiceAr": "From web or Google Serach",
+                     "checked" : false
+                 },
+                 {
+                     "answerChoiceAr": "From Frind",
+                     "checked": false
+                 },
+                 {
+                     "answerChoiceAr": "Newspaper ads",
+                     "checked": false
+                 }
+                ]
+            },
+           {
+               "questionTitle": "What is your satisfaction level?",
+               "answerChoices": [
+                {
+                    "answerChoiceAr": "Good",
+                    "checked": false,
+                },
+                {
+                    "answerChoiceAr": "Very Good",
+                    "checked": false,
+                },
+                {
+                    "answerChoiceAr": "Excellent",
+                    "checked": false,
+                }
+               ]
+           }]
+
+            var massApp = angular.module("massApp", []);
+            massApp.controller("massCtrl", function ($scope) {
+
+                $scope.Questions = questions;
+
+                $scope.NextStep = function()
+                {
+                    $scope.NextStepBool = true;
+                }
+
+                $scope.NextStepBool = false;
+
+            });
+        })();
+    </script>
+
+
+</head>
+<body id="questions">
+    <div ng-app="massApp" ng-controller="massCtrl">
+        <div ng-repeat="question in Questions">
+            <h1>{{question.questionTitle}}</h1>
+            <div ng-repeat="choice in question.answerChoices">
+                <div class="row" ng-if="NextStepBool == false || choice.checked == true">
+                    <div>
+                        <input ng-if="NextStepBool == false" ng-model="choice.checked" type="checkbox">
+                    </div>
+                    <div>{{choice.answerChoiceAr}}</div>
+                    <div ng-if="NextStepBool == true">
+                        <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio">ALTIJD MINDER dan ik wil</label>
+                        <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio">SOMS MINDER dan ik wil</label>
+                        <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio">ONGEVEER IDEAAL voor mij</label>
+                        <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio">SOMS MEER dan ik wil</label>
+                        <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio"> ALTIJD MEER dan ik wil</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button ng-click="NextStep()">Volgende stap</button>
+
+        <h1 style="text-decoration: underline;">DEBUG</h1>
+        <pre>{{Questions}}}</pre>
+    </div>
+</body>
+</html>

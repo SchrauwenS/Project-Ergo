@@ -11,7 +11,7 @@
         function myctrl($scope)
         {
             $scope.Stap2 = false;
-
+            $scope.Quoting = "null";
 
             $scope.Submit = function ()
             {
@@ -142,8 +142,9 @@
 <body ng-app id="questions">
     <div ng-controller="myctrl" class="container">
             <div class="row">
-            <button ng-click="Submit()">Submit</button><button ng-click="initialize()">Initialize</button>
-            </div>
+                <button ng-click="Submit()">Submit</button>
+                <button ng-click="initialize()">Initialize</button>
+             </div>
             <h1>Gezondheid</h1>
             <div ng-show="ViewModel.value1 == true" class="row">
                 <div class="Checkbox col-lg-1 col-md-1 col-sm-1 col-xs-1"><input ng-model="checkboxModel.value1" type="checkbox"></div>
@@ -151,11 +152,11 @@
             </div>
             <div ng-show="ViewModel.value1 == true && Stap2 == true">
                 <form>
-                    <label class="radio-inline"><input name="Q1" type="radio" >ALTIJD MINDER dan ik wil</label>
-                    <label class="radio-inline"><input name="Q1" type="radio">SOMS MINDER dan ik wil</label>
-                    <label class="radio-inline"><input name="Q1" type="radio">ONGEVEER IDEAAL voor mij</label>
-                    <label class="radio-inline"><input name="Q1" type="radio">SOMS MEER dan ik wil</label>
-                    <label class="radio-inline"><input name="Q1" type="radio"> ALTIJD MEER dan ik wil</label>
+                    <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio" >ALTIJD MINDER dan ik wil</label>
+                    <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio">SOMS MINDER dan ik wil</label>
+                    <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio">ONGEVEER IDEAAL voor mij</label>
+                    <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio">SOMS MEER dan ik wil</label>
+                    <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio"> ALTIJD MEER dan ik wil</label>
                 </form> 
             </div>
             <div ng-show="ViewModel.value2 == true" class="row">
