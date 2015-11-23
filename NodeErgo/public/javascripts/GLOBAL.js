@@ -72,7 +72,7 @@ function addUser(event) {
     event.preventDefault();
     
     // Super basic validation - increase errorCount variable if any fields are blank
-    var errorEmptyfield = 1;
+    var errorEmptyfield = 0;
     var errorUser = false;
     var errorEmail = false;
     
@@ -147,6 +147,8 @@ function addUser(event) {
 
             }
         });
+    
+        
     }
     else {
         

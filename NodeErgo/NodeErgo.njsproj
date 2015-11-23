@@ -23,7 +23,6 @@
     <Compile Include="routes\users.js" />
     <Content Include="views\error.jade" />
     <Content Include="views\index.jade" />
-    <Content Include="views\newuser.jade" />
     <Content Include="views\register.jade" />
     <Content Include="views\users.jade" />
     <Content Include="views\layout.jade" />
