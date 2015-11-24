@@ -1,19 +1,31 @@
 var express = require('express');
 var router = express.Router();
+var user = require('../Mongoose/models/Gebruiker');
+
 
 /* GET Userlist page. */
 /*
  * GET userlist.
  */
-router.get('/userlist', function (req, res) {
-    var db = req.db;
-    var collection = db.get('Users');
-    collection.find({}, {}, function (e, docs) {
-        res.json(docs);
+router.get('/userList', function (req, res) {
+    user.find({}, function (err, users) {
+        
+        
+        console.log('test');
+        if (err) {
+            throw err;
+        }
+        else {
+            console.log('test');
+            console.log(users);
+           
+        }
+        
+        res.json(users);
     });
 });
 
-module.exports = router;
+
 
 
 /*
@@ -45,3 +57,5 @@ router.delete('/deleteuser/:id', function (req, res) {
 router.get('/register', function (req, res, next) {
     res.render('register', { title: 'Register page' });
 });
+
+module.exports = router;

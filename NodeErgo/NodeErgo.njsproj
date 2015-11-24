@@ -16,8 +16,11 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Content Include="Mongoose\connection.txt" />
     <Content Include="package.json" />
     <Compile Include="app.js" />
+    <Compile Include="Mongoose\models\dbconnection.js" />
+    <Compile Include="Mongoose\models\Gebruiker.js" />
     <Compile Include="public\javascripts\global.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
@@ -30,6 +33,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin" />
+    <Folder Include="Mongoose\models\" />
+    <Folder Include="Mongoose\" />
     <Folder Include="public" />
     <Folder Include="public\images" />
     <Folder Include="public\javascripts" />
