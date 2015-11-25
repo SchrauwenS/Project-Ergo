@@ -33,5 +33,5 @@ var gebruikersSchema = new schema(
     }
 );
 
-var Users = ('Users', gebruikersSchema);
+var Users = mongoose.model('Users', gebruikersSchema);
 module.exports = Users;

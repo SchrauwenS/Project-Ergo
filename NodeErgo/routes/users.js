@@ -26,5 +26,9 @@ router.post('/adduser', function (req, res) {
     return UserC.create(req, res);
 });
 
+router.get('/register', function (req, res) {
+    res.render('register')
+});
+
 
 module.exports = router;
