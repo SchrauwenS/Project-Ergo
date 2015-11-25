@@ -19,9 +19,9 @@
     <Content Include="Mongoose\connection.txt" />
     <Content Include="package.json" />
     <Compile Include="app.js" />
-    <Compile Include="Mongoose\models\dbconnection.js" />
-    <Compile Include="Mongoose\models\Gebruiker.js" />
-    <Compile Include="public\javascripts\global.js" />
+    <Compile Include="Mongoose\dbconnection.js" />
+    <Compile Include="Mongoose\gebruiker.js" />
+    <Compile Include="Controllers\UserController.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
     <Content Include="views\error.jade" />
@@ -33,7 +33,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin" />
-    <Folder Include="Mongoose\models\" />
+    <Folder Include="Controllers\" />
     <Folder Include="Mongoose\" />
     <Folder Include="public" />
     <Folder Include="public\images" />
