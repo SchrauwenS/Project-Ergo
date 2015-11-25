@@ -2,7 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
-    <title>Ergo - Questions</title>
+    <title>Ergo - questionlist</title>
     <meta charset="utf-8" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
@@ -10,52 +10,79 @@
 
     <script>
         (function () {
-            var questions = [{
-                "questionTitle": "How you Know Our Services?",
-                "answerChoices": [
-                 {
-                     "answerChoiceAr": "From web or Google Serach",
-                     "checked" : false
-                 },
-                 {
-                     "answerChoiceAr": "From Frind",
-                     "checked": false
-                 },
-                 {
-                     "answerChoiceAr": "Newspaper ads",
-                     "checked": false
-                 }
-                ]
-            },
+            var massApp = angular.module("massApp", []);
+            massApp.controller("massCtrl", function ($scope) {
+                $scope.questionlist = [{
+                    "Subdomain": "Gezondheid",
+                    "Question": [
+                     {
+                         "ID": 1,
+                         "Text": "Zorgen voor voldoende slaap",
+                         "checked": false,
+                         "Quoting": null 
+                     },
+                     {
+                         "ID": 2,
+                         "Text": "Ontspannen/rusten",
+                         "checked": false,
+                         "Quoting": null
+                     },
+                     {
+                         "ID": 3,
+                         "Text": "Zorgen voor regelmatige beweging",
+                         "checked": false,
+                         "Quoting": null
+                     }
+                    ]
+                },
            {
-               "questionTitle": "What is your satisfaction level?",
-               "answerChoices": [
+               "Subdomain": "Identiteit",
+               "Question": [
                 {
-                    "answerChoiceAr": "Good",
+                    "ID": 10,
+                    "Text": "Good",
                     "checked": false,
+                    "Quoting": null
                 },
                 {
-                    "answerChoiceAr": "Very Good",
+                    "ID": 11,
+                    "Text": "Very Good",
                     "checked": false,
+                    "Quoting": null
                 },
                 {
-                    "answerChoiceAr": "Excellent",
+                    "ID": 13,
+                    "Text": "Excellent",
                     "checked": false,
+                    "Quoting": null
                 }
                ]
            }]
 
-            var massApp = angular.module("massApp", []);
-            massApp.controller("massCtrl", function ($scope) {
-
-                $scope.Questions = questions;
-
+                $scope.NextStepBool = false;
                 $scope.NextStep = function()
                 {
                     $scope.NextStepBool = true;
                 }
 
-                $scope.NextStepBool = false;
+                $scope.radioValue = "radioValue";
+                $scope.radioData = [{
+                    Rating: "ALTIJD MINDER dan ik wil",
+                    value: 1
+                }, {
+                    Rating: "SOMS MINDER dan ik wil",
+                    value: 2
+                }, {
+                    Rating: "ONGEVEER IDEAAL voor mij",
+                    value: 3
+                }, {
+                    Rating: "SOMS MEER dan ik wil",
+                    value: 4
+                }, {
+                    Rating: "ALTIJD MEER dan ik wil",
+                    value: 5
+                }
+                ]
 
             });
         })();
@@ -63,31 +90,30 @@
 
 
 </head>
-<body id="questions">
+<body id="questionlist">
     <div ng-app="massApp" ng-controller="massCtrl">
-        <div ng-repeat="question in Questions">
-            <h1>{{question.questionTitle}}</h1>
-            <div ng-repeat="choice in question.answerChoices">
-                <div class="row" ng-if="NextStepBool == false || choice.checked == true">
+        <div ng-repeat="item in questionlist">
+            <h1>{{item.Subdomain}}</h1>
+            <div ng-repeat="choice in item.Question">
+                <div ng-if="NextStepBool == false || choice.checked == true" >
                     <div>
                         <input ng-if="NextStepBool == false" ng-model="choice.checked" type="checkbox">
                     </div>
-                    <div>{{choice.answerChoiceAr}}</div>
+                    <div>{{choice.Text}}</div>
                     <div ng-if="NextStepBool == true">
-                        <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio">ALTIJD MINDER dan ik wil</label>
-                        <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio">SOMS MINDER dan ik wil</label>
-                        <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio">ONGEVEER IDEAAL voor mij</label>
-                        <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio">SOMS MEER dan ik wil</label>
-                        <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio"> ALTIJD MEER dan ik wil</label>
+                        <div ng-repeat="radio in radioData">
+                            <input type="radio" name="{{choice.ID}}" ng-model="choice.Quoting" id="radio_{{$index}}" ng-value="radio" />
+                            <label for="radio_{{$index}}">{{radio.Rating}}</label>
+                        </div>
+                        </div>
                     </div>
-                </div>
             </div>
         </div>
 
         <button ng-click="NextStep()">Volgende stap</button>
-
+        <button ng-click="NextStep2()">stap3</button>
         <h1 style="text-decoration: underline;">DEBUG</h1>
-        <pre>{{Questions}}}</pre>
+        <pre>{{questionlist}}}</pre>
     </div>
 </body>
 </html>
