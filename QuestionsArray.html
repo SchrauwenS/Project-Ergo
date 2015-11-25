@@ -361,19 +361,19 @@
         $scope.radioValue = "radioValue";
         $scope.radioData = [{
             Rating: "ALTIJD MINDER dan ik wil",
-            value: 1
+            value: "1"
         }, {
             Rating: "SOMS MINDER dan ik wil",
-            value: 2
+            value: "2"
         }, {
             Rating: "ONGEVEER IDEAAL voor mij",
-            value: 3
+            value: "3"
         }, {
             Rating: "SOMS MEER dan ik wil",
-            value: 4
+            value: "02"
         }, {
             Rating: "ALTIJD MEER dan ik wil",
-            value: 5
+            value: "01"
         }
         ]
 
@@ -395,7 +395,7 @@
                     <div>{{choice.Text}}</div>
                     <div ng-if="NextStepBool == true">
                         <div ng-repeat="radio in radioData">
-                            <input type="radio" name="{{choice.ID}}" ng-model="choice.Quoting" id="radio_{{$index}}" ng-value="radio" />
+                            <input type="radio" name="{{choice.ID}}" ng-model="choice.Quoting" id="radio_{{$index}}" ng-value="radio.value" />
                             <label for="radio_{{$index}}">{{radio.Rating}}</label>
                         </div>
                     </div>
