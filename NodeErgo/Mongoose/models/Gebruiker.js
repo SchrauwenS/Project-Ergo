@@ -1,7 +1,6 @@
-﻿var mongoose = require('mongoose');
+﻿var db = require('./dbconnection.js');
 
-
-var schema = mongoose.Schema;
+var schema = db.Schema;
 
 var gebruikersSchema = new schema(
  {
