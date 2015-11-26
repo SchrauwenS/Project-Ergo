@@ -1,6 +1,6 @@
 ﻿var mongoose = require('mongoose');
 
-var fs = require('fs').readFile('./Mongoose/connection.txt', 'UTF-8', function (err, data) {
+var fs = require('fs').readFile('./Mongoose/DbConnect.txt', 'UTF-8', function (err, data) {
     console.log(data);
     if (err) return console.log('There was an error reading the connection string to the database, make sure to check if ./mongoose/connectiontxt.js exists and has an URL.');
     mongoose.connect(data);

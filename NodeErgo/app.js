@@ -29,6 +29,11 @@ app.use('/', routes);
 app.use('/users', users);
 
 
+//Mongoose
+var mongoose = require('./Mongoose/dbconnection.js');
+var schemas = require('./Mongoose/gebruiker.js');
+
+
 
 var server = app.listen(3000, function () {
     var host = server.address().address;

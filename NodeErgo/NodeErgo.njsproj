@@ -16,7 +16,6 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
-    <Content Include="Mongoose\connection.txt" />
     <Content Include="package.json" />
     <Compile Include="app.js" />
     <Compile Include="Mongoose\dbconnection.js" />
