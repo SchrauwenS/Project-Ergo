@@ -21,9 +21,12 @@
     <Compile Include="Mongoose\dbconnection.js" />
     <Compile Include="Mongoose\gebruiker.js" />
     <Compile Include="Controllers\UserController.js" />
+    <Compile Include="Passport\auth.js" />
+    <Compile Include="Passport\login.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
     <Content Include="views\error.jade" />
+    <Content Include="views\Home.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\register.jade" />
     <Content Include="views\users.jade" />
@@ -34,6 +37,7 @@
     <Folder Include="bin" />
     <Folder Include="Controllers\" />
     <Folder Include="Mongoose\" />
+    <Folder Include="Passport\" />
     <Folder Include="public" />
     <Folder Include="public\images" />
     <Folder Include="public\javascripts" />

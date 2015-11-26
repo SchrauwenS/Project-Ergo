@@ -2,10 +2,7 @@
 
 
 exports.create = function (req, res)
-{
-    
-    console.log('accessed by: ' + req.body.Username + '');
-    
+{    
     var entry = new Users({   
         Username: req.body.Username,
         Name: req.body.Name,
@@ -23,6 +20,23 @@ exports.create = function (req, res)
 
 exports.getUser = function (req, res) {
 
-    res.render('newUser', { title: 'User - adding user' });
+    res.render('register', { title: 'User - adding user' });
+
+};
+
+exports.getUserList = function (req, res) {
+    Users.find({}, function (err, users) {
+        
+        if (err) {
+            throw err;
+        }
+        else {
+           
+            console.log(users);
+           
+        }
+        
+        res.json(users);
+    });
 
 };

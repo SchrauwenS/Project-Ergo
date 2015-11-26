@@ -2,18 +2,6 @@ var express = require('express');
 var router = express.Router();
 var UserC = require('../Controllers/UserController');
 
-
-/* GET Userlist page. */
-/*
- * GET userlist.
- */
-router.get('/userList', function (req, res) {
-    
-});
-
-
-
-
 /* Adding users*/
 
 router.get('/adduser', function (req, res){
@@ -28,6 +16,13 @@ router.post('/adduser', function (req, res) {
 
 router.get('/register', function (req, res) {
     res.render('register')
+});
+
+//Get Users from the server
+
+router.get('/userList', function (req, res) {
+    return UserC.getUserList(req, res);
+
 });
 
 
