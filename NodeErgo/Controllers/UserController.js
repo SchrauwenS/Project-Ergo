@@ -4,12 +4,12 @@
 exports.create = function (req, res)
 {    
     var entry = new Users({   
-        Username: req.body.Username,
-        Name: req.body.Name,
-        Telefoon: req.body.Telefoon,
-        Email: req.body.Email,
-        passwoord: req.body.passwoord,
-        Age:req.body.Age
+        username: req.body.username,
+        name: req.body.name,
+        telefoon: req.body.telefoon,
+        email: req.body.email,
+        password: req.body.password,
+        age:req.body.age
     });
 
     entry.save();

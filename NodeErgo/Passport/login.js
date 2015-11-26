@@ -5,13 +5,16 @@ module.exports = function (passport) {
     passport.use('login', new LocalStrategy({
         passReqToCallback: true
     },
-        function (req, UserName, Passwoord, done) {
-        User.findOne({ Username: UserName }).exec(function (err, user) {
+        function (req, username, password, done) {
+        User.findOne({ username: UserName }).exec(function (err, user) {
             if (user) {
+                console.log('Found user: ' + user);
                 return done(null, user);
             }
             else {
+                console.log('not found');
                 return done(null, false);
+                
             }
         
         

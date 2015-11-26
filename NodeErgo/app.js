@@ -5,8 +5,9 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
-
+var cookieParser = require("cookie-parser");
 //Passport Code
+
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var session = require('express-session');
@@ -25,6 +26,7 @@ var schemas = require('./Mongoose/gebruiker.js');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(session({
     secret: 'The Cake is A Lie',
@@ -45,10 +47,39 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
+// Test Code
+var user = require('./Mongoose/gebruiker.js');
 
+passport.use(new LocalStrategy(
+    function (username, password, done) {
+        user.findOne({ username: username }).exec(function (err, user){
+            if (user) {
+                return done(null, user);
+            }
+            else {
+                return done(null, false);
+            }
+           
+            
+        })
+    }
+    
+));
 
+passport.serializeUser(function (user, done) {
+    if (user) {
+        console.log('test: ' + user);
+        done(null,user._id);
+    }
+});
 
+passport.deserializeUser(function (id, done) {
+    user.findById(id, function (err, user) {
+        done(err, user);
+    });
+}); 
 
+// end test code
 
 var server = app.listen(3000, function () {
     var host = server.address().address;

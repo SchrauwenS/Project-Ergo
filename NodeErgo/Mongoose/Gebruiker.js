@@ -4,30 +4,30 @@ var schema = mongoose.Schema;
 
 var gebruikersSchema = new schema(
  {
-        Username: {
+        username: {
             type: String
             
         },
-        Name: {
+        name: {
             type: String
            
         },
         
-        Email: {
+        email: {
             type: String
            
         },
         
-        Age: {
+        age: {
             type: Number
            
         },
         
-        Telefoon: {
+        telefoon: {
             type: Number
            
         },
-        passwoord: {
+        password: {
             type: String
            
         }
