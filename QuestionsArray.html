@@ -403,8 +403,8 @@
             </div>
         </div>
 
-        <button ng-click="NextStep()">Volgende stap</button>
-        <button ng-click="NextStep2()">stap3</button>
+        <button ng-if="NextStepBool == false" ng-click="NextStep()">Volgende stap</button>
+        <button ng-if="NextStepBool == true" ng-click="NextStep2()">indienen</button>
         <h1 style="text-decoration: underline;">DEBUG</h1>
         <pre>{{questionlist}}}</pre>
     </div>
