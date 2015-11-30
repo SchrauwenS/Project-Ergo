@@ -12,6 +12,9 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var session = require('express-session');
 var cookiestore = require('connect-mongo')(session);
+var configPassport = require('./Passport/passportconfig.js');
+configPassport();
+
 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -44,40 +47,13 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
 app.use('/', routes);
 app.use('/users', users);
 
 // Test Code
-var user = require('./Mongoose/gebruiker.js');
 
-passport.use(new LocalStrategy(
-    function (username, password, done) {
-        user.findOne({ username: username }).exec(function (err, user){
-            if (user) {
-                return done(null, user);
-            }
-            else {
-                return done(null, false);
-            }
-           
-            
-        })
-    }
-    
-));
-
-passport.serializeUser(function (user, done) {
-    if (user) {
-        console.log('test: ' + user);
-        done(null,user._id);
-    }
-});
-
-passport.deserializeUser(function (id, done) {
-    user.findById(id, function (err, user) {
-        done(err, user);
-    });
-}); 
 
 // end test code
 

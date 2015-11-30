@@ -11,6 +11,18 @@ router.get('/', function(req, res, next) {
 
 router.post('/login', auth.authenticate);
 
+router.post('/logout',function(req,res) {
+    req.logout();
+    res.end();
+       
+})
 
+router.get('*', function (req, res) {
+    res.render('index', {
+        bootstrappedUser:req.user
+
+
+    });
+});
 
 module.exports = router;
