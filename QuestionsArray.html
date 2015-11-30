@@ -11,7 +11,7 @@
     <script>
         (function () {
             var massApp = angular.module("massApp", []);
-            massApp.controller("massCtrl", function ($scope) {
+            massApp.controller("MainCtrl", function ($scope) {
                 $scope.questionlist = [
                                         {
                                         "Subdomain": "Gezondheid",
@@ -357,6 +357,22 @@
         {
             $scope.NextStepBool = true;
         }
+        $scope.NextStep2 = function () {
+           // $location.
+        }
+
+                /*
+                eventuele oplossing radio buttons
+                http://stackoverflow.com/questions/4553235/how-to-change-json-keyvalue
+
+
+                function replaceByValue( field, oldvalue, newvalue ) {
+            for( var k = 0; k < json.length; ++k ) {
+                if( oldvalue == json[k][field] ) {
+                    json[k][field] = newvalue ;
+                }
+            }
+            return json;*/
 
         $scope.radioValue = "radioValue";
         $scope.radioData = [{
@@ -384,7 +400,7 @@
 
 </head>
 <body id="questionlist">
-    <div ng-app="massApp" ng-controller="massCtrl">
+    <div ng-app="massApp" ng-controller="MainCtrl">
         <div ng-repeat="item in questionlist">
             <h1>{{item.Subdomain}}</h1>
             <div ng-repeat="choice in item.Question">
