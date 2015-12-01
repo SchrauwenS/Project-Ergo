@@ -17,12 +17,6 @@ router.post('/logout',function(req,res) {
        
 })
 
-router.get('*', function (req, res) {
-    res.render('index', {
-        bootstrappedUser:req.user
 
-
-    });
-});
 
 module.exports = router;

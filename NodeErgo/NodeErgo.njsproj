@@ -25,7 +25,7 @@
     <Compile Include="Mongoose\gebruiker.js" />
     <Compile Include="Controllers\UserController.js" />
     <Compile Include="Passport\auth.js" />
-    <Compile Include="Passport\login.js" />
+    <Compile Include="Passport\encrypt.js" />
     <Compile Include="Passport\passportconfig.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />

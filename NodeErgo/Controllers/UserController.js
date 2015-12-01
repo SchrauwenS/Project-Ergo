@@ -1,16 +1,15 @@
-﻿var Users = require('../Mongoose/gebruiker.js');
+﻿var schema = require('../Mongoose/gebruiker')
+var Users = schema.Users;
 
 
-exports.create = function (req, res)
-{    
-    var entry = new Users({   
-        username: req.body.username,
-        name: req.body.name,
-        telefoon: req.body.telefoon,
-        email: req.body.email,
-        password: req.body.password,
-        age:req.body.age
-    });
+
+
+
+exports.create = function (req, res, next)
+{
+    var userdata = req.body;
+    userdata.salt = 
+    userdata.hashed_pwd =
 
     entry.save();
     console.log('saved to server');
@@ -26,7 +25,7 @@ exports.getUser = function (req, res) {
 
 exports.getUserList = function (req, res) {
     Users.find({}, function (err, users) {
-        
+             
         if (err) {
             throw err;
         }

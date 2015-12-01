@@ -1,13 +1,10 @@
 ﻿var mongoose = require('mongoose');
-var crypto = require('crypto');
+var  encrypt = require('../Passport/encrypt');
 var schema = mongoose.Schema;
 
 var gebruikersSchema = new schema(
  {
-        username: {
-            type: String
-            
-        },
+        username:String ,
         name: {
             type: String
            
@@ -39,19 +36,9 @@ var gebruikersSchema = new schema(
 
 gebruikersSchema.methods = {
     authenticate: function (passwordToMatch){
-        return hashpwd(this.salt, passwordToMatch) === this.hashed_pwd;
+        return encrypt.hashPwd(this.salt, passwordToMatch) === this.hashed_pwd;
     }
 }
-
-
-function createSalt() {
-    return crypto.randomBytes(128).toString('base64');
-};
-function hashpwd(salt, pwd) {
-    var hmc = crypto.createHmac('sha1', salt);
-    return hmc.update(pwd).digest('hex');
-};
-
 
 var Users = mongoose.model('Users', gebruikersSchema);
 

@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var UserC = require('../Controllers/UserController');
+var auth = require('../passport/auth');
 
 /* Adding users*/
 
@@ -20,10 +21,11 @@ router.get('/register', function (req, res) {
 
 //Get Users from the server
 
-router.get('/userList', function (req, res) {
+router.get('/userlist',auth.requiresApiLogin , function (req, res){
+    console.log('blijkbaar doet dit het');
     return UserC.getUserList(req, res);
-
 });
+
 
 
 module.exports = router;

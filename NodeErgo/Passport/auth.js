@@ -21,4 +21,14 @@ exports.authenticate = function (req, res, next) {
         
     })
     auth(req, res, next);
-}
+};
+
+exports.requiresApiLogin = function (req, res, next) {
+    if (!req.isAuthenticated) {
+        console.log('You need to be logged in')
+        res.status(403);
+        res.end;
+    } else {
+        next();
+    }
+};
