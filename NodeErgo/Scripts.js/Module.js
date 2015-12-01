@@ -37,7 +37,7 @@
 }
                                     ]
                                 },
-                                /* {
+                                 {
                                     "Subdomain": "Relaties",
                                     "Question": [
             {
@@ -339,7 +339,7 @@
                                     "Quoting": null
                                },
                                     ]
-                                }*/]
+                                }]
 
         $scope.NextStepBool = false;
 
