@@ -24,8 +24,16 @@
                     <div ng-if="NextStepBool == true">
                         <div ng-repeat="radio in radioData">
                             <input type="radio" name="{{choice.ID}}" ng-model="choice.Quoting" id="radio_{{$index}}" ng-value="radio.value" />
-                            <label for="radio_{{$index}}">{{radio.Rating}}</label>
+                            <label for="radio_{{$index}}">{{radio.Rating}}</label>                         
                         </div>
+                        <!-- radiobuttons zonder ng-repeat
+                        <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio" >ALTIJD MINDER dan ik wil</label>
+                        <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio">SOMS MINDER dan ik wil</label>
+                        <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio">ONGEVEER IDEAAL voor mij</label>
+                        <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio">SOMS MEER dan ik wil</label>
+                        <label class="radio-inline"><input ng-model="Quoting" name="Q1" type="radio"> ALTIJD MEER dan ik wil</label>
+                        -->
+
                     </div>
                 </div>
             </div>
