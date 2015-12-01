@@ -39,8 +39,8 @@
             </div>
         </div>
 
-        <button ng-if="NextStepBool == false" ng-click="NextStep()">Volgende stap</button>
-        <button ng-if="NextStepBool == true" ng-click="NextStep2()">indienen</button>
+        <button ng-if="NextStepBool == false" ng-click="NextStep()">{{button1}}</button>
+        <button ng-if="NextStepBool == true" ng-click="NextStep2()">{{button2}}</button>
         <h1 style="text-decoration: underline;">DEBUG</h1>
         <pre>{{questionlist}}}</pre>
     </div>

@@ -342,6 +342,10 @@
                                 }*/]
 
         $scope.NextStepBool = false;
+
+        $scope.button1 = "Volgende stap";
+        $scope.button2 = "indienen";
+
         $scope.NextStep = function () {
             $scope.NextStepBool = true;
         }
