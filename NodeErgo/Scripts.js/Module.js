@@ -345,6 +345,8 @@
 
         $scope.button1 = "Volgende stap";
         $scope.button2 = "indienen";
+        $scope.button3 = "Uitloggen";
+        $scope.button4 = "test herstarten";
 
         $scope.NextStep = function () {
             $scope.NextStepBool = true;
