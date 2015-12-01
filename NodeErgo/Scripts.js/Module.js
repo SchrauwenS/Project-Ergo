@@ -1,52 +1,41 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
-    <title>Ergo - questionlist</title>
-    <meta charset="utf-8" />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-
-    <script>
-        (function () {
-            var massApp = angular.module("massApp", []);
-            massApp.controller("MainCtrl", function ($scope) {
+﻿(function () {
+            var App = angular.module("massApp", []);
+            App.controller("MainCtrl", function ($scope) {
                 $scope.questionlist = [
                                         {
-                                        "Subdomain": "Gezondheid",
-                                        "Question": [
-{
-    "ID": 1,
-    "Text": "Zorgen voor voldoende slaap",
-    "checked": false,
-    "Quoting": null
-},
-{
-    "ID": 2,
-    "Text": "Ontspannen/rusten",
-    "checked": false,
-    "Quoting": null
-},
-{
-    "ID": 3,
-    "Text": "Zorgen voor regelmatige beweging",
-    "checked": false,
-    "Quoting": null
-},
-{
-    "ID": 4,
-    "Text": "Voedzaam eten",
-    "checked": false,
-    "Quoting": null
-},
-{
-    "ID": 5,
-    "Text": "Zorgen voor eigen gezondheidsbehoeften",
-    "checked": false,
-    "Quoting": null
-}
-                    ]
+                                            "Subdomain": "Gezondheid",
+                                            "Question": [
+    {
+        "ID": 1,
+        "Text": "Zorgen voor voldoende slaap",
+        "checked": false,
+        "Quoting": null
+    },
+    {
+        "ID": 2,
+        "Text": "Ontspannen/rusten",
+        "checked": false,
+        "Quoting": null
+    },
+    {
+        "ID": 3,
+        "Text": "Zorgen voor regelmatige beweging",
+        "checked": false,
+        "Quoting": null
+    },
+    {
+        "ID": 4,
+        "Text": "Voedzaam eten",
+        "checked": false,
+        "Quoting": null
+    },
+    {
+        "ID": 5,
+        "Text": "Zorgen voor eigen gezondheidsbehoeften",
+        "checked": false,
+        "Quoting": null
+    }
+                                            ]
                                         },
                                         /* {
                                             "Subdomain": "Relaties",
@@ -353,13 +342,13 @@
                                         }*/]
 
                 $scope.NextStepBool = false;
-        $scope.NextStep = function()
-        {
-            $scope.NextStepBool = true;
-        }
-        $scope.NextStep2 = function () {
-           // $location.
-        }
+                $scope.NextStep = function()
+                {
+                    $scope.NextStepBool = true;
+                }
+                $scope.NextStep2 = function () {
+                    // $location.
+                }
 
                 /*
                 eventuele oplossing radio buttons
@@ -374,55 +363,24 @@
             }
             return json;*/
 
-        $scope.radioValue = "radioValue";
-        $scope.radioData = [{
-            Rating: "ALTIJD MINDER dan ik wil",
-            value: "1"
-        }, {
-            Rating: "SOMS MINDER dan ik wil",
-            value: "2"
-        }, {
-            Rating: "ONGEVEER IDEAAL voor mij",
-            value: "3"
-        }, {
-            Rating: "SOMS MEER dan ik wil",
-            value: "02"
-        }, {
-            Rating: "ALTIJD MEER dan ik wil",
-            value: "01"
-        }
-        ]
+                $scope.radioValue = "radioValue";
+                $scope.radioData = [{
+                    Rating: "ALTIJD MINDER dan ik wil",
+                    value: "1"
+                }, {
+                    Rating: "SOMS MINDER dan ik wil",
+                    value: "2"
+                }, {
+                    Rating: "ONGEVEER IDEAAL voor mij",
+                    value: "3"
+                }, {
+                    Rating: "SOMS MEER dan ik wil",
+                    value: "02"
+                }, {
+                    Rating: "ALTIJD MEER dan ik wil",
+                    value: "01"
+                }
+                ]
 
-        });
+            });
         })();
-    </script>
-
-
-</head>
-<body id="questionlist">
-    <div ng-app="massApp" ng-controller="MainCtrl">
-        <div ng-repeat="item in questionlist">
-            <h1>{{item.Subdomain}}</h1>
-            <div ng-repeat="choice in item.Question">
-                <div ng-if="NextStepBool == false || choice.checked == true">
-                    <div>
-                        <input ng-if="NextStepBool == false" ng-model="choice.checked" type="checkbox">
-                    </div>
-                    <div>{{choice.Text}}</div>
-                    <div ng-if="NextStepBool == true">
-                        <div ng-repeat="radio in radioData">
-                            <input type="radio" name="{{choice.ID}}" ng-model="choice.Quoting" id="radio_{{$index}}" ng-value="radio.value" />
-                            <label for="radio_{{$index}}">{{radio.Rating}}</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <button ng-if="NextStepBool == false" ng-click="NextStep()">Volgende stap</button>
-        <button ng-if="NextStepBool == true" ng-click="NextStep2()">indienen</button>
-        <h1 style="text-decoration: underline;">DEBUG</h1>
-        <pre>{{questionlist}}}</pre>
-    </div>
-</body>
-</html>

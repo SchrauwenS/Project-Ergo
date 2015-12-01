@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+    <title>Ergo - questionlist</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+
+</head>
+<body id="questionlist">
+    <div ng-app="App" ng-controller="MainCtrl">
+        <div ng-repeat="item in questionlist">
+            <h1>{{item.Subdomain}}</h1>
+            <div ng-repeat="choice in item.Question">
+                <div ng-if="NextStepBool == false || choice.checked == true">
+                    <div>
+                        <input ng-if="NextStepBool == false" ng-model="choice.checked" type="checkbox">
+                    </div>
+                    <div>{{choice.Text}}</div>
+                    <div ng-if="NextStepBool == true">
+                        <div ng-repeat="radio in radioData">
+                            <input type="radio" name="{{choice.ID}}" ng-model="choice.Quoting" id="radio_{{$index}}" ng-value="radio.value" />
+                            <label for="radio_{{$index}}">{{radio.Rating}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button ng-if="NextStepBool == false" ng-click="NextStep()">Volgende stap</button>
+        <button ng-if="NextStepBool == true" ng-click="NextStep2()">indienen</button>
+        <h1 style="text-decoration: underline;">DEBUG</h1>
+        <pre>{{questionlist}}}</pre>
+    </div>
+</body>
+</html>
