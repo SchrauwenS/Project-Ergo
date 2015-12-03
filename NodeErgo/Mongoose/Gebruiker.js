@@ -4,15 +4,21 @@ var schema = mongoose.Schema;
 
 var gebruikersSchema = new schema(
  {
-        username:String ,
+        username: {
+            type: String,
+            required: '{PATH} is required',
+            
+
+        },
         name: {
-            type: String
-           
+            type: String,
+            required: '{PATH} is required'
         },
         
         email: {
-            type: String
-           
+            type: String,
+            required: '{PATH} is required',
+            unique: true
         },
         
         age: {
@@ -23,13 +29,16 @@ var gebruikersSchema = new schema(
         telefoon: {
             type: Number
            
+        },         
+        
+        salt: {
+            type: String,
+            required: '{PATH} is required'
         },
-        password: {
-            type: String
-           
+        hashed_pwd: {
+            type: String,
+            required: '{PATH} is required'
         },
-        salt: String,
-        hashed_pwd: String,
         Admin: Boolean
     }
 );

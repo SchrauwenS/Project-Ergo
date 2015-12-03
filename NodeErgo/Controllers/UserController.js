@@ -1,6 +1,6 @@
 ﻿var schema = require('../Mongoose/gebruiker')
 var Users = schema.Users;
-
+var encrypt = require('../Passport/encrypt');
 
 
 
@@ -8,12 +8,35 @@ var Users = schema.Users;
 exports.create = function (req, res, next)
 {
     var userdata = req.body;
-    userdata.salt = 
-    userdata.hashed_pwd =
+    userdata.salt = encrypt.createSalt();
+    userdata.hashed_pwd = encrypt.hashPwd(userdata.salt, userdata.password);
 
-    entry.save();
-    console.log('saved to server');
-    res.redirect(301, '/');
+    Users.create(userdata, function myFunction(err, user) {
+        if (err) {
+            console.log(err);
+            
+            if (err.toString().indexOf('E11000') > -1) {
+                err = new Error('Gebruikersnaam al in gebruik!');
+            }
+            
+            res.status(400);
+            return res.send({ reason: err.toString() });
+        }
+       /* else {
+            req.logIn(user, function (err){
+                if (err) { return next(err); }
+                res.send(user);
+            
+            })
+        }*/
+        else {
+            res.redirect(301, '/');
+            console.log('saved to server');
+        }
+        
+    });
+   
+    
 
 };
 
