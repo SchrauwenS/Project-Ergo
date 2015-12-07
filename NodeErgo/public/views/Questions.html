@@ -1,19 +1,4 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    
-    <title>Ergo - questionlist</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    <script src="../Scripts.js/Module.js"></script>
-    <script data-required="angular-route@*" data-semver="1.2.14" src="../packages/AngularJS.Route.1.4.7/content/Scripts/angular-route.js"></script>
-
-</head>
-<body id="questionlist">
-    <div ng-app="App" ng-controller="MainCtrl">
+﻿    <div>
         <div ng-repeat="item in questionlist">
             <h1>{{item.Subdomain}}</h1>
             <div ng-repeat="choice in item.Question">
@@ -42,12 +27,7 @@
 
         <button ng-if="NextStepBool == false" ng-click="NextStep()">{{button1}}</button>
         <button ng-if="NextStepBool == true" ng-click="NextStep2()">{{button2}}</button>
-        
-        
+              
         <h1 style="text-decoration: underline;">DEBUG</h1>
         <pre>{{questionlist}}}</pre>
-
-
     </div>
-</body>
-</html>
