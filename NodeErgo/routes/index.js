@@ -4,7 +4,12 @@ var bodyparser = require('body-parser');
 var auth = require('../Passport/auth.js')
 
 /* GET home page. */
-router.get('/wrapper', function(req, res, next) {
+router.get('/', function(req, res, next) {
+    res.render('index');
+});
+
+/* GET wrapper page. */
+router.get('/wrapper', function (req, res, next) {
     res.sendfile('views/wrapper.html')
 });
 
