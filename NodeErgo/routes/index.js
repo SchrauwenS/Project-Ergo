@@ -3,6 +3,8 @@ var router = express.Router();
 var bodyparser = require('body-parser');
 var auth = require('../Passport/auth.js')
 
+var isLoggedInRedirect = auth.requiresApiLogin;
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('index');
@@ -10,7 +12,7 @@ router.get('/', function(req, res, next) {
 
 /* GET wrapper page. */
 router.get('/wrapper', function (req, res, next) {
-    res.sendfile('views/wrapper.html')
+    res.sendfile('views/wrapper.html');
 });
 
 

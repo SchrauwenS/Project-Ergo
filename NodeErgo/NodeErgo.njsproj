@@ -43,11 +43,11 @@
     <Compile Include="Passport\passportconfig.js" />
     <Compile Include="public\javascripts\ViewControl.js" />
     <Compile Include="public\javascripts\Questionscontroller.js" />
+    <Compile Include="routes\admin.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
     <Content Include="public\views\Endscreen.html" />
     <Content Include="public\views\Questions.html" />
-    <Content Include="views\error.jade" />
     <Content Include="views\Home.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\register.jade" />

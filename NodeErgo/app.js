@@ -4,6 +4,8 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var admin = require('./routes/admin.js');
+
 var app = express();
 var cookieParser = require("cookie-parser");
 //Passport Code
@@ -51,6 +53,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/admin', admin);
+
 
 // Test Code
 

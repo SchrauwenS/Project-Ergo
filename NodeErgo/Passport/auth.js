@@ -9,13 +9,15 @@ exports.authenticate = function (req, res, next) {
         }
         if (!username) {
             console.log('no success');
-            res.done({ success: false });
+           
+            res.redirect('/');
         }
         req.logIn(username, function (err) {
             if (err) {
                 return next(err);
             }
-            res.done({ success: true, username: username });
+           // res.send({ success: true, username: username });
+            res.redirect('Home');
         })
         
     })
@@ -26,10 +28,15 @@ exports.requiresApiLogin = function (req, res, next) {
     if (!req.isAuthenticated()) {
         console.log('You need to be logged in')
         res.status(403);
-        res.end;
+        res.redirect('/');
     } else {
         console.log('u are logged in');
-        console.log(req.isAuthenticated());
         next();
     }
 };
+
+exports.isAdmin = function (req, res, next) {
+    if (!req.isAuthenticated()) return null;
+    if (!req.user.Admin) return null;
+    return next();
+}
