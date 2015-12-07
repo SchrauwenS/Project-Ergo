@@ -10,8 +10,8 @@
             })
             .when("/Endscreen", {
             templateUrl: "views/Endscreen.html",
-            controller: "MainCtrl"
+            controller: "EndscreenCtrl"
             })
-            .otherwise({ redirectTo: "/" });//indien pagina niet gevonden word
+            .otherwise({ redirectTo: "/" });//indien pagina niet gevonden wordt
     });
 }());
