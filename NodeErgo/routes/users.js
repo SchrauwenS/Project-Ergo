@@ -21,10 +21,13 @@ router.get('/register', function (req, res) {
 
 //Get Users from the server
 
+
 router.get('/users',auth.requiresApiLogin, function (req, res){
-    console.log('blijkbaar doet dit het');
+   
     return UserC.getUserList(req, res);
-});
+
+
+})
 
 
 

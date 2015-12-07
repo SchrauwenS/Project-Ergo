@@ -1,6 +1,5 @@
 ﻿var passport = require('passport');
 
-
 exports.authenticate = function (req, res, next) {
     
     var auth = passport.authenticate('local', function (err, username) {
@@ -10,13 +9,13 @@ exports.authenticate = function (req, res, next) {
         }
         if (!username) {
             console.log('no success');
-            res.send({ success: false });
+            res.done({ success: false });
         }
         req.logIn(username, function (err) {
             if (err) {
                 return next(err);
             }
-            res.send({ success: true, username: username });
+            res.done({ success: true, username: username });
         })
         
     })
