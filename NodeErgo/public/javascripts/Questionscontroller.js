@@ -364,6 +364,7 @@
             var totalempty = 0;
             var subempty = 0;
             var subs = [];
+
             for (count = 0; count < $scope.questionlist.length; count++) {
                 for (count2 = 0; count2 < $scope.questionlist[count].Question.length; count2++) {
                     if ($scope.questionlist[count].Question[count2].Quoting != null)
@@ -377,7 +378,14 @@
                 subempty = 0;
                 subtotal = 0;
             }
-            total = total /(53-totalempty)
+
+            total = total / (53 - totalempty)
+            $scope.results.totaal = total;
+            $scope.results.subtotalGezondheid = subs[0];
+            $scope.results.subtotalRelaties = subs[1];
+            $scope.results.subtotalIdentiteit = subs[2];
+            $scope.results.subtotalUitdagingIntresse= subs[3];
+
             //$location.path("/Endscreen");
         }
         
