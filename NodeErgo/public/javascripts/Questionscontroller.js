@@ -328,13 +328,16 @@
 
         $scope.button1 = "Volgende stap";
         $scope.button2 = "indienen";
-        $scope.button3 = "Uitloggen";
-        $scope.button4 = "test herstarten";
 
         $scope.NextStep = function () {
             $scope.NextStepBool = true;
         }
         $scope.NextStep2 = function () {
+            var total = 0;
+            for (count = 0; count < $scope.questionlist.length; count++) {
+                total += $scope.questionlist[count].Question[0].Quoting;
+            }
+            console.log(total)
             $location.path("/Endscreen");
         }
 
