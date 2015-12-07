@@ -41,7 +41,7 @@
     <Compile Include="Passport\auth.js" />
     <Compile Include="Passport\encrypt.js" />
     <Compile Include="Passport\passportconfig.js" />
-    <Compile Include="public\javascripts\app.js" />
+    <Compile Include="public\javascripts\ViewControl.js" />
     <Compile Include="public\javascripts\Questionscontroller.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
@@ -50,7 +50,6 @@
     <Content Include="views\error.jade" />
     <Content Include="views\Home.jade" />
     <Content Include="views\index.jade" />
-    <Content Include="views\Questions.jade" />
     <Content Include="views\register.jade" />
     <Content Include="views\users.jade" />
     <Content Include="views\layout.jade" />
