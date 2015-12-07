@@ -357,19 +357,19 @@
         $scope.radioValue = "radioValue";
         $scope.radioData = [{
             Rating: "ALTIJD MINDER dan ik wil",
-            value: "1"
+            value: 1
         }, {
             Rating: "SOMS MINDER dan ik wil",
-            value: "2"
+            value: 2
         }, {
             Rating: "ONGEVEER IDEAAL voor mij",
-            value: "3"
+            value: 3
         }, {
             Rating: "SOMS MEER dan ik wil",
-            value: "02"
+            value: 4
         }, {
             Rating: "ALTIJD MEER dan ik wil",
-            value: "01"
+            value: 5
         }
         ]
 
