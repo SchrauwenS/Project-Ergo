@@ -8,6 +8,6 @@
                 templateUrl: "views/Questions.html",
                 controller: "MainCtrl"
             })
-            .otherwise({ redirectTo: "/Questions" });//indien pagina niet gevonden word
+            .otherwise({ redirectTo: "/" });//indien pagina niet gevonden word
     });
 }());

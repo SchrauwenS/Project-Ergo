@@ -41,10 +41,12 @@
     <Compile Include="Passport\auth.js" />
     <Compile Include="Passport\encrypt.js" />
     <Compile Include="Passport\passportconfig.js" />
+    <Compile Include="public\javascripts\app.js" />
+    <Compile Include="public\javascripts\Questionscontroller.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
-    <Content Include="views\Questions.html" />
-    <Content Include="views\Endscreen.html" />
+    <Content Include="public\views\Endscreen.html" />
+    <Content Include="public\views\Questions.html" />
     <Content Include="views\error.jade" />
     <Content Include="views\Home.jade" />
     <Content Include="views\index.jade" />
@@ -53,6 +55,7 @@
     <Content Include="views\users.jade" />
     <Content Include="views\layout.jade" />
     <Content Include="public\stylesheets\style.css" />
+    <Content Include="views\wrapper.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin" />
@@ -67,6 +70,7 @@
     <Folder Include="public\images" />
     <Folder Include="public\javascripts" />
     <Folder Include="public\stylesheets" />
+    <Folder Include="public\views\" />
     <Folder Include="routes" />
     <Folder Include="views" />
   </ItemGroup>

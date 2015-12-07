@@ -1,6 +1,6 @@
 ﻿(function () {
-    var App = angular.module("App", []);
-    App.controller("MainCtrl", function ($scope, $location) {
+    var App = angular.module("App");
+    var MainCtrl = function($scope, $routeParams) {
         $scope.questionlist = [
                                 {
                                     "Subdomain": "Gezondheid",
@@ -370,5 +370,8 @@
         }
         ]
 
-    });
+    };
+
+    App.controller("MainCtrl", MainCtrl);
+
 })();
