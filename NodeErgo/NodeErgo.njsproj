@@ -29,6 +29,7 @@
     <Compile Include="Passport\passportconfig.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
+    <Content Include="views\Questions.html" />
     <Content Include="views\Endscreen.html" />
     <Content Include="views\error.jade" />
     <Content Include="views\Home.jade" />
