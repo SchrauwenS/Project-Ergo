@@ -1,6 +1,6 @@
 ﻿(function () {
     var App = angular.module("App");
-    var MainCtrl = function($scope, $routeParams) {
+    var MainCtrl = function($scope, $routeParams, $location) {
         $scope.questionlist = [
                                 {
                                     "Subdomain": "Gezondheid",
@@ -335,7 +335,7 @@
             $scope.NextStepBool = true;
         }
         $scope.NextStep2 = function () {
-            $location.path()
+            $location.path("/Endscreen");
         }
 
         /*
