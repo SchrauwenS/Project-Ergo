@@ -364,11 +364,17 @@
             var totalempty = 0;
             var subempty = 0;
             var subs = [];
-
+            
             for (count = 0; count < $scope.questionlist.length; count++) {
                 for (count2 = 0; count2 < $scope.questionlist[count].Question.length; count2++) {
-                    if ($scope.questionlist[count].Question[count2].Quoting != null)
-                        subtotal += $scope.questionlist[count].Question[count2].Quoting;
+                    if ($scope.questionlist[count].Question[count2].Quoting != null) {
+                        if ($scope.questionlist[count].Question[count2].Quoting < 4) {
+                            subtotal += $scope.questionlist[count].Question[count2].Quoting;
+                        }
+                        else {
+                            subtotal += ($scope.questionlist[count].Question[count2].Quoting - 3);
+                        }
+                    }  
                     else
                         subempty++
                 }
@@ -378,30 +384,18 @@
                 subempty = 0;
                 subtotal = 0;
             }
-
+            
             total = total / (53 - totalempty)
             $scope.results.totaal = total;
             $scope.results.subtotalGezondheid = subs[0];
             $scope.results.subtotalRelaties = subs[1];
             $scope.results.subtotalIdentiteit = subs[2];
-            $scope.results.subtotalUitdagingIntresse= subs[3];
+            $scope.results.subtotalUitdagingIntresse = subs[3];
 
             //$location.path("/Endscreen");
         }
         
-        /*
-        eventuele oplossing radio buttons
-        http://stackoverflow.com/questions/4553235/how-to-change-json-keyvalue
-
-
-        function replaceByValue( field, oldvalue, newvalue ) {
-    for( var k = 0; k < json.length; ++k ) {
-        if( oldvalue == json[k][field] ) {
-            json[k][field] = newvalue ;
-        }
-    }
-    return json;*/
-    
+        
         $scope.radioValue = "radioValue";
         $scope.radioData = [{
                 Rating: "ALTIJD MINDER dan ik wil",
