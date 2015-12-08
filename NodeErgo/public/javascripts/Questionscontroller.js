@@ -6,8 +6,11 @@
             $scope.questionlist = res.data;
         });
         
-        $scope.results = [{ "totaal": 0 }, { "subtotalGezondheid": 0 }, { "subtotalRelaties" : 0 }, { "subtotalIdentiteit": 0 }, { "subtotalUitdagingIntresse": 0 }];
-        
+        $http.get('JSON/Answers.json')
+            .then(function (res) {
+            $scope.results  = res.data;
+        });
+                 
         $scope.NextStepBool = false;
         
         $scope.button1 = "Volgende stap";

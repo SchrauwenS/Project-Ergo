@@ -47,6 +47,7 @@
     <Compile Include="routes\admin.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
+    <Content Include="public\JSON\Answers.json" />
     <Content Include="public\JSON\Questions.json" />
     <Content Include="public\views\Endscreen.html" />
     <Content Include="public\views\Questions.html" />
