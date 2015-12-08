@@ -6,8 +6,7 @@ var gebruikersSchema = new schema(
  {
         username: {
             type: String,
-            required: '{PATH} is required',
-            
+            required: '{PATH} is required',            
 
         },
         name: {
@@ -39,9 +38,33 @@ var gebruikersSchema = new schema(
             type: String,
             required: '{PATH} is required'
         },
-        Admin: Boolean
+        Admin: Boolean,
+             
     }
 );
+
+var scoreSchema = new schema({
+    
+   id: String,
+   subGezondheid: Number,
+   subIdentiteit: Number,
+   subRelaties: Number,
+   subUitdaging: Number,
+   subIntresse: Number,
+   totaalScore: Number,
+    
+
+
+});
+
+var vraagSchema = new schema({
+    
+    user: schema.ObjectId,
+    text: String,
+    score: String,
+    vraagnummer: Number
+
+});
 
 gebruikersSchema.methods = {
     authenticate: function (passwordToMatch){
@@ -50,5 +73,9 @@ gebruikersSchema.methods = {
 }
 
 var Users = mongoose.model('Users', gebruikersSchema);
+var subScore = mongoose.model('subScore', scoreSchema);
+var vraagSchema = mongoose.model('vragen', vraagSchema);
 
 exports.Users = Users;
+exports.subScore = subScore;
+exports.vragen = vraagSchema;
