@@ -47,6 +47,7 @@
     <Compile Include="routes\admin.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
+    <Content Include="public\JSON\Questions.json" />
     <Content Include="public\views\Endscreen.html" />
     <Content Include="public\views\Questions.html" />
     <Content Include="views\Home.jade" />
@@ -69,6 +70,7 @@
     <Folder Include="public" />
     <Folder Include="public\images" />
     <Folder Include="public\javascripts" />
+    <Folder Include="public\JSON\" />
     <Folder Include="public\stylesheets" />
     <Folder Include="public\views\" />
     <Folder Include="routes" />
