@@ -53,7 +53,7 @@
             $scope.results.subtotalIdentiteit = subs[2];
             $scope.results.subtotalUitdagingIntresse = subs[3];
 
-            //$location.path("/Endscreen");
+            $location.path("/Endscreen");
         }
         
         
