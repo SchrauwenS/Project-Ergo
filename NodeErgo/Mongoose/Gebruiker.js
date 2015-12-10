@@ -45,7 +45,7 @@ var gebruikersSchema = new schema(
 
 var scoreSchema = new schema({
     
-   id: String,
+   user: schema.ObjectId,
    subGezondheid: Number,
    subIdentiteit: Number,
    subRelaties: Number,

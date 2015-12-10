@@ -35,6 +35,7 @@
     <Compile Include="bootstrap\js\bootstrap.js" />
     <Compile Include="bootstrap\js\bootstrap.min.js" />
     <Compile Include="bootstrap\js\npm.js" />
+    <Compile Include="Controllers\vragenController.js" />
     <Compile Include="Mongoose\dbconnection.js" />
     <Compile Include="Mongoose\gebruiker.js" />
     <Compile Include="Controllers\UserController.js" />
