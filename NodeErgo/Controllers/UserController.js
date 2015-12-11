@@ -76,8 +76,8 @@ exports.getUserList = function (req, res) {
 exports.updateUser = function(req,res,next) {
     var userUpdates = req.body;
 
-    if (req.user.id != userUpdates.id && !req.user.Admin) {
-        res.send(403);
+    if (req.user._id != userUpdates._id && !req.user.Admin) {
+        res.send(401);
         return res.end();
     }
     

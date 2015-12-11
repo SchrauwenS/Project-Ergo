@@ -1,81 +1,41 @@
 ﻿var schema = require('../Mongoose/gebruiker');
-var vragen = schema.vragen;
+var vragen = schema.survey;
 var JsonVragen = require('../public/JSON/Questions');
 
 
 
-exports.getVragen = function(req,res,next) {
-   
-
+exports.postSurvey = function (req, res, data) {
+    
+    var newSurvey = {
+        user: req.user.id,
+        vragen: []
+    }
     for (var Subs in JsonVragen) {
         
         //console.log('Subdomain:' + JsonVragen[Subs].Subdomain);
         
         
         for (var vraag in JsonVragen[Subs].Question) {
-            
-            // HIER KOMT CODE VOOR MONGOOSE //
-            
-            var vraag_id = JsonVragen[Subs].Question[vraag].ID;
-            var vraag_user = req.user.id;
-            var vraag_score = JsonVragen[Subs].Question[vraag].Quoting;
-            var vraag_Text = JsonVragen[Subs].Question[vraag].Text;
-            
-            if (vraag_score == null) {
-                vraag_score = 'N';
-            }
-            
-            
-            var newVraag = new vragen({
-                user: vraag_user,
-                text: vraag_Text,
-                score: vraag_score,
+            var newVraag = {
+                text: JsonVragen[Subs].Question[vraag].Text,
+                score: JsonVragen[Subs].Question[vraag].Quoting,
                 vraagnummer: JsonVragen[Subs].Question[vraag].ID
-                
-            });
+            };
             
+            newSurvey.vragen.push(newVraag);
             
-            
-            if (vragen.findOne({ 'user': newVraag.user, 'ID': newvraag.vraagnummer }, function (err, gevondenVraag) {
-            if (err) {
-                                console.log('Probleem bij opslaan/updaten van antw: ' + err);
-            }
-            
-           if (gevondenVraag) {
-                if (gevondenVraag.score != newVraag.score) {
-                    gevondenVraag.save(function (err) {
-                        if (err) {
-                                  console.log('Error bij toevoegen van vraag: ' + err)
-                                 }
-            
-                                    });
-                     console.log('Vraag aangepast: ' + newVraag.vraagnummer);
-                }
-                
-                                
-
-          
-           
-            }
-            
-            
-            }));
-            else {
-                newVraag.save(function (err) {
-                    if (err) {
-                        console.log('Error bij toevoegen van vraag: ' + err)
-                    }
-            
-                });
-                console.log('Vraag opgeslagen: ' + newVraag.vraagnummer);
-            }
-
-           
-            
-        }   
-        
-        
-        
+        }
     }
-    
+    for (var vraagindex in data.vragen) {
+        for (var surveyindex in newSurvey.vragen) {
+            if (newSurvey.vragen[surveyindex].vraagnummer == data.vragen[vraagindex].ID) {
+                newSurvey.vragen[surveyindex].text = data.vragen[vraagindex].Text;
+                newSurvey.vragen[surveyindex].score = data.vragen[vraagindex].Quoting;
+            }
+        };
+    };
+    vragen.update({ 'user': req.user._id }, { $set: newSurvey }, { upsert: true }, function (err, saved) {
+        if (err) return console.log(err);
+        res.sendStatus(201);
+    })
 };
