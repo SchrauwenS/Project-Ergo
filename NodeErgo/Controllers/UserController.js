@@ -12,6 +12,7 @@ exports.create = function (req, res, next)
     userdata.hashed_pwd = encrypt.hashPwd(userdata.salt, userdata.password);
     
     var email = userdata.email;
+    var username = userdata.username;
     
     Users.findOne({'email': email},function myFunction(err,user) {
         if (err) {

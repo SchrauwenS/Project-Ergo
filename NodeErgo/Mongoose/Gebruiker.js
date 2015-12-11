@@ -62,7 +62,7 @@ var vraagSchema = new schema({
     user: schema.ObjectId,
     text: String,
     score: String,
-    vraagnummer: Number
+    vraagnummer: String
 
 });
 
