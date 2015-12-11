@@ -36,7 +36,10 @@ exports.requiresApiLogin = function (req, res, next) {
 };
 
 exports.isAdmin = function (req, res, next) {
-    if (!req.isAuthenticated()) return null;
-    if (!req.user.Admin) return null;
+    
+    console.log(req.user.username + 'is admin: ' + req.user.Admin);
+
+    if (!req.isAuthenticated()) res.redirect('/');
+    if (!req.user.Admin) res.redirect('/');
     return next();
 }

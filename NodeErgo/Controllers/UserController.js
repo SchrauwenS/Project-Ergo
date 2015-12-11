@@ -56,12 +56,6 @@ exports.create = function (req, res, next)
 
 };
 
-exports.getUser = function (req, res) {
-
-    res.render('register', { title: 'User - adding user' });
-
-};
-
 exports.getUserList = function (req, res) {
     Users.find({}, function (err, users) {
              
@@ -76,5 +70,30 @@ exports.getUserList = function (req, res) {
         
         res.json(users);
     });
+
+};
+
+exports.updateUser = function(req,res,next) {
+    var userUpdates = req.body;
+
+    if (req.user.id != userUpdates.id && !req.user.Admin) {
+        res.send(403);
+        return res.end();
+    }
+    
+    req.user.name = userUpdates.name;
+    if (userUpdates.password && userUpdates.password.length > 0) {
+        req.user.salt = encrypt.createSalt();
+        req.user.hashed_pwd = encrypt.hashPwd(req.user.salt, userUpdates.password);
+    }
+
+    req.user.save(function (err) {
+        if (err) {
+            res.status(400); return res.send({ reason: err.toString() });
+        }
+        
+    });
+    
+
 
 };

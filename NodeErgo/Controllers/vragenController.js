@@ -20,7 +20,7 @@ exports.getVragen = function(req,res,next) {
             var vraag_user = req.user.id;
             var vraag_score = JsonVragen[Subs].Question[vraag].Quoting;
             var vraag_Text = JsonVragen[Subs].Question[vraag].Text;
-
+            
             if (vraag_score == null) {
                 vraag_score = 'N';
             }
@@ -33,14 +33,47 @@ exports.getVragen = function(req,res,next) {
                 vraagnummer: JsonVragen[Subs].Question[vraag].ID
                 
             });
-
-            console.log('gebruiker: ' + newVraag.user + 'text: ' + newVraag.text + 'score: ' + newVraag.score + 'ID: ' + newVraag.vraagnummer);
-            // MONGOOSE //
             
-
             
-            //console.log('Question:' + JsonVragen[Subs].Question[vraag].Text);
-        };
+            
+            if (vragen.findOne({ 'user': newVraag.user, 'ID': newvraag.vraagnummer }, function (err, gevondenVraag) {
+            if (err) {
+                                console.log('Probleem bij opslaan/updaten van antw: ' + err);
+            }
+            
+           if (gevondenVraag) {
+                if (gevondenVraag.score != newVraag.score) {
+                    gevondenVraag.save(function (err) {
+                        if (err) {
+                                  console.log('Error bij toevoegen van vraag: ' + err)
+                                 }
+            
+                                    });
+                     console.log('Vraag aangepast: ' + newVraag.vraagnummer);
+                }
+                
+                                
+
+          
+           
+            }
+            
+            
+            }));
+            else {
+                newVraag.save(function (err) {
+                    if (err) {
+                        console.log('Error bij toevoegen van vraag: ' + err)
+                    }
+            
+                });
+                console.log('Vraag opgeslagen: ' + newVraag.vraagnummer);
+            }
+
+           
+            
+        }   
+        
         
         
     }

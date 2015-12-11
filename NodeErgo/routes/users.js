@@ -19,6 +19,14 @@ router.get('/register', function (req, res) {
     res.render('register')
 });
 
+
+// Info van gebruiker bijwerken
+
+router.put('/users', function (req, res, next) {
+   return UserC.updateUser(req, res, next);
+
+});
+
 //Get Users from the server
 
 
