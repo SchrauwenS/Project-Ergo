@@ -12,13 +12,17 @@ exports.authenticate = function (req, res, next) {
            
             res.redirect('/');
         }
-        req.logIn(username, function (err) {
-            if (err) {
-                return next(err);
-            }
-           // res.send({ success: true, username: username });
-            res.redirect('Home');
-        })
+        else {
+            req.logIn(username, function (err) {
+                if (err) {
+                    return next(err);
+                }
+                
+                res.redirect('Home');
+            })
+        }
+        
+        
         
     })
     auth(req, res, next);
@@ -26,19 +30,15 @@ exports.authenticate = function (req, res, next) {
 
 exports.requiresApiLogin = function (req, res, next) {
     if (!req.isAuthenticated()) {
-        console.log('You need to be logged in')
-        res.status(403);
+        res.status(403).send('U need to be logged in');
         res.redirect('/');
     } else {
-        console.log('u are logged in');
+        //console.log('u are logged in');
         next();
     }
 };
 
 exports.isAdmin = function (req, res, next) {
-    
-    console.log(req.user.username + 'is admin: ' + req.user.Admin);
-
     if (!req.isAuthenticated()) res.redirect('/');
     if (!req.user.Admin) res.redirect('/');
     return next();

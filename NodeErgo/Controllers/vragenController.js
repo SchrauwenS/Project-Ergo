@@ -29,7 +29,6 @@ exports.postSurvey = function (req, res, data) {
     for (var vraagindex in data.vragen) {
         for (var surveyindex in newSurvey.vragen) {
             if (newSurvey.vragen[surveyindex].vraagnummer == data.vragen[vraagindex].ID) {
-                newSurvey.vragen[surveyindex].text = data.vragen[vraagindex].Text;
                 newSurvey.vragen[surveyindex].score = data.vragen[vraagindex].Quoting;
             }
         };
@@ -38,4 +37,13 @@ exports.postSurvey = function (req, res, data) {
         if (err) return console.log(err);
         res.sendStatus(201);
     })
+};
+
+exports.getVragen = function (req, res, data) {
+
+    vragen.find({ 'user': req.user._id }, function (err, saved) {
+        if (err) return console.log(err);
+        res.status(200).json(saved);
+    })
+
 };

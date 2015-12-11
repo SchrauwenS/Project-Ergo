@@ -6,17 +6,16 @@ var bodyparser = require('body-parser');
 var auth = require('../Passport/auth.js')
 var vraag = require('../Controllers/vragenController');
 
-var isAdmin = auth.isAdmin;
+var isLoggedIn = auth.requiresApiLogin;
 
-
-/* GET home page. */
-router.get('/', isAdmin, function (req, res, next) {
-    res.redirect('users/users');
+router.get('/testResults', isLoggedIn, function (req, res) {
+    vraag.getVragen(req, res);
 });
 
 
-
-
+router.post('/testResults', isLoggedIn, function (req, res, next) {
+    vraag.postSurvey(req, res, req.body);
+});
 
 
 module.exports = router;

@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var admin = require('./routes/admin.js');
+var results = require('./routes/results')
 
 var app = express();
 var cookieParser = require("cookie-parser");
@@ -38,7 +39,7 @@ app.use(session({
     name: "Ergo",
     store: new cookiestore({
         mongooseConnection: mongoose.db,
-       ttl: 14*24*60*60
+        ttl: 7 * 24 * 60 * 60
     }),
     resave: true,
     saveUninitialized: true
@@ -54,7 +55,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/admin', admin);
-
+app.use('/results', results);
 
 // Test Code
 
