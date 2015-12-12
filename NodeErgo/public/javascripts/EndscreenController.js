@@ -11,12 +11,6 @@
             $scope.results = res.data;
         });
         
-         //$scope.totaal = $scope.results.totaal
-         //$scope.subtotalGezondheid = 
-         //$scope.subtotalRelaties
-         //$scope.subtotalIdentiteit
-         //$scope.subtotalUitdagingIntresse  
-
         $scope.button3 = "Uitloggen";
         $scope.button4 = "test herstarten";
         
