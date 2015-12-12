@@ -44,7 +44,9 @@
                 subs[count] = subtotal / (count2 - subempty);
                 subempty = 0;
                 subtotal = 0;
-            }
+
+
+               }
             
             total = total / (53 - totalempty)
             $scope.results.totaal = total;
@@ -52,8 +54,10 @@
             $scope.results.subtotalRelaties = subs[1];
             $scope.results.subtotalIdentiteit = subs[2];
             $scope.results.subtotalUitdagingIntresse = subs[3];
+            
+            $http.post('JSON/Questions.json', $scope.questionlist)
+            $http.post('JSON/Answers.json' , $scope.Answers)
 
-            $location.path("/Endscreen");
         }
         
         
