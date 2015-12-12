@@ -1,12 +1,12 @@
-﻿    <div>
+﻿    <div class="row">
         <div ng-repeat="item in questionlist">
-            <h1>{{item.Subdomain}}</h1>
+            <h1 class="col-sm-offset-2 col-xs-offset-1">{{item.Subdomain}}</h1>
             <div ng-repeat="choice in item.Question">
-                <div ng-if="NextStepBool == false || choice.checked == true">
-                    <div>
-                        <input ng-if="NextStepBool == false" ng-model="choice.checked" type="checkbox">
+                <div class="row" ng-if="NextStepBool == false || choice.checked == true">
+                    <div class="col-xs-3">
+                        <input class="pull-right" ng-if="NextStepBool == false" ng-model="choice.checked" type="checkbox">
                     </div>
-                    <div>{{choice.Text}}</div>
+                    <div class="col-xs-8">{{choice.Text}}</div>
                     <div ng-if="NextStepBool == true">
                         <div ng-repeat="radio in radioData">
                             <input type="radio" name="{{choice.ID}}" ng-model="choice.Quoting" id="radio_{{$index}}" ng-value="radio.value" />
@@ -25,8 +25,8 @@
             </div>
         </div>
 
-        <button ng-if="NextStepBool == false" ng-click="NextStep()">{{button1}}</button>
-        <button ng-if="NextStepBool == true" ng-click="NextStep2()">{{button2}}</button>
+        <button class="btn btn-primary" ng-if="NextStepBool == false" ng-click="NextStep()">{{button1}}</button>
+        <button class="btn btn-primary" ng-if="NextStepBool == true" ng-click="NextStep2()">{{button2}}</button>
               
         <h1 style="text-decoration: underline;">DEBUG</h1>
         <pre>{{questionlist}}}</pre>
