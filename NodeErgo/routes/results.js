@@ -8,14 +8,27 @@ var vraag = require('../Controllers/vragenController');
 
 var isLoggedIn = auth.requiresApiLogin;
 
+
+//Server vragen voor de Lijst met vragen/antwoorden
 router.get('/testResults', isLoggedIn, function (req, res) {
     vraag.getVragen(req, res);
 });
 
+//Server vragen voor de Lijst met vragen/antwoorden
+router.get('/testScore', isLoggedIn, function (req, res) {
+    vraag.getScore(req, res);
+});
 
+//Vragen psuhen naar de server
 router.post('/testResults', isLoggedIn, function (req, res, next) {
     vraag.postSurvey(req, res, req.body);
 });
 
+//scores pushen naar de server
+
+
+router.post('/testScore', isLoggedIn, function (req, res, next) {
+    vraag.postScores(req, res, req.body);
+});
 
 module.exports = router;

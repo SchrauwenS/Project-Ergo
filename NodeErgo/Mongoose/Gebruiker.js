@@ -46,16 +46,13 @@ var gebruikersSchema = new schema(
 var scoreSchema = new schema({
     
     user: schema.ObjectId,
-    scores: [{
-            subGezondheid: Number,
-            subIdentiteit: Number,
-            subRelaties: Number,
-            subUitdaging: Number,
-            subIntresse: Number,
-            totaalScore: Number
-        }]
+    subGezondheid: Number,
+    subIdentiteit: Number,
+    subRelaties: Number,
+    subUitdaging: Number,
+    totaalScore: Number
 
-    
+
 
 
 });
