@@ -2,7 +2,6 @@
 var router = express.Router();
 var schema = require('../Mongoose/gebruiker');
 var vragen = schema.survey;
-var 
 
 var bodyparser = require('body-parser');
 var auth = require('../Passport/auth.js')
