@@ -33,7 +33,7 @@ router.put('/Update', function (req, res, next) {
 
 router.get('/users',auth.requiresApiLogin, function (req, res){
     
-    if (req.admin.Admin) {
+    if (req.user.Admin) {
         return UserC.getUserList(req, res);
 
     }
