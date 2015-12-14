@@ -15,7 +15,8 @@
         $scope.button4 = "test herstarten";
         
         $scope.Button3click = function () {
-        
+            $http.post("/logout");
+            res.redirect("/");
         }
 
         $scope.Button4click = function () {
