@@ -49,6 +49,7 @@
                }
             
             total = total / (53 - totalempty)
+            Math.round(total * 100) / 100
             $scope.results.totaal = total;
             $scope.results.subtotalGezondheid = subs[0];
             $scope.results.subtotalRelaties = subs[1];
