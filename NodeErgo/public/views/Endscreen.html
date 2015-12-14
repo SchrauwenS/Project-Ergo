@@ -9,22 +9,23 @@
 
 
     <h4>Totaal LBI score:</h4>
+    <div>Gemiddelde van ingevulde activiteiten</div>
+    <div class="results">{{results.totaalScore}}</div>
     <h4>LBI subschalen:</h4>
-        <div>
-            <h5>Totaal gemiddelde</h5>
-            <div>{{results.totaal}}</div>
-            <h5>Gemiddelde Subdomein Gezondheid</h5>
-            <div>{{results.subtotalGezondheid}}</div>
-            <h5>Gemiddelde Subdomein Relaties</h5>
-            <div>{{results.subtotalRelaties}}</div>
-            <h5>Gemiddelde Subdomein Identiteit</h5>
-            <div>{{results.subtotalIdentiteit}}</div>
-            <h5>Gemiddelde Subdomein UitdagingIntresse</h5>
-            <div>{{results.subtotalUitdagingIntresse}}</div>
-        </div>
+    
+        <h5>Gemiddelde Subdomein Gezondheid</h5>
+        <div class="results">{{results.subGezondheid}}</div>
+        <h5>Gemiddelde Subdomein Relaties</h5>
+        <div class="results">{{results.subRelaties}}</div>
+        <h5>Gemiddelde Subdomein Identiteit</h5>
+        <div class="results">{{results.subIdentiteit}}</div>
+        <h5>Gemiddelde Subdomein UitdagingIntresse</h5>
+        <div class="results">{{results.subUitdaging}}</div>
     
 
-    <button ng-click="Button3click()">{{button3}}</button>
-    <button ng-click="Button4click()">{{button4}}</button>
+    <div class="row paddingTop20">
+        <button class="btn btn-primary" ng-click="Button3click()">{{button3}}</button>
+        <button class="btn btn-primary" ng-click="Button4click()">{{button4}}</button>
+    </div>
 </div>
 
