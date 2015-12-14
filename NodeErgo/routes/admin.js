@@ -2,9 +2,11 @@
 var router = express.Router();
 var schema = require('../Mongoose/gebruiker');
 var vragen = schema.survey;
+var 
+
 var bodyparser = require('body-parser');
 var auth = require('../Passport/auth.js')
-var vraag = require('../Controllers/vragenController');
+
 
 var isAdmin = auth.isAdmin;
 
@@ -14,6 +16,9 @@ router.get('/', isAdmin, function (req, res, next) {
     res.redirect('users/users');
 });
 
+router.get('/users:userID', isAdmin, function (req, res, next) {
+    var userID = req.params.userID;
+});
 
 
 

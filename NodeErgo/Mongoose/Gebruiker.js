@@ -6,39 +6,40 @@ var gebruikersSchema = new schema(
     {
         username: {
             type: String,
-            required: '{PATH} is required',            
+            required: true,            
 
         },
         name: {
             type: String,
-            required: '{PATH} is required'
+            required: true
         },
         
         email: {
             type: String,
-            required: '{PATH} is required',
+            required: true,
             unique: true
         },
         
         age: {
-            type: Number
+            type: Number,
+            default:null
            
         },
         
-        telefoon: {
-            type: Number
+        telefoon: {  type: Number,  default: 0
+           
            
         },         
         
         salt: {
             type: String,
-            required: '{PATH} is required'
+            required: true
         },
         hashed_pwd: {
             type: String,
-            required: '{PATH} is required'
+            required: true
         },
-        Admin: Boolean,
+        Admin: {type: Boolean, default: false}
              
     }
 );
