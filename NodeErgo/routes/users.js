@@ -32,9 +32,16 @@ router.put('/Update', function (req, res, next) {
 
 
 router.get('/users',auth.requiresApiLogin, function (req, res){
-   
-    return UserC.getUserList(req, res);
+    
+    if (req.admin.Admin) {
+        return UserC.getUserList(req, res);
 
+    }
+    else {
+        
+    }
+    
+   
 
 })
 

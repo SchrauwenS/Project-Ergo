@@ -33,7 +33,7 @@ exports.requiresApiLogin = function (req, res, next) {
         res.status(403).send('U need to be logged in');
         res.redirect('/');
     } else {
-        //console.log('u are logged in');
+       
         next();
     }
 };

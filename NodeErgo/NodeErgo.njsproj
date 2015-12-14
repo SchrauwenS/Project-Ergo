@@ -47,6 +47,7 @@
     <Compile Include="public\javascripts\ViewControl.js" />
     <Compile Include="public\javascripts\Questionscontroller.js" />
     <Compile Include="routes\admin.js" />
+    <Compile Include="routes\Home.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\results.js" />
     <Compile Include="routes\users.js" />
