@@ -2,13 +2,13 @@
     var App = angular.module("App");
     var EndscreenCtrl = function ($scope, $routeParams, $location, $http) {
         
-        $http.get('JSON/Questions.json')
+        $http.get('results/testResults')
             .then(function (res) {
             $scope.questionlist = res.data;
         });
-        $http.get('JSON/Answers.json')
+        $http.get('results/testScore')
             .then(function (res) {
-            $scope.results = res.data;
+            $scope.results = res.data[0];
         });
         
         $scope.button3 = "Uitloggen";
