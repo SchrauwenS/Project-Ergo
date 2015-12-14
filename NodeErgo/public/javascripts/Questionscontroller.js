@@ -55,8 +55,8 @@
             $scope.results.subtotalIdentiteit = subs[2];
             $scope.results.subtotalUitdagingIntresse = subs[3];
             
-            $http.post('JSON/Questions.json', $scope.questionlist)
-            $http.post('JSON/Answers.json' , $scope.Answers)
+            $http.post('/results/testResults', $scope.questionlist)
+            $http.post('/results/testScore' , $scope.results)
 
         }
         
@@ -73,10 +73,10 @@
                 value: 3
             }, {
                 Rating: "SOMS MEER dan ik wil",
-                value: 4
+                value: 5
             }, {
                 Rating: "ALTIJD MEER dan ik wil",
-                value: 5
+                value: 4
             }
         ]
 
