@@ -31,7 +31,6 @@
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Mongoose\Connect.txt" />
     <Content Include="package.json" />
     <Compile Include="app.js" />
     <Compile Include="bootstrap\js\bootstrap.js" />

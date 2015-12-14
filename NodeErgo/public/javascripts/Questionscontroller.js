@@ -55,9 +55,10 @@
             $scope.results.subtotalIdentiteit = subs[2];
             $scope.results.subtotalUitdagingIntresse = subs[3];
             
-            $http.post('/results/testResults', $scope.questionlist)
-            $http.post('/results/testScore' , $scope.results)
-
+            $http.post('/results/testResults', $scope.questionlist);
+            $http.post('/results/testScore' , $scope.results);
+            
+            $location.path("/Endscreen");
         }
         
         
