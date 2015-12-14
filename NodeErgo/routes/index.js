@@ -6,7 +6,13 @@ var auth = require('../Passport/auth.js')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index');
+    if (req.isAuthenticated()) {
+        res.redirect('/home')
+    }
+    else {
+        res.render('index');
+    }
+    
 });
 
 /* GET wrapper page. */

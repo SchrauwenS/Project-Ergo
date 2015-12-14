@@ -5,8 +5,8 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var admin = require('./routes/admin.js');
-var results = require('./routes/results')
-
+var results = require('./routes/results');
+var home = require('./routes/Home.js');
 var app = express();
 var cookieParser = require("cookie-parser");
 //Passport Code
@@ -56,7 +56,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/admin', admin);
 app.use('/results', results);
-
+app.use('/Home', home);
 // Test Code
 
 

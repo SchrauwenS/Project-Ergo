@@ -23,7 +23,7 @@ router.get('/register', function (req, res) {
 
 // Info van gebruiker bijwerken
 
-router.put('/users', function (req, res, next) {
+router.put('/Update', function (req, res, next) {
    return UserC.updateUser(req, res, next);
 
 });
