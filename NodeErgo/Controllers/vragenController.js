@@ -26,14 +26,14 @@ exports.postSurvey = function (req, res, data) {
         }
     }
     //indien vraag al bestaat, scores vergelijken en indien ze veranderd zijn deze aanpassen
-    
-    for (var vraagindex in data.vragen) {
-        for (var surveyindex in newSurvey.vragen) {
-            if (newSurvey.vragen[surveyindex].vraagnummer == data.vragen[vraagindex].ID) {
-                
-                newSurvey.vragen[surveyindex].score = data.vragen[vraagindex].Quoting;
-               
-            }
+    for (var subdomainindex in data) {
+        for (var vraagindex in data[subdomainindex].Question) {
+            //console.log(data[subdomainindex].Question[vraagindex]);
+            for (var surveyindex in newSurvey.vragen) {                
+                if (newSurvey.vragen[surveyindex].vraagnummer == data[subdomainindex].Question[vraagindex].ID) {
+                    newSurvey.vragen[surveyindex].score = data[subdomainindex].Question[vraagindex].Quoting;
+                }
+            };
         };
     };
     vragen.update({ 'user': req.user._id }, { $set: newSurvey }, { upsert: true }, function (err, saved) {
@@ -45,7 +45,7 @@ exports.postSurvey = function (req, res, data) {
 exports.postScores = function (req, res, data) {
     
     console.log(data);
-
+    
     var newScore = {
         user: req.user.id,
         subGezondheid: data.subtotalGezondheid,
@@ -54,7 +54,7 @@ exports.postScores = function (req, res, data) {
         subUitdaging: data.subtotalUitdagingIntresse,
         totaalScore: data.totaal
     }
-       
+    
     scores.update({ 'user': req.user._id }, { $set: newScore }, { upsert: true }, function (err, saved) {
         if (err) return console.log(err);
         res.sendStatus(201);
@@ -76,7 +76,7 @@ exports.getVragen = function (req, res, data) {
 };
 
 
-exports.getScore = function myFunction(req,res,data) {
+exports.getScore = function myFunction(req, res, data) {
     scores.find({ 'user': req.user._id }, function (err, saved) {
         if (err) return console.log(err);
         res.status(200).json(saved);
