@@ -1,7 +1,7 @@
 ﻿<div class="container">
         <div ng-repeat="item in questionlist">
             <div class="row">
-                <h1>{{item.Subdomain}}</h1>
+                <h1 ng-if="NextStepBool == false || ISChecked(item.Subdomain)">{{item.Subdomain}}</h1>
                 <div ng-repeat="choice in item.Question">
                     <div ng-if="NextStepBool == false || choice.checked == true">
                         <input ng-if="NextStepBool == false" ng-model="choice.checked" type="checkbox">
@@ -19,9 +19,12 @@
             </div>
         </div>
 
+    <div class="row paddingTop50">
         <button class="btn btn-primary" ng-if="NextStepBool == false" ng-click="NextStep()">{{button1}}</button>
         <button class="btn btn-primary" ng-if="NextStepBool == true" ng-click="NextStep2()">{{button2}}</button>
-
+    </div>
+    <!--
         <h1 style="text-decoration: underline;">DEBUG</h1>
         <pre>{{results}}</pre>
+    -->
     </div>

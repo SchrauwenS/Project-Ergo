@@ -12,6 +12,22 @@
         });
                  
         $scope.NextStepBool = false;
+        $scope.ISChecked = function (Sub) 
+        {
+            for (count3 = 0; count3 < $scope.questionlist.length; count3++) 
+                {
+                    if ($scope.questionlist[count3].Subdomain == Sub) 
+                        {
+                            for (count4 = 0; count4 < $scope.questionlist[count3].Question.length ; count4++) 
+                                {
+                                         if ($scope.questionlist[count3].Question[count4].checked != false)
+                                         {
+                                                return true;
+                                             }
+                                }
+                        }
+                }
+        }
         
         $scope.button1 = "Volgende stap";
         $scope.button2 = "indienen";
