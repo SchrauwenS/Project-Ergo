@@ -102,3 +102,6 @@ the users Score can be posted here
 
 
 
+#To Do
+
+* Work on admin panel -> increase the stuff an admin can do (specific user info, get their answers and scores)
