@@ -14,12 +14,12 @@ router.get('/testResults', isLoggedIn, function (req, res) {
     vraag.getVragen(req, res);
 });
 
-//Server vragen voor de Lijst met vragen/antwoorden
+//Server vragen voor de score van een gebruiker
 router.get('/testScore', isLoggedIn, function (req, res) {
     vraag.getScore(req, res);
 });
 
-//Vragen psuhen naar de server
+//Vragen pushen naar de server
 router.post('/testResults', isLoggedIn, function (req, res, next) {
     vraag.postSurvey(req, res, req.body);
 });
