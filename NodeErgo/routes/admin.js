@@ -38,7 +38,7 @@ router.get('/users/:id', isAdmin, function (req, res, next) {
 router.get('/users/:id/survey', isAdmin, function (req, res, next) {
     var userID = req.params.id;
     console.log(userID);
-    vragen.findOne({ user: userID }).lean().exec(function (err, result) {
+    vragen.find({ user: userID }).lean().exec(function (err, result) {
         if (err) return console.error(err);
         
         res.status(200).json(result);

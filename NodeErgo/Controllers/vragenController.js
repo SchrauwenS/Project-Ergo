@@ -68,7 +68,7 @@ exports.postScores = function (req, res, data) {
 
 exports.getVragen = function (req, res, data) {
     
-    vragen.findOne({ 'user': req.user._id }, function (err, saved) {
+    vragen.find({ 'user': req.user._id }, function (err, saved) {
         if (err) return console.log(err);
         
     })
