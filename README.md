@@ -101,7 +101,18 @@ the users answers can be posted here
 the users Score can be posted here
 
 
+###admin portal
 
-#To Do
+###GET /users/{ID}
 
-* Work on admin panel -> increase the stuff an admin can do (specific user info, get their answers and scores)
+returns the information of a specific user
+
+###GET /users/{ID}/survey
+
+returns the survey of the specific user
+
+###GEt /users/{ID}/score
+
+returns the score of the specific user
+
+
