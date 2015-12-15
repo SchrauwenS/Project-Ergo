@@ -67,11 +67,11 @@ exports.postScores = function (req, res, data) {
 
 
 exports.getVragen = function (req, res, data) {
-    
-    vragen.find({ 'user': req.user._id }, function (err, saved) {
+  
+    vragen.findOne({ 'user': req.user._id }, function (err, saved) {
         if (err) return console.log(err);
-        
-    })
+        res.status(200).json(saved);
+    });
 
 };
 
