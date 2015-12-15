@@ -44,7 +44,7 @@ exports.postSurvey = function (req, res, data) {
 
 exports.postScores = function (req, res, data) {
     
-    console.log(data);
+  
     
     var newScore = {
         user: req.user.id,
@@ -80,15 +80,16 @@ exports.getScore = function myFunction(req, res, data) {
     scores.findOne({ 'user': req.user._id }, function (err, saved) {
         if (err) return console.log(err);
         
-
+        
         var result = {
             user: req.user.id,
-            subGezondheid: saved.subtotalGezondheid,
-            subIdentiteit: saved.subtotalIdentiteit,
-            subRelaties: saved.subtotalRelaties,
-            subUitdaging: saved.subtotalUitdagingIntresse,
-            totaalScore: saved.totaal
+            subGezondheid: saved.subGezondheid,
+            subIdentiteit: saved.subIdentiteit,
+            subRelaties: saved.subRelaties,
+            subUitdaging: saved.subUitdaging,
+            totaalScore: saved.totaalScore
         }
+       
         res.status(200).json(result);
     })
 };

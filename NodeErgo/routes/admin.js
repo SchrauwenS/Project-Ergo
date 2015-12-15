@@ -38,7 +38,7 @@ router.get('/users/:id', isAdmin, function (req, res, next) {
 router.get('/users/:id/survey', isAdmin, function (req, res, next) {
     var userID = req.params.id;
     console.log(userID);
-    vragen.find({ user: userID }).lean().exec(function (err, result) {
+    vragen.findOne({ user: userID }).lean().exec(function (err, result) {
         if (err) return console.error(err);
         
         res.status(200).json(result);
@@ -49,13 +49,22 @@ router.get('/users/:id/survey', isAdmin, function (req, res, next) {
 /* get specific Survey from a user */
 router.get('/users/:id/score', isAdmin, function (req, res, next) {
     var userID = req.params.id;
-    console.log(userID);
-    scores.find({ user: userID }).lean().exec(function (err, result) {
-        if (err) return console.error(err);
+    
+    scores.findOne({ user: userID }).lean().exec(function (err, saved) {
+        if (err) return console.log(err);
         
-        res.status(200).json(result);
+        //var result = {
+        //    user: userID,
+        //    subGezondheid: saved.subGezondheid,
+        //    subIdentiteit: saved.subIdentiteit,
+        //    subRelaties: saved.subRelaties,
+        //    subUitdaging: saved.subUitdaging,
+        //    totaalScore: saved.totaalScore
+        //}
+        
+        res.status(200).json(saved);
+        
     })
-
 });
 
 
