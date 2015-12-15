@@ -18,6 +18,8 @@ var isAdmin = auth.isAdmin;
 /* GET home page. */
 router.get('/', isAdmin, function (req, res, next) {
     res.redirect('users/users');
+
+    // in de redirect moet de pagina komen voor de admin
 });
 
 

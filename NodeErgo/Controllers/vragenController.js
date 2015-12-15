@@ -68,17 +68,27 @@ exports.postScores = function (req, res, data) {
 
 exports.getVragen = function (req, res, data) {
     
-    vragen.find({ 'user': req.user._id }, function (err, saved) {
+    vragen.findOne({ 'user': req.user._id }, function (err, saved) {
         if (err) return console.log(err);
-        res.status(200).json(saved);
+        
     })
 
 };
 
 
 exports.getScore = function myFunction(req, res, data) {
-    scores.find({ 'user': req.user._id }, function (err, saved) {
+    scores.findOne({ 'user': req.user._id }, function (err, saved) {
         if (err) return console.log(err);
-        res.status(200).json(saved);
+        
+
+        var result = {
+            user: req.user.id,
+            subGezondheid: saved.subtotalGezondheid,
+            subIdentiteit: saved.subtotalIdentiteit,
+            subRelaties: saved.subtotalRelaties,
+            subUitdaging: saved.subtotalUitdagingIntresse,
+            totaalScore: saved.totaal
+        }
+        res.status(200).json(result);
     })
 };

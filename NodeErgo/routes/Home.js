@@ -12,7 +12,7 @@ router.get('/',isLoggedIn, function (req, res, next) {
         res.redirect('/admin')
     }
     else {
-        res.render('Home');
+        res.render('Home'); // pagina waar de gebruiker terecht komt als hij aanmeld
     }
     
 });
