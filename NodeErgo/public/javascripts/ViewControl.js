@@ -12,6 +12,6 @@
             templateUrl: "views/Endscreen.html",
             controller: "EndscreenCtrl"
             })
-            .otherwise({ redirectTo: "/" });//indien pagina niet gevonden wordt
+            .otherwise({ redirectTo: "/Questions" });//indien pagina niet gevonden wordt
     });
 }());

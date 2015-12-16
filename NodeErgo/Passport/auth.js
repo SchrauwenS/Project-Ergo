@@ -9,21 +9,14 @@ exports.authenticate = function (req, res, next) {
         }
         if (!username) {
             console.log('no success');
-           
             res.redirect('/');
         }
         else {
             req.logIn(username, function (err) {
-                if (err) {
-                    return next(err);
-                }
-                
-                res.redirect('Home');
+                res.redirect('/Home');
             })
+         
         }
-        
-        
-        
     })
     auth(req, res, next);
 };

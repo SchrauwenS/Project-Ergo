@@ -55,8 +55,6 @@
     <Content Include="public\JSON\Questions.json" />
     <Content Include="public\views\Endscreen.html" />
     <Content Include="public\views\Questions.html" />
-    <Content Include="views\Home.jade" />
-    <Content Include="views\index.jade" />
     <Content Include="views\register.jade" />
     <Content Include="views\users.jade" />
     <Content Include="views\layout.jade" />
