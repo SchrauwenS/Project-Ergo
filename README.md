@@ -111,7 +111,7 @@ returns the information of a specific user
 
 returns the survey of the specific user
 
-###GEt /users/{ID}/score
+###GET /users/{ID}/score
 
 returns the score of the specific user
 
