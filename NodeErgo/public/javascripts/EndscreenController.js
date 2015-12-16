@@ -1,6 +1,6 @@
 ﻿(function () {
     var App = angular.module("App");
-    var EndscreenCtrl = function ($scope, $routeParams, $location, $http) {
+    var EndscreenCtrl = function ($scope, $window, $routeParams, $location, $http) {
         
 
         $http.get('results/testScore')
@@ -12,8 +12,9 @@
         $scope.button4 = "test herstarten";
         
         $scope.Button3click = function () {
-            $http.post("/logout");
-            res.redirect("/");
+            var url = "http://" + $window.location.host + "/logout";
+            $window.location.href = url;
+          
         }
 
         $scope.Button4click = function () {
