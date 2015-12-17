@@ -44,6 +44,8 @@
     <Compile Include="Passport\encrypt.js" />
     <Compile Include="Passport\passportconfig.js" />
     <Compile Include="public\javascripts\EndscreenController.js" />
+    <Compile Include="public\javascripts\LoginController.js" />
+    <Compile Include="public\javascripts\LoginViewController.js" />
     <Compile Include="public\javascripts\ViewControl.js" />
     <Compile Include="public\javascripts\Questionscontroller.js" />
     <Compile Include="routes\admin.js" />
@@ -54,7 +56,10 @@
     <Content Include="public\JSON\Answers.json" />
     <Content Include="public\JSON\Questions.json" />
     <Content Include="public\views\Endscreen.html" />
+    <Content Include="public\views\login.html" />
     <Content Include="public\views\Questions.html" />
+    <Content Include="public\views\Register.html" />
+    <Content Include="views\Loginwrapper.html" />
     <Content Include="views\register.jade" />
     <Content Include="views\users.jade" />
     <Content Include="views\layout.jade" />
