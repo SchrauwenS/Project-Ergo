@@ -62,6 +62,16 @@ Required:
  
 ## Data access and information portals
 
+###Index page
+
+###POST /addUser
+
+Users can here be created
+
+###POST /Update
+
+User can update their user info here
+
 ###users portal
 
 ###GET /register
@@ -72,15 +82,6 @@ Shows the register page
 
 shows all the user from the database ( only if you are admin)
 otherwise you will be send to index page
-
-###POST /addUser
-
-Users can here be created
-
-###POST /Update
-
-User can update their user info here
-
 
 ###results portal
 
