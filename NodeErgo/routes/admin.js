@@ -17,8 +17,7 @@ var isAdmin = auth.isAdmin;
 
 /* GET home page. */
 router.get('/', isAdmin, function (req, res, next) {
-    res.redirect('users/users');
-
+    res.sendfile('views/Adminwrapper.html');
     // in de redirect moet de pagina komen voor de admin
 });
 
@@ -65,6 +64,10 @@ router.get('/users/:id/score', isAdmin, function (req, res, next) {
         res.status(200).json(saved);
         
     })
+
+    router.get('/users',isAdmin, function (req, res));
+
+})
 });
 
 
