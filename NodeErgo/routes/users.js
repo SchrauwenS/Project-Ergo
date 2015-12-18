@@ -7,9 +7,9 @@ var auth = require('../passport/auth');
 
 
 
-router.get('/register', function (req, res) {
-    res.render('register')
-});
+//router.get('/register', function (req, res) {
+//    res.render('register')
+//});
 
 
 // Info van gebruiker bijwerken
