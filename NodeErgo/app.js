@@ -3,7 +3,6 @@ var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
-var users = require('./routes/users');
 var admin = require('./routes/admin.js');
 var results = require('./routes/results');
 var home = require('./routes/Home.js');
@@ -58,7 +57,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', routes);
-app.use('/users', users);
 app.use('/admin', admin);
 app.use('/results', results);
 app.use('/Home', home);
