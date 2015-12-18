@@ -1,6 +1,7 @@
 ﻿<div class="Container">
-    <h2>Register</h2>
+
     <form class="col-md-6 col-md-offset-3 col-ol-sm-offset-2" name="form" action="/adduser" role="form" method="POST">
+        <h2>Register</h2>
         <div>
             <label for="username">Username</label>
             <input type="text" name="username" class="form-control" ng-model="Username" required />
@@ -16,7 +17,8 @@
         </div>
         <div>
             <label for="email">email</label>
-            <input type="email" name="email" class="form-control" ng-model="email" required />
+            <input type="email" id="email" name="email" class="form-control" ng-model="email" required />
+            <span ng-show="form.email.$dirty && form.email.$error.email" class="help-block">Een email adres moet volgende structuur hebben me@example.com</span>
         </div>
         <div>
             <label for="age">Age</label>
@@ -27,7 +29,7 @@
             <input type="number" name="telefoon" class="form-control" ng-model="telefoon" required />
         </div>
 
-        <div class="form-actions">
+        <div class="paddingTop50 form-actions">
             <button type="submit" ng-disabled="form.$invalid || dataLoading" class="btn btn-primary">Register</button>
             <i ng-if="dataLoading" class="fa fa-spinner fa-spin"></i>
             <a href="#/" class="btn btn-link">Cancel</a>

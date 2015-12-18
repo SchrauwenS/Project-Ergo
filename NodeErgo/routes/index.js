@@ -26,6 +26,7 @@ router.get('/logout',function(req,res) {
 
 router.post('/adduser', function (req, res) {
     return UserC.create(req, res);
+ 
 });
 
 router.post('/Update', function (req, res, next) {
