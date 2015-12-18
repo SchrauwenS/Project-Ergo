@@ -1,7 +1,7 @@
 ﻿var express = require('express');
 var router = express.Router();
 var schema = require('../Mongoose/gebruiker');
-
+var UserC = require('../Controllers/UserController');
 
 var vragen = schema.survey;
 var user = schema.Users;
@@ -18,9 +18,13 @@ var isAdmin = auth.isAdmin;
 /* GET home page. */
 router.get('/', isAdmin, function (req, res, next) {
     res.sendfile('views/Adminwrapper.html');
-    // in de redirect moet de pagina komen voor de admin
+    
 });
 
+router.get('/users', isAdmin, function (req, res) {
+    UserC.getUserList;
+
+});
 
 /* Get specific user*/
 router.get('/users/:id', isAdmin, function (req, res, next) {
@@ -65,9 +69,6 @@ router.get('/users/:id/score', isAdmin, function (req, res, next) {
         
     })
 
-    router.get('/users',isAdmin, function (req, res));
-
-})
 });
 
 
