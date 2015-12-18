@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var auth = require('../Passport/auth.js')
+var auth = require('../Passport/auth.js');
+var UserC = require('../Controllers/UserController');
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -22,6 +24,13 @@ router.get('/logout',function(req,res) {
     res.redirect('/');
 })
 
+router.post('/adduser', function (req, res) {
+    return UserC.create(req, res);
+});
 
+router.post('/Update', function (req, res, next) {
+    return UserC.updateUser(req, res, next);
+
+});
 
 module.exports = router;

@@ -1,14 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var bodyparser = require('body-parser');
-var UserC = require('../Controllers/UserController');
+
 var auth = require('../passport/auth');
 
 
 
-router.post('/adduser', function (req, res) {
-    return UserC.create(req, res);
-});
 
 router.get('/register', function (req, res) {
     res.render('register')
