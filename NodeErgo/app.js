@@ -9,6 +9,11 @@ var results = require('./routes/results');
 var home = require('./routes/Home.js');
 var app = express();
 var cookieParser = require("cookie-parser");
+
+//Port number
+
+var portnumb = Number(process.env.PORT || 3000);
+
 //Passport Code
 
 var passport = require('passport');
@@ -62,7 +67,7 @@ app.use('/Home', home);
 
 // end test code
 
-var server = app.listen(3000, function () {
+var server = app.listen(portnumb, function () {
     var host = server.address().address;
     var port = server.address().port;
     
