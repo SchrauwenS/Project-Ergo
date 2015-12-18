@@ -1,7 +1,7 @@
 ﻿var schema = require('../Mongoose/gebruiker')
 var Users = schema.Users;
 var encrypt = require('../Passport/encrypt');
-
+var auth = require('../Passport/auth.js');
 
 
 
@@ -21,7 +21,7 @@ exports.create = function (req, res, next)
         }
         if (user && email) {
             console.log('email allready in use');
-            return res.redirect('register');
+            return res.redirect('register');//hier moet de view gewoon terug terecht komen van register
         }
         else {
             Users.findOne({ 'username': username }, function (err, user) {
@@ -31,12 +31,21 @@ exports.create = function (req, res, next)
             }
             if (user) {
                     console.log('user allready in use');
-                    return res.redirect('register');
+                    return res.redirect('register');//hier moet de view gewoon terug terecht komen van register
             }
               else {
                     Users.create(userdata, function myFunction(err, user) {
                         
-                        res.redirect(301, '/');
+                        req.logIn(user, function(err) {
+                            if (err) {
+                                console.log('something went wrong in the login'); 
+                            }
+                            else {
+                                res.redirect('/Home');
+
+                            }
+                            
+                        })
                         console.log('Signup: ' + user.name);
                     
         
