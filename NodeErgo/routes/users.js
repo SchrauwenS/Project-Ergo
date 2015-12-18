@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var bodyparser = require('body-parser');
-
+var UserC = require('../Controllers/UserController');
 var auth = require('../passport/auth');
 
 
