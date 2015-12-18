@@ -14,10 +14,7 @@ router.get('/register', function (req, res) {
 
 // Info van gebruiker bijwerken
 
-router.post('/Update', function (req, res, next) {
-   return UserC.updateUser(req, res, next);
 
-});
 
 //Get Users from the server
 
