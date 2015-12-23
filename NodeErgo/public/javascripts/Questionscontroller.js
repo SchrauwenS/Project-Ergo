@@ -65,12 +65,11 @@
                }
             
             total = total / (53 - totalempty)
-            Math.round(total * 100) / 100
-            $scope.results.totaal = total;
-            $scope.results.subtotalGezondheid = subs[0];
-            $scope.results.subtotalRelaties = subs[1];
-            $scope.results.subtotalIdentiteit = subs[2];
-            $scope.results.subtotalUitdagingIntresse = subs[3];
+            $scope.results.totaal = Math.round(total* 100) / 100;
+            $scope.results.subtotalGezondheid = Math.round(subs[0] * 100) / 100;
+            $scope.results.subtotalRelaties = Math.round(subs[1] * 100) / 100;
+            $scope.results.subtotalIdentiteit = Math.round(subs[2] * 100) / 100;
+            $scope.results.subtotalUitdagingIntresse = Math.round(subs[3] * 100) / 100;
             
             $http.post('/results/testResults', $scope.questionlist);
             $http.post('/results/testScore' , $scope.results);
