@@ -26,7 +26,7 @@ var gebruikersSchema = new schema(
            
         },
         
-        telefoon: {  type: Number,  default: 0
+        telefoon: {  type: String,  default: 0
            
            
         },         
