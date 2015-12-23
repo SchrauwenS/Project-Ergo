@@ -15,7 +15,7 @@
                     },
                     {
                         "ID": 3,
-                        "Text": "Ontspannen/rusten",
+                        "Text": "Ontspannen / rusten",
                         "checked": false,
                         "Quoting": null
                     },
@@ -200,7 +200,7 @@
                 ]
             },
             {
-                "Subdomain": "uitdaging/intresse",
+                "Subdomain": "uitdaging / intresse",
                 "Question": [
                     {
                         "ID": 32,
@@ -240,13 +240,13 @@
                     },
                     {
                         "ID": 38,
-                        "Text": "Geld beheren (rekeningen/budget/investeringen)",
+                        "Text": "Geld beheren (rekeningen / budget / investeringen)",
                         "checked": false,
                         "Quoting": null
                     },
                     {
                         "ID": 39,
-                        "Text": "Naar restaurant/café gaan",
+                        "Text": "Naar restaurant / café gaan",
                         "checked": false,
                         "Quoting": null
                     },
@@ -276,7 +276,7 @@
                     },
                     {
                         "ID": 44,
-                        "Text": "Naaien/naaldwerk",
+                        "Text": "Naaien / naaldwerk",
                         "checked": false,
                         "Quoting": null
                     },
