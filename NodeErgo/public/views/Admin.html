@@ -37,38 +37,56 @@
             </div>
         </div>
     </div>
+    <div class="row col-xs-12">
+        <div ng-if="selectedUSER[0] != null" class="row col-sm-4 col-xs-12">
+            <h4>Totaal LBI score:</h4>
+            <div class="row">
+                <label>Gemiddelde van ingevulde activiteiten</label>
+                <div>{{scorelist.totaalScore}}</div>
+            </div>
 
-    <div ng-if="selectedUSER[0] != null" class="row">
-        <h4>Totaal LBI score:</h4>
-        <div class="row">
-            <label>Gemiddelde van ingevulde activiteiten</label>
-            <div>{{scorelist.totaalScore}}</div>
+            <h4>LBI subschalen:</h4>
+            <div class="row">
+                <label>Gemiddelde Subdomein Gezondheid</label>
+                <div>{{scorelist.subGezondheid}}</div>
+            </div>
+            <div class="row">
+                <label>Gemiddelde Subdomein Relaties</label>
+                <div>{{scorelist.subRelaties}}</div>
+            </div>
+            <div class="row">
+                <label>Gemiddelde Subdomein Identiteit</label>
+                <div>{{scorelist.subIdentiteit}}</div>
+            </div>
+            <div class="row">
+                <label>Gemiddelde Subdomein UitdagingIntresse</label>
+                <div>{{scorelist.subUitdaging}}</div>
+            </div>
         </div>
+        <div class="paddingTop50 row col-sm-8 col-xs-12">
+                <div class="list-group">
+                    <div class="">
+                        <div class="list-group-item" ng-repeat="item in vragenlist[0].vragen">
+                            <div>{{item.vraagnummer}}. {{item.text}}</div>
+                            <div class="row" ng-if="item.score == null"><div class="NoAnswer col-xs-1 col-xs-offset-1" /><div class="col-xs-10">ONBEANTWOORD</div></div>
+                            <div class="row" ng-if="item.score == 1"><div class="BadAnswer col-xs-1 col-xs-offset-1" /><div class="col-xs-10">ALTIJD MINDER dan ik wil</div></div>
+                            <div class="row" ng-if="item.score == 2"><div class="MedAnswer col-xs-1 col-xs-offset-1" /><div class="col-xs-10">SOMS MINDER dan ik wil</div></div>
+                            <div class="row" ng-if="item.score == 3"><div class="GoodAnswer col-xs-1 col-xs-offset-1" /><div class="col-xs-10">ONGEVEER IDEAAL voor mij</div></div>
+                            <div class="row" ng-if="item.score == 4"><div class="MedAnswer col-xs-1 col-xs-offset-1" /><div class="col-xs-10">SOMS MEER dan ik wil</div></div>
+                            <div class="row" ng-if="item.score == 5"><div class="BadAnswer col-xs-1 col-xs-offset-1" /><div class="col-xs-10">ALTIJD MEER dan ik wil</div></div>
+                        </div>
+                        </div>
+                </div>
+            </div>
 
-        <h4>LBI subschalen:</h4>
-        <div class="row">
-            <label>Gemiddelde Subdomein Gezondheid</label>
-            <div>{{scorelist.subGezondheid}}</div>
-        </div>
-        <div class="row">
-            <label>Gemiddelde Subdomein Relaties</label>
-            <div>{{scorelist.subRelaties}}</div>
-        </div>
-        <div class="row">
-            <label>Gemiddelde Subdomein Identiteit</label>
-            <div>{{scorelist.subIdentiteit}}</div>
-        </div>
-        <div class="row">
-            <label>Gemiddelde Subdomein UitdagingIntresse</label>
-            <div>{{scorelist.subUitdaging}}</div>
         </div>
     </div>
 
 
-    <div>
-        <h1 style="text-decoration: underline;">DEBUG</h1>
-        <pre>{{scorelist}}</pre>
-    </div>
+    <!-- <div>
+         <h1 style="text-decoration: underline;">DEBUG</h1>
+         <pre>{{vragenlist[0].vragen}}</pre>
+     </div>-->
 </div>
 
 
