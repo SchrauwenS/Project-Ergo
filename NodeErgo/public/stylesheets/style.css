@@ -32,21 +32,33 @@ margin-top: 50px
 }
 
 .BadAnswer {
-height:16px;
+height:12px;
+width:12px;
+float:right;
+padding:5px;
 background-color:red
 }
 
 .GoodAnswer {
-height:16px;
+height:12px;
+width:12px;
+float:right;
+padding:5px;
 background-color:green
 }
 
 .MedAnswer {
-height:16px;
+height:12px;
+width:12px;
+float:right;
+padding:5px;
 background-color:orange
 }
 
 .NoAnswer {
-height:16px;
-background-color:black
+height:12px;
+width:12px;
+float:right;
+padding:5px;
+background-color:black;
 }
