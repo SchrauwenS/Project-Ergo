@@ -23,3 +23,30 @@ a {
 h4 {
 margin-top: 50px
 }
+
+.answerlist {
+    margin-left:-15px;
+    margin-right:-60px;
+    overflow-y:auto; 
+    max-height:298px;
+}
+
+.BadAnswer {
+height:16px;
+background-color:red
+}
+
+.GoodAnswer {
+height:16px;
+background-color:green
+}
+
+.MedAnswer {
+height:16px;
+background-color:orange
+}
+
+.NoAnswer {
+height:16px;
+background-color:black
+}
