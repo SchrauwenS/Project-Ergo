@@ -20,15 +20,10 @@ a {
     padding-top: 50px;
 }
 
-h4 {
-margin-top: 50px
-}
-
 .answerlist {
-    margin-left:-15px;
-    margin-right:-60px;
+
     overflow-y:auto; 
-    max-height:298px;
+    max-height:319px;
 }
 
 .BadAnswer {
