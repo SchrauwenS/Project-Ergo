@@ -10,60 +10,67 @@
         </div>
         <div class="col-sm-6 col-xs-12">
             <div class="row paddingTop50">
-                <div class="row">
-                    <label class="col-xs-12 col-sm-3 col-sm-offset-2">id:</label>
-                    <div class="col-xs-12 col-sm-7">{{selectedUSER[0]._id}}</div>
-                </div>
-                <div class="row">
-                    <label class="col-xs-12 col-sm-3 col-sm-offset-2">naam:</label>
-                    <div class="col-xs-12 col-sm-7">{{selectedUSER[0].name}}</div>
-                </div>
-                <div class="row">
-                    <label class="col-xs-12 col-sm-3 col-sm-offset-2">Leeftijd:</label>
-                    <div class="col-xs-12 col-sm-7">{{selectedUSER[0].age}}</div>
-                </div>
-                <div class="row">
-                    <label class="col-xs-12 col-sm-3 col-sm-offset-2">tel.:</label>
-                    <div class="col-xs-12 col-sm-7">{{selectedUSER[0].telefoon}}</div>
-                </div>
-                <div class="row">
-                    <label class="col-xs-12 col-sm-3 col-sm-offset-2">email</label>
-                    <div class="col-xs-12 col-sm-7">{{selectedUSER[0].email}}</div>
-                </div>
-                <div class="row">
-                    <label class="col-xs-12 col-sm-3 col-sm-offset-2">Username:</label>
-                    <div class="col-xs-12 col-sm-7">{{selectedUSER[0].username}}</div>
+                <div class="col-xs-12 col-md-9 col-md-offset-2 col-sm-offset-1 col-sm-10 list-group-item">
+                    <div class="row">
+                        <label class="col-xs-12 col-sm-3 ">id:</label>
+                        <div class="col-xs-12 col-sm-6">{{selectedUSER[0]._id}}</div>
+                    </div>
+                    <div class="row">
+                        <label class="col-xs-12 col-sm-3 ">naam:</label>
+                        <div class="col-xs-12 col-sm-6">{{selectedUSER[0].name}}</div>
+                    </div>
+                    <div class="row">
+                        <label class="col-xs-12 col-sm-3 ">Leeftijd:</label>
+                        <div class="col-xs-12 col-sm-6">{{selectedUSER[0].age}}</div>
+                    </div>
+                    <div class="row">
+                        <label class="col-xs-12 col-sm-3 ">tel.:</label>
+                        <div class="col-xs-12 col-sm-6">{{selectedUSER[0].telefoon}}</div>
+                    </div>
+                    <div class="row">
+                        <label class="col-xs-12 col-sm-3 ">email</label>
+                        <div class="col-xs-12 col-sm-6">{{selectedUSER[0].email}}</div>
+                    </div>
+                    <div class="row">
+                        <label class="col-xs-12 col-sm-3 ">Username:</label>
+                        <div class="col-xs-12 col-sm-6">{{selectedUSER[0].username}}</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row col-xs-12">
-        <div ng-if="selectedUSER[0] != null" class="row col-sm-4 col-xs-12">
-            <h4>Totaal LBI score:</h4>
-            <div class="row">
-                <label>Gemiddelde van ingevulde activiteiten</label>
-                <div>{{scorelist.totaalScore}}</div>
-            </div>
-
-            <h4>LBI subschalen:</h4>
-            <div class="row">
-                <label>Gemiddelde Subdomein Gezondheid</label>
-                <div>{{scorelist.subGezondheid}}</div>
-            </div>
-            <div class="row">
-                <label>Gemiddelde Subdomein Relaties</label>
-                <div>{{scorelist.subRelaties}}</div>
-            </div>
-            <div class="row">
-                <label>Gemiddelde Subdomein Identiteit</label>
-                <div>{{scorelist.subIdentiteit}}</div>
-            </div>
-            <div class="row">
-                <label>Gemiddelde Subdomein UitdagingIntresse</label>
-                <div>{{scorelist.subUitdaging}}</div>
+    <div class="row">
+        <div ng-if="selectedUSER[0] != null" class="row col-sm-4 ">
+            <div class="paddingTop50">
+                <div class="list-group-item">
+                    <h4>Totaal LBI score:</h4>
+                    <div class="row">
+                        <label>Gemiddelde van ingevulde activiteiten</label>
+                        <div>{{scorelist.totaalScore}}</div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <h4>LBI subschalen:</h4>
+                    <div class="row">
+                        <label>Gemiddelde Subdomein Gezondheid</label>
+                        <div>{{scorelist.subGezondheid}}</div>
+                    </div>
+                    <div class="row">
+                        <label>Gemiddelde Subdomein Relaties</label>
+                        <div>{{scorelist.subRelaties}}</div>
+                    </div>
+                    <div class="row">
+                        <label>Gemiddelde Subdomein Identiteit</label>
+                        <div>{{scorelist.subIdentiteit}}</div>
+                    </div>
+                    <div class="row">
+                        <label>Gemiddelde Subdomein UitdagingIntresse</label>
+                        <div>{{scorelist.subUitdaging}}</div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="paddingTop50 row col-sm-8 col-xs-12">
+        <div class="paddingTop50 row col-sm-7 col-sm-offset-1 col-xs-12">
                 <div class="list-group">
                     <div class="answerlist">
                         <div class="list-group-item" ng-repeat="item in vragenlist[0].vragen">
@@ -93,12 +100,6 @@
 
         </div>
     </div>
-
-
-    <!-- <div>
-         <h1 style="text-decoration: underline;">DEBUG</h1>
-         <pre>{{vragenlist[0].vragen}}</pre>
-     </div>-->
 </div>
 
 
