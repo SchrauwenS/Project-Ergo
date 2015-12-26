@@ -1,6 +1,6 @@
 ﻿(function () {
     var App = angular.module("App");
-    var MainCtrl = function ($scope, $routeParams, $location, $http) {
+    var MainCtrl = function ($scope, $anchorScroll, $routeParams, $location, $http) {
         $http.get('JSON/Questions.json')
             .then(function (res) {
             $scope.questionlist = res.data;
@@ -33,6 +33,8 @@
         $scope.button2 = "indienen";
         
         $scope.NextStep = function () {
+            $location.hash('Top');            
+            $anchorScroll();
             $scope.NextStepBool = true;
         }
         $scope.NextStep2 = function () {
