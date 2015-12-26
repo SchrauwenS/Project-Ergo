@@ -5,7 +5,7 @@
                 <div ng-repeat="choice in item.Question">
                     <div ng-if="NextStepBool == false || choice.checked == true">
                         <input ng-if="NextStepBool == false" ng-model="choice.checked" type="checkbox">
-                        {{choice.Text}}
+                        <div ng-click="choice.checked = !choice.checked">{{choice.Text}}</div>
                         <div ng-if="NextStepBool == true">
                             <div ng-repeat="radio in radioData">
                                 <div class="col-xs-12 paddingleft30">
