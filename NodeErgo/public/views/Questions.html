@@ -21,8 +21,12 @@
         </div>
     </form>
 
-    <div class="row paddingTop50">
-        <button class="btn btn-primary" ng-if="NextStepBool == false" ng-click="NextStep()">{{button1}}</button>
-        <button class="btn btn-primary" ng-disabled="form.$invalid" ng-if="NextStepBool == true" ng-click="NextStep2()">{{button2}}</button>
-    </div>
+    <div ng-mouseenter="show = true" ng-mouseleave="show = false" class="row paddingTop50">
+        <div ng-if="NextStepBool == true && form.$invalid" ng-show="show" class="row">
+            <p>U hebt nog niet alle vragen die u wou beantwoorden beantwoord!</p>
+        </div>
+        <div  class="row">
+            <button class="btn btn-primary" ng-if="NextStepBool == false" ng-click="NextStep()">{{button1}}</button>
+            <button class="btn btn-primary" ng-disabled="form.$invalid" ng-if="NextStepBool == true" ng-click="NextStep2()">{{button2}}</button>
+        </div></div>
 </div>
