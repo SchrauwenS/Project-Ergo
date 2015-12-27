@@ -22,8 +22,8 @@ router.get('/', isAdmin, function (req, res, next) {
 });
 
 router.get('/users', isAdmin, function (req, res) {
-    UserC.getUserList;
-
+    
+    UserC.getUserList(req,res);
 });
 
 /* Get specific user*/
