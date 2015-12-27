@@ -57,3 +57,8 @@ float:right;
 padding:5px;
 background-color:black;
 }
+
+.FrontPage {
+    font-size: 1000%;
+    font-weight:bold;
+}
