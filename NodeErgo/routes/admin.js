@@ -22,7 +22,7 @@ router.get('/', isAdmin, function (req, res, next) {
 });
 
 router.get('/users', isAdmin, function (req, res) {
-    UserC.getUserList(req,res);
+    UserC.getUserList;
 
 });
 
@@ -54,22 +54,9 @@ router.get('/users/:id/score', isAdmin, function (req, res, next) {
     var userID = req.params.id;
     
     scores.findOne({ user: userID }).lean().exec(function (err, saved) {
-        if (err) return console.log(err);
-        
-        //var result = {
-        //    user: userID,
-        //    subGezondheid: saved.subGezondheid,
-        //    subIdentiteit: saved.subIdentiteit,
-        //    subRelaties: saved.subRelaties,
-        //    subUitdaging: saved.subUitdaging,
-        //    totaalScore: saved.totaalScore
-        //}
-        
-        res.status(200).json(saved);
-        
+        if (err) return console.log(err);     
+        res.status(200).json(saved);     
     })
 
 });
-
-
 module.exports = router;

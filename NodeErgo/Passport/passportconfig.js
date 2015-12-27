@@ -1,7 +1,8 @@
 ﻿var passport = require('passport');
 var mongoose = require('mongoose');
 var LocalStategy = require('passport-local').Strategy;
-var user = mongoose.model('Users');
+var schema = require('../Mongoose/gebruiker')
+var user = schema.Users;
 
 
 module.exports = function () {
@@ -37,8 +38,6 @@ module.exports = function () {
             else {
                 return done(null, false);
             }
-            
-            
         })
     });
 }

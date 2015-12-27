@@ -22,11 +22,12 @@ var gebruikersSchema = new schema(
         
         age: {
             type: Number,
-            default:null
+            default: null
            
         },
         
-        telefoon: {  type: String,  default: 0
+        telefoon: {
+            type: Number, default: 0
            
            
         },         
@@ -39,7 +40,7 @@ var gebruikersSchema = new schema(
             type: String,
             required: true
         },
-        Admin: {type: Boolean, default: false}
+        Admin: { type: Boolean, default: false }
              
     }
 );

@@ -20,22 +20,8 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
-    <Content Include="bootstrap\css\bootstrap-theme.css" />
-    <Content Include="bootstrap\css\bootstrap-theme.css.map" />
-    <Content Include="bootstrap\css\bootstrap-theme.min.css" />
-    <Content Include="bootstrap\css\bootstrap.css" />
-    <Content Include="bootstrap\css\bootstrap.css.map" />
-    <Content Include="bootstrap\css\bootstrap.min.css" />
-    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="package.json" />
     <Compile Include="app.js" />
-    <Compile Include="bootstrap\js\bootstrap.js" />
-    <Compile Include="bootstrap\js\bootstrap.min.js" />
-    <Compile Include="bootstrap\js\npm.js" />
     <Compile Include="Controllers\vragenController.js" />
     <Compile Include="Mongoose\dbconnection.js" />
     <Compile Include="Mongoose\gebruiker.js" />
@@ -58,6 +44,7 @@
     <Content Include="public\JSON\Questions.json" />
     <Content Include="public\views\Admin.html" />
     <Content Include="public\views\Endscreen.html" />
+    <Content Include="public\views\Startpage.html" />
     <Content Include="public\views\login.html" />
     <Content Include="public\views\Questions.html" />
     <Content Include="public\views\Register.html" />
@@ -68,10 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin" />
-    <Folder Include="bootstrap\" />
-    <Folder Include="bootstrap\css\" />
-    <Folder Include="bootstrap\fonts\" />
-    <Folder Include="bootstrap\js\" />
     <Folder Include="Controllers\" />
     <Folder Include="Mongoose\" />
     <Folder Include="Passport\" />
