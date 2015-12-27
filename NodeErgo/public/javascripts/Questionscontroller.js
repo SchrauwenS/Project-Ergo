@@ -33,9 +33,8 @@
         $scope.button2 = "indienen";
         
         $scope.NextStep = function () {
-            $location.hash('Top');            
-            $anchorScroll();
             $scope.NextStepBool = true;
+            $('html,body').scrollTop(0);
         }
         $scope.NextStep2 = function () {
             var total = 0;
