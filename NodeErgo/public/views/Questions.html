@@ -10,8 +10,8 @@
                         <div ng-if="NextStepBool == true">
                             <div ng-repeat="radio in radioData">
                                 <div class="col-xs-12 paddingleft30">
-                                    <input type="radio" name="{{choice.ID}}" ng-model="choice.Quoting" ng-required="!choice.Quoting" id="radio_{{$index}}" ng-value="radio.value" />
-                                    <label for="radio_{{$index}}">{{radio.Rating}}</label>
+                                    <input class="col-xs-1" type="radio" name="{{choice.ID}}" ng-model="choice.Quoting" ng-required="!choice.Quoting" id="radio_{{$index}}" ng-value="radio.value" />
+                                    <label class="col-xs-11" for="radio_{{$index}}">{{radio.Rating}}</label>
                                 </div>
                             </div>
                         </div>
