@@ -5,12 +5,12 @@
                 <h1 class="row" ng-if="NextStepBool == false || ISChecked(item.Subdomain)">{{item.Subdomain}}</h1>
                 <div class="row" ng-repeat="choice in item.Question">
                     <div ng-if="NextStepBool == false || choice.checked == true">
-                        <input class="col-xs-1" ng-if="NextStepBool == false" ng-model="choice.checked" type="checkbox">
+                        <input class="col-xs-1" ng-if="NextStepBool == false" ng-model="choice.checked" ng-required="CheckboxChecked(choice.checked)" type="checkbox">
                         <div class="col-xs-11" ng-click="choice.checked = !choice.checked">{{choice.Text}}</div>
                         <div ng-if="NextStepBool == true">
                             <div ng-repeat="radio in radioData">
                                 <div class="col-xs-12 paddingleft30">
-                                    <input class="col-xs-1" type="radio" name="{{choice.ID}}" ng-model="choice.Quoting" ng-required="!choice.Quoting" id="radio_{{$index}}" ng-value="radio.value" />
+                                    <input class="col-xs-1" type="radio" name="{{choice.ID}}" ng-model="choice.Quoting" ng-required="!choice.Quoting"  id="radio_{{$index}}" ng-value="radio.value" />
                                     <label class="col-xs-11" for="radio_{{$index}}">{{radio.Rating}}</label>
                                 </div>
                             </div>
@@ -22,11 +22,14 @@
     </form>
 
     <div ng-mouseenter="show = true" ng-mouseleave="show = false" class="row paddingTop50">
-        <div ng-if="NextStepBool == true && form.$invalid" ng-show="show" class="row">
+    <div ng-if="NextStepBool == false && form.$invalid" ng-show="show" class="row">
+            <p>U moet minstens één vraag beantwoorden!</p>
+        </div>    
+    <div ng-if="NextStepBool == true && form.$invalid" ng-show="show" class="row">
             <p>U hebt nog niet alle vragen die u wou beantwoorden beantwoord!</p>
         </div>
         <div  class="row">
-            <button class="btn btn-primary" ng-if="NextStepBool == false" ng-click="NextStep()">{{button1}}</button>
+            <button class="btn btn-primary" ng-disabled="form.$invalid" ng-if="NextStepBool == false" ng-click="NextStep()">{{button1}}</button>
             <button class="btn btn-primary" ng-disabled="form.$invalid" ng-if="NextStepBool == true" ng-click="NextStep2()">{{button2}}</button>
         </div></div>
 </div>

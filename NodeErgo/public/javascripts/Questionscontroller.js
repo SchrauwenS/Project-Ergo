@@ -1,6 +1,6 @@
 ﻿(function () {
     var App = angular.module("App");
-    var MainCtrl = function ($scope, $anchorScroll, $routeParams, $location, $http) {
+    var MainCtrl = function ($scope, $filter, $anchorScroll, $routeParams, $location, $http) {
         $http.get('JSON/Questions.json')
             .then(function (res) {
             $scope.questionlist = res.data;
@@ -78,6 +78,18 @@
             $location.path("/Endscreen");
         }
         
+        var test2 = false;
+        $scope.CheckboxChecked = function (test) {
+            if (test == true) {
+                test2 = true;
+                return false;
+            }
+            else if (test == false && test2 == true) {
+                return false;
+            }
+            else
+                return true;
+        }
         
         $scope.radioValue = "radioValue";
         $scope.radioData = [{
