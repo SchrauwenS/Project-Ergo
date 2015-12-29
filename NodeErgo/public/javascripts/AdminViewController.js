@@ -8,6 +8,10 @@
             templateUrl: "views/Admin.html",
             controller: "AdminCtrl"
         })
+        .when("/AlgemeneAccountinstellingen", {
+            templateUrl: "views/AdminAlgemeneAccountinstellingen.html",
+            controller: "AdminCtrl"
+        })
          .otherwise({ redirectTo: "/" });//indien pagina niet gevonden wordt
     });
 }());

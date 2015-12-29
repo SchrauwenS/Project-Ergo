@@ -18,6 +18,9 @@
                 });
             }
            
+        $scope.AlgemeneAccountinstellingen = function () {            
+            $location.path("/AlgemeneAccountinstellingen");
+        }
                     
     };
     App.controller("AdminCtrl", AdminCtrl);

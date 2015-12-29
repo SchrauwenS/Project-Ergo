@@ -43,6 +43,7 @@
     <Content Include="public\JSON\Answers.json" />
     <Content Include="public\JSON\Questions.json" />
     <Content Include="public\views\Admin.html" />
+    <Content Include="public\views\AdminAlgemeneAccountinstellingen.html" />
     <Content Include="public\views\Endscreen.html" />
     <Content Include="public\views\Startpage.html" />
     <Content Include="public\views\login.html" />
