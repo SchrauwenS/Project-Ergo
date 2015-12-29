@@ -24,6 +24,9 @@ a {
 .paddingTop50 {
     padding-top: 50px;
 }
+.paddingbottom50 {
+    padding-bottom: 50px;
+}
 
 .answerlist {
 
@@ -73,5 +76,8 @@ opacity: 0.95;
 
 .login-Register {
 background-color:white;
-padding-bottom:50px;
+}
+
+.floatright {
+float:right
 }
