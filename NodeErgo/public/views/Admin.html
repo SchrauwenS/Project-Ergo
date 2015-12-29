@@ -46,26 +46,31 @@
                     <h4>Totaal LBI score:</h4>
                     <div class="row">
                         <label>Gemiddelde van ingevulde activiteiten</label>
-                        <div>{{scorelist.totaalScore}}</div>
+                        <div class="paddingleft30" ng-if="scorelist.totaalScore" >{{scorelist.totaalScore}}</div>
+                        <label class="paddingleft30" ng-if="!scorelist.totaalScore">De gebruiker heeft een leeg formulier ingediend</label>
                     </div>
                 </div>
                 <div class="list-group-item">
                     <h4>LBI subschalen:</h4>
                     <div class="row">
                         <label>Gemiddelde Subdomein Gezondheid</label>
-                        <div>{{scorelist.subGezondheid}}</div>
+                        <div class="paddingleft30" ng-if="scorelist.subGezondheid">{{scorelist.subGezondheid}}</div>
+                        <label class="paddingleft30" ng-if="!scorelist.subGezondheid">De gebruiker heeft geen enkele vraag voor dit subdomein ingevuld</label>
                     </div>
                     <div class="row">
                         <label>Gemiddelde Subdomein Relaties</label>
-                        <div>{{scorelist.subRelaties}}</div>
+                        <div class="paddingleft30" ng-if="scorelist.subRelaties" >{{scorelist.subRelaties}}</div>
+                        <label class="paddingleft30" ng-if="!scorelist.subRelaties">De gebruiker heeft geen enkele vraag voor dit subdomein ingevuld</label>
                     </div>
                     <div class="row">
                         <label>Gemiddelde Subdomein Identiteit</label>
-                        <div>{{scorelist.subIdentiteit}}</div>
+                        <div class="paddingleft30" ng-if="scorelist.subIdentiteit">{{scorelist.subIdentiteit}}</div>
+                        <label class="paddingleft30" ng-if="!scorelist.subIdentiteit">De gebruiker heeft geen enkele vraag voor dit subdomein ingevuld</label>
                     </div>
                     <div class="row">
                         <label>Gemiddelde Subdomein UitdagingIntresse</label>
-                        <div>{{scorelist.subUitdaging}}</div>
+                        <div class="paddingleft30" ng-if="scorelist.subUitdaging">{{scorelist.subUitdaging}}</div>
+                        <label class="paddingleft30" ng-if="!scorelist.subUitdaging">De gebruiker heeft geen enkele vraag voor dit subdomein ingevuld</label>
                     </div>
                 </div>
             </div>

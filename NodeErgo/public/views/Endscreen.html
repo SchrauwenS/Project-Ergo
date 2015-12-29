@@ -11,17 +11,22 @@
     <div class="paddingTop50">
         <h4>Totaal LBI score:</h4>
         <div>Gemiddelde van ingevulde activiteiten</div>
-        <div class="results">{{results.totaalScore}}</div>
+        <div ng-if="results.totaalScore" class="results">{{results.totaalScore}}</div>
+        <label class="paddingleft30" ng-if="!results.totaalScore">U hebt een leeg formulier ingediend</label>
         <h4>LBI subschalen:</h4>
 
         <h5>Gemiddelde Subdomein Gezondheid</h5>
-        <div class="results">{{results.subGezondheid}}</div>
+        <div ng-if="results.subGezondheid" class="results">{{results.subGezondheid}}</div>
+        <label class="paddingleft30" ng-if="!results.subGezondheid">U hebt geen enkele vraag van dit subdomein ingevuld</label>
         <h5>Gemiddelde Subdomein Relaties</h5>
-        <div class="results">{{results.subRelaties}}</div>
+        <div class="results.subRelaties">{{results.subRelaties}}</div>
+        <label class="paddingleft30" ng-if="!results.subRelaties">U hebt geen enkele vraag van dit subdomein ingevuld</label>
         <h5>Gemiddelde Subdomein Identiteit</h5>
-        <div class="results">{{results.subIdentiteit}}</div>
+        <div class="results.subIdentiteit">{{results.subIdentiteit}}</div>
+        <label class="paddingleft30" ng-if="!results.subIdentiteit">U hebt geen enkele vraag van dit subdomein ingevuld</label>
         <h5>Gemiddelde Subdomein UitdagingIntresse</h5>
-        <div class="results">{{results.subUitdaging}}</div>
+        <div class="results.subUitdaging">{{results.subUitdaging}}</div>
+        <label class="paddingleft30" ng-if="!results.subUitdaging">U hebt geen enkele vraag van dit subdomein ingevuld</label>
     </div>
     
 
