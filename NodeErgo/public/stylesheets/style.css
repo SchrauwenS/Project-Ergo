@@ -1,6 +1,11 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../images/Ergo.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  background-size: 80% auto;
 }
 
 a {
@@ -58,7 +63,15 @@ padding:5px;
 background-color:black;
 }
 
-.FrontPage {
-    font-size: 1000%;
-    font-weight:bold;
+.bottom {
+margin-bottom: 100px;
+}
+
+.transparant {
+opacity: 0.95;
+}
+
+.login-Register {
+background-color:white;
+padding-bottom:50px;
 }

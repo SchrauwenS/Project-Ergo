@@ -42,7 +42,7 @@
     <div class="row">
         <div ng-if="selectedUSER[0] != null" class="row col-sm-4 ">
             <div class="paddingTop50">
-                <div class="list-group-item">
+                <div class="transparant list-group-item">
                     <h4>Totaal LBI score:</h4>
                     <div class="row">
                         <label>Gemiddelde van ingevulde activiteiten</label>
@@ -50,33 +50,33 @@
                         <label class="paddingleft30" ng-if="!scorelist.totaalScore">De gebruiker heeft een leeg formulier ingediend</label>
                     </div>
                 </div>
-                <div class="list-group-item">
+                <div class="transparant list-group-item">
                     <h4>LBI subschalen:</h4>
                     <div class="row">
                         <label>Gemiddelde Subdomein Gezondheid</label>
                         <div class="paddingleft30" ng-if="scorelist.subGezondheid">{{scorelist.subGezondheid}}</div>
-                        <label class="paddingleft30" ng-if="!scorelist.subGezondheid">De gebruiker heeft geen enkele vraag voor dit subdomein ingevuld</label>
+                        <label class="paddingleft30" ng-if="!scorelist.subGezondheid">De gebruiker beantwoorde geen vraag uit dit subdomein</label>
                     </div>
                     <div class="row">
                         <label>Gemiddelde Subdomein Relaties</label>
                         <div class="paddingleft30" ng-if="scorelist.subRelaties" >{{scorelist.subRelaties}}</div>
-                        <label class="paddingleft30" ng-if="!scorelist.subRelaties">De gebruiker heeft geen enkele vraag voor dit subdomein ingevuld</label>
+                        <label class="paddingleft30" ng-if="!scorelist.subRelaties">De gebruiker beantwoorde geen vraag uit dit subdomein</label>
                     </div>
                     <div class="row">
                         <label>Gemiddelde Subdomein Identiteit</label>
                         <div class="paddingleft30" ng-if="scorelist.subIdentiteit">{{scorelist.subIdentiteit}}</div>
-                        <label class="paddingleft30" ng-if="!scorelist.subIdentiteit">De gebruiker heeft geen enkele vraag voor dit subdomein ingevuld</label>
+                        <label class="paddingleft30" ng-if="!scorelist.subIdentiteit">De gebruiker beantwoorde geen vraag uit dit subdomein</label>
                     </div>
                     <div class="row">
                         <label>Gemiddelde Subdomein UitdagingIntresse</label>
                         <div class="paddingleft30" ng-if="scorelist.subUitdaging">{{scorelist.subUitdaging}}</div>
-                        <label class="paddingleft30" ng-if="!scorelist.subUitdaging">De gebruiker heeft geen enkele vraag voor dit subdomein ingevuld</label>
+                        <label class="paddingleft30" ng-if="!scorelist.subUitdaging">De gebruiker beantwoorde geen vraag uit dit subdomein</label>
                     </div>
                 </div>
             </div>
         </div>
         <div class="paddingTop50 row col-sm-7 col-sm-offset-1 col-xs-12">
-                <div class="list-group">
+                <div class="transparant list-group">
                     <div class="answerlist">
                         <div class="list-group-item" ng-repeat="item in vragenlist[0].vragen">
                             <div>{{item.vraagnummer}}. {{item.text}}</div>
