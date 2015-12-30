@@ -2,7 +2,7 @@
     <h1>Welkom</h1>
     <div class="row col-xs-12 ">
         <button class="floatright btn btn-primary" ng-click="AlgemeneAccountinstellingen()"><span class="glyphicon glyphicon-cog" /></button>
-        <button  ng-click="logout()" class="floatright btn btn-primary">logout</button>
+        <button ng-click="logout()" class="floatright btn btn-primary">logout</button>
     </div>
     <div class="row">
         <div class="col-sm-6 col-xs-12">
@@ -52,7 +52,7 @@
                         <label>Gemiddelde van ingevulde activiteiten</label>
                         <div class="paddingleft30" ng-if="scorelist.totaalScore">{{scorelist.totaalScore}}</div>
                         <div class="paddingleft30" ng-if="!scorelist.totaalScore">
-                            De gebruiker heeft een leeg formulier ingediend</label>
+                            <div>De gebruiker heeft een leeg formulier ingediend</div>
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                     </div>
                     <div class="row">
                         <label>Gemiddelde Subdomein Relaties</label>
-                        <div class="paddingleft30" ng-if="scorelist.subRelaties" >{{scorelist.subRelaties}}</div>
+                        <div class="paddingleft30" ng-if="scorelist.subRelaties">{{scorelist.subRelaties}}</div>
                         <div class="paddingleft30" ng-if="!scorelist.subRelaties">De gebruiker beantwoorde geen vraag uit dit subdomein</div>
                     </div>
                     <div class="row">
@@ -79,9 +79,9 @@
                         <div class="paddingleft30" ng-if="!scorelist.subUitdaging">De gebruiker beantwoorde geen vraag uit dit subdomein</div>
                     </div>
                 </div>
-            
-        </div>
-        <div class="paddingTop50 row col-sm-7 col-sm-offset-1 col-xs-12">
+
+            </div>
+            <div class="paddingTop50 row col-sm-7 col-sm-offset-1 col-xs-12">
                 <div class="transparant list-group">
                     <div class="answerlist">
                         <div class="list-group-item" ng-repeat="item in vragenlist[0].vragen">
@@ -89,10 +89,10 @@
                             <div class="row">
                                 <div>
                                     <div class="col-xs-1 col-xs-offset-1">
-                                        <div ng-if="item.score == null" class="NoAnswer"/>
+                                        <div ng-if="item.score == null" class="NoAnswer" />
                                         <div ng-if="item.score == 1 || item.score == 4" class="BadAnswer col-xs-1 " />
                                         <div ng-if="item.score == 2 || item.score == 5" class="MedAnswer col-xs-1 " />
-                                        <div ng-if="item.score == 3"  class="GoodAnswer col-xs-1 " />
+                                        <div ng-if="item.score == 3" class="GoodAnswer col-xs-1 " />
                                     </div>
                                     <div class="col-sm-10">
                                         <div ng-if="item.score == null">ONBEANTWOORD</div>
@@ -104,13 +104,14 @@
                                     </div>
                                 </div>
 
+                            </div>
                         </div>
-                        </div>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
-</div>
 
+</div>
 
