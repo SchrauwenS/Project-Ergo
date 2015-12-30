@@ -6,6 +6,7 @@ var routes = require('./routes/index');
 var admin = require('./routes/admin.js');
 var results = require('./routes/results');
 var home = require('./routes/Home.js');
+var user = require('./routes/user.js');
 var app = express();
 var cookieParser = require("cookie-parser");
 
@@ -60,6 +61,7 @@ app.use('/', routes);
 app.use('/admin', admin);
 app.use('/results', results);
 app.use('/Home', home);
+app.use('/user', user);
 // Test Code
 
 
