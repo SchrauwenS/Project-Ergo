@@ -8,6 +8,12 @@ var auth = require('../Passport/auth.js');
 exports.create = function (req, res, next)
 {
     var userdata = req.body;
+    
+    if (
+        userdata.APass == "Ergotherapie") {
+        userdata.Admin = true;
+    }
+
     userdata.salt = encrypt.createSalt();
     userdata.hashed_pwd = encrypt.hashPwd(userdata.salt, userdata.password);
     
@@ -21,7 +27,7 @@ exports.create = function (req, res, next)
         }
         if (user && email) {
             console.log('email allready in use');
-            return res.redirect('register');//hier moet de view gewoon terug terecht komen van register
+            return res.redirect('/');//hier moet de view gewoon terug terecht komen van register
         }
         else {
             Users.findOne({ 'username': username }, function (err, user) {
@@ -31,7 +37,7 @@ exports.create = function (req, res, next)
             }
             if (user) {
                     console.log('user allready in use');
-                    return res.redirect('register');//hier moet de view gewoon terug terecht komen van register
+                    return res.redirect('/');//hier moet de view gewoon terug terecht komen van register
             }
               else {
                     Users.create(userdata, function myFunction(err, user) {
