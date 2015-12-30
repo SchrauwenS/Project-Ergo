@@ -79,5 +79,6 @@ background-color:white;
 }
 
 .floatright {
-float:right
+float:right;
+margin:5px;
 }
