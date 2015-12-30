@@ -52,7 +52,7 @@ exports.create = function (req, res, next)
                             }
                             
                         })
-                        console.log('Signup: ' + user.name);
+                        console.log('Signup');
                     
         
                     });
