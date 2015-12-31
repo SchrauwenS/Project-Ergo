@@ -20,6 +20,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Compile Include="public\javascripts\AlgemeneAccountinstellingenController.js" />
     <Compile Include="public\javascripts\StartscreenController.js" />
     <Compile Include="routes\user.js" />
     <Content Include="package.json" />
@@ -45,7 +46,7 @@
     <Content Include="public\JSON\Answers.json" />
     <Content Include="public\JSON\Questions.json" />
     <Content Include="public\views\Admin.html" />
-    <Content Include="public\views\AdminAlgemeneAccountinstellingen.html" />
+    <Content Include="public\views\AlgemeneAccountinstellingen.html" />
     <Content Include="public\views\Endscreen.html" />
     <Content Include="public\views\Startpage.html" />
     <Content Include="public\views\login.html" />

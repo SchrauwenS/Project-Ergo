@@ -15,7 +15,7 @@
         }
         
         $scope.Configclick = function () {
-            $location.path("/");
+            $location.path("/AlgemeneAccountinstellingen");
         }
 
         };

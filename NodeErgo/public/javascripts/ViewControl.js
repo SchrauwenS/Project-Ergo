@@ -16,6 +16,10 @@
             templateUrl: "views/Endscreen.html",
             controller: "EndscreenCtrl"
             })
+            .when("/AlgemeneAccountinstellingen", {
+                templateUrl: "views/AlgemeneAccountinstellingen.html",
+                controller: "AACtrl"
+            })
             .otherwise({ redirectTo: "/" });//indien pagina niet gevonden wordt
     });
 }());

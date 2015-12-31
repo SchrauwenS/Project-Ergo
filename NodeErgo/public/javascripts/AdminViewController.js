@@ -9,8 +9,8 @@
             controller: "AdminCtrl"
         })
         .when("/AlgemeneAccountinstellingen", {
-            templateUrl: "views/AdminAlgemeneAccountinstellingen.html",
-            controller: "AdminCtrl"
+            templateUrl: "views/AlgemeneAccountinstellingen.html",
+            controller: "AACtrl"
         })
          .otherwise({ redirectTo: "/" });//indien pagina niet gevonden wordt
     });
