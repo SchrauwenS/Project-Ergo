@@ -93,7 +93,7 @@ exports.updateUser = function (req, res, next) {
     
     
     console.log(userUpdates);
-    if (req.user._id != userUpdates._id && !req.user.Admin) {
+    if (!req.user._id && !req.user.Admin) {
         res.send(401);
         return res.end();
     }
@@ -130,8 +130,10 @@ exports.updateUser = function (req, res, next) {
         }
     });
     Users.update({ 'user': req.user._id }, { $set: userdata }, { upsert: false }, function (err, saved) {
-        if (err) res.redirect('/');
-        res.sendStatus(201);
+        if (err) return console.log(err);
+        return res.redirect('/');
+        
+        
     })
    
    
