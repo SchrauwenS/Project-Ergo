@@ -1,7 +1,6 @@
 ﻿<div class="Container paddingbottom50">
     <div class="row" >
         <form class="col-md-6 col-md-offset-3 col-ol-sm-offset-2" name="form" action="/adduser" role="form" method="POST">
-            <h2>Register</h2>
             <div>
                 <label for="username">Username</label>
                 <input type="text" name="username" class="form-control" ng-model="Username" required />
@@ -28,7 +27,14 @@
                 <label for="telefoon">Tel. Nr.</label>
                 <input type="text" name="telefoon" class="form-control" ng-model="telefoon" required />
             </div>
-
+            <div>
+                <label>Admin</label>
+                <input ng-model="AdminCheckbox" type="checkbox" />
+            </div>
+            <div ng-if="AdminCheckbox" >
+                <label>AdminPassword</label>
+                <input type="password" class="form-control" />
+            </div>
             <div class="paddingTop50 form-actions">
                 <button type="submit" ng-disabled="form.$invalid || dataLoading" class="btn btn-primary">Register</button>
                 <i ng-if="dataLoading" class="fa fa-spinner fa-spin"></i>
