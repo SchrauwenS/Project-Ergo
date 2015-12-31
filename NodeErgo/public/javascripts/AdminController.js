@@ -7,6 +7,11 @@
             $scope.Userlist = res.data;
         });
         
+        $http.get('user/userinfo')
+            .then(function (res) {
+            $scope.userinfo= res.data;
+        });
+
         $scope.GetData = function () {
             $http.get("admin/users/" + $scope.selectedUSER[0]._id + "/score")
                     .then(function (res) {
