@@ -130,7 +130,7 @@ exports.updateUser = function (req, res, next) {
         }
     });
     Users.update({ 'user': req.user._id }, { $set: userdata }, { upsert: false }, function (err, saved) {
-        if (err) return console.log(err);
+        if (err) res.redirect('/');
         res.sendStatus(201);
     })
    
