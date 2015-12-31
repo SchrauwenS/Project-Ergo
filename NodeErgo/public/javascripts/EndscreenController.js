@@ -8,17 +8,10 @@
             $scope.results = res.data;
         });
         
-        $scope.button3 = "Uitloggen";
-        $scope.button4 = "test herstarten";
+        $scope.button4 = "naar start";
         
-        $scope.Button3click = function () {
-            var url = "http://" + $window.location.host + "/logout";
-            $window.location.href = url;
-          
-        }
-
         $scope.Button4click = function () {
-             $location.path("/Questions");
+             $location.path("/");
         }
 
         };

@@ -31,7 +31,6 @@ router.post('/adduser',function (req, res) {
 
 router.post('/Update', function (req, res, next) {
     return UserC.updateUser(req, res, next);
-
 });
 
 module.exports = router;

@@ -4,6 +4,10 @@
 
     App.config(function ($routeProvider){
         $routeProvider
+            .when("/", {
+            templateUrl: "views/Startpage.html",
+            controller: "StartscreenCtrl"
+            })
             .when("/Questions", {
                 templateUrl: "views/Questions.html",
                 controller: "MainCtrl"
@@ -12,6 +16,6 @@
             templateUrl: "views/Endscreen.html",
             controller: "EndscreenCtrl"
             })
-            .otherwise({ redirectTo: "/Questions" });//indien pagina niet gevonden wordt
+            .otherwise({ redirectTo: "/" });//indien pagina niet gevonden wordt
     });
 }());
