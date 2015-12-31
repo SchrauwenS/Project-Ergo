@@ -23,7 +23,7 @@ router.get('/userinfo', isLoggedIn, function (req, res) {
             name:result.name,
             email: result.email,
             telephone: result.telefoon,
-            age: result.telefoon,
+            age: result.age,
             admin: result.Admin
         }
         
