@@ -25,21 +25,21 @@
         </div>
         <div>
             <label for="Kinderen">Aantal kinderen</label>
-            <input type="number" name="kinderen" class="form-control" ng-model="kinderen" required />
+            <input type="number" name="kinderen" class="form-control" ng-model="userinfo.kinderen"  />
         </div>
         <div>
             <label for="Sex">Sex</label>
             <div class="row results">
                 <div class="col-xs-4">
-                    <input class="" type="radio" value="Unisex" name="geslacht" ng-model="Sex" required />
+                    <input class="" type="radio" value="Unisex" name="geslacht" ng-model="userinfo.geslacht"/>
                     Unisex
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Male" name="geslacht" ng-model="Sex" required />
+                    <input type="radio" value="Male" name="geslacht" ng-model="userinfo.geslacht" />
                     Male
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Female" name="geslacht" ng-model="Sex" required />
+                    <input type="radio" value="Female" name="geslacht" ng-model="userinfo.geslacht"/>
                     Female
                 </div>
             </div>
@@ -48,23 +48,23 @@
             <label for="Diploma">Diploma</label>
             <div class="row results">
                 <div class="col-xs-4">
-                    <input type="radio" value="Universitair" name="diploma" ng-model="Diploma" required />
+                    <input type="radio" value="Universitair" name="diploma" ng-model="userinfo.diploma"  />
                     Universitair
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Hoger Onderwijs" name="diploma" ng-model="Diploma" required />
+                    <input type="radio" value="Hoger Onderwijs" name="diploma" ng-model="userinfo.diploma" />
                     Hoger Onderwijs
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Secundair Onderwijs" name="diploma" ng-model="Diploma" required />
+                    <input type="radio" value="Secundair Onderwijs" name="diploma" ng-model="userinfo.diploma" />
                     Secundair Onderwijs
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Lager Onderwijs" name="diploma" ng-model="Diploma" required />
+                    <input type="radio" value="Lager Onderwijs" name="diploma" ng-model="userinfo.diploma"/>
                     Lager Onderwijs
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Geen" name="diploma" ng-model="Diploma" required />
+                    <input type="radio" value="Geen" name="diploma" ng-model="userinfo.diploma"/>
                     Geen diploma
                 </div>
             </div>
@@ -73,35 +73,35 @@
             <label for="BurgerlijkeStaat">BurgerlijkeStaat</label>
             <div class="row results">
                 <div class="col-xs-4">
-                    <input type="radio" value="Gehuwd" name="burg_statuut" ng-model="BurgerlijkeStaat" required />
+                    <input type="radio" value="Gehuwd" name="burg_statuut" ng-model="userinfo.burg_statuut"/>
                     Gehuwd
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Vrijgezel" name="burg_statuut" ng-model="BurgerlijkeStaat" required />
+                    <input type="radio" value="Vrijgezel" name="burg_statuut" ng-model="userinfo.burg_statuut"/>
                     Vrijgezel
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="InEenRelatie" name="burg_statuut" ng-model="BurgerlijkeStaat" required />
+                    <input type="radio" value="InEenRelatie" name="burg_statuut" ng-model="userinfo.burg_statuut"/>
                     In een relatie
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Verloofd" name="burg_statuut" ng-model="BurgerlijkeStaat" required />
+                    <input type="radio" value="Verloofd" name="burg_statuut" ng-model="userinfo.burg_statuut"/>
                     Verloofd
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Weduw(e)/(naar)" name="burg_statuut" ng-model="BurgerlijkeStaat" required />
-                    Weduwe/Weduwenaar
+                    <input type="radio" value="Weduw(e)/(naar)" name="burg_statuut" ng-model="userinfo.burg_statuut"/>
+                    Weduw(e)/(naar)
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Gescheiden" name="burg_statuut" ng-model="BurgerlijkeStaat" required />
+                    <input type="radio" value="Gescheiden" name="burg_statuut" ng-model="userinfo.burg_statuut"/>
                     Gescheiden
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="brugpensioen" name="burg_statuut" ng-model="BurgerlijkeStaat" required />
+                    <input type="radio" value="brugpensioen" name="burg_statuut" ng-model="userinfo.burg_statuut"/>
                     brugpensioen
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Andere" name="burg_statuut" ng-model="BurgerlijkeStaat" required />
+                    <input type="radio" value="Andere" name="burg_statuut" ng-model="userinfo.burg_statuut">
                     Andere
                 </div>
             </div>
@@ -110,39 +110,39 @@
             <label for="huidskleur">Origine</label>
             <div class="row results">
                 <div class="col-xs-4">
-                    <input type="radio" value="Blank" name="huidskleur" ng-model="huidskleur" required />
+                    <input type="radio" value="Blank" name="huidskleur" ng-model="userinfo.huidskleur"  />
                     Blank
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Zwart" name="huidskleur" ng-model="huidskleur" required />
+                    <input type="radio" value="Zwart" name="huidskleur" ng-model="userinfo.huidskleur"  />
                     Zwart
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Aziatisch" name="huidskleur" ng-model="huidskleur" required />
+                    <input type="radio" value="Aziatisch" name="huidskleur" ng-model="userinfo.huidskleur"  />
                     Aziaat
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Latijns-Amerikaans" name="huidskleur" ng-model="huidskleur" required />
+                    <input type="radio" value="Latijns-Amerikaans" name="huidskleur" ng-model="userinfo.huidskleur"  />
                     Latijns-Amerikaans
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Afro-Amerikaans" name="huidskleur" ng-model="huidskleur" required />
+                    <input type="radio" value="Afro-Amerikaans" name="huidskleur" ng-model="userinfo.huidskleur"  />
                     Afro-Amerikaans
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Latijns-Amerikaans" name="huidskleur" ng-model="huidskleur" required />
+                    <input type="radio" value="Latijns-Amerikaans" name="huidskleur" ng-model="userinfo.huidskleur"  />
                     Indiaans
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Indiaans" name="huidskleur" ng-model="huidskleur" required />
+                    <input type="radio" value="Indiaans" name="huidskleur" ng-model="userinfo.huidskleur"  />
                     Arabisch
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Arabisch" name="huidskleur" ng-model="huidskleur" required />
+                    <input type="radio" value="Arabisch" name="huidskleur" ng-model="userinfo.huidskleur"  />
                     Arabisch
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Inuit" name="huidskleur" ng-model="huidskleur" required />
+                    <input type="radio" value="Inuit" name="huidskleur" ng-model="userinfo.huidskleur"  />
                     Inuit
                 </div>
             </div>
@@ -151,31 +151,31 @@
             <label for="werkstatus">Werk status</label>
             <div class="row results">
                 <div class="col-xs-4">
-                    <input type="radio" value="Student" name="werkstatus" ng-model="werkstatus" required />
+                    <input type="radio" value="Student" name="werkstatus" ng-model="userinfo.werkstatus"  />
                     Student
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Voltijds in dienst" name="werkstatus" ng-model="werkstatus" required />
+                    <input type="radio" value="Voltijds in dienst" name="werkstatus" ng-model="userinfo.werkstatus"  />
                     Voltijds in dienst
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="deeltijds in dienst" name="werkstatus" ng-model="werkstatus" required />
+                    <input type="radio" value="deeltijds in dienst" name="werkstatus" ng-model="userinfo.werkstatus"  />
                     deeltijds in dienst
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Zelfstandig" name="werkstatus" ng-model="werkstatus" required />
+                    <input type="radio" value="Zelfstandig" name="werkstatus" ng-model="userinfo.werkstatus"  />
                     Zelfstandig
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Werkzoekend" name="werkstatus" ng-model="werkstatus" required />
+                    <input type="radio" value="Werkzoekend" name="werkstatus" ng-model="userinfo.werkstatus"  />
                     Werk zoekend
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Gepensioneerd" name="werkstatus" ng-model="werkstatus" required />
+                    <input type="radio" value="Gepensioneerd" name="werkstatus" ng-model="userinfo.werkstatus"  />
                     Gepensioneerd
                 </div>
                 <div class="col-xs-4">
-                    <input type="radio" value="Andere" name="werkstatus" ng-model="werkstatus" required />
+                    <input type="radio" value="Andere" name="werkstatus" ng-model="userinfo.werkstatus"  />
                     Andere
                 </div>
             </div>

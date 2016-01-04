@@ -10,9 +10,13 @@
                 <label class="col-xs-12">Geef hier een naam of id in van de persoon die u zoekt</label>
                 <input class="col-xs-12" type="text" ng-model="search" />
                 <select class="col-xs-12" ng-change="GetData()" ng-options="item.name for item in Userlist | filter:search | orderBy:'name'" multiple size="10" ng-model="selectedUSER"></select>
+                <div class="paddingTop20 col-xs-12" ng-if="selectedUSER[0] != null" class="row">
+                    <label class="col-xs-12">Download rapport van de geselecteerde user</label>
+                    <button class=" row col-xs-10 col-xs-offset-1 btn btn-primary " ng-click="excel(selectedUSER[0].name,vragenlist, selectedUSER[0],scorelist)">Download</button>
+                </div>
             </div>
         </div>
-        <div class="col-sm-6 col-xs-12 paddingTop40">
+        <div class="paddingTop20 col-sm-6 col-xs-12">
             <div ng-if="selectedUSER[0] != null" class="row">
                 <div class="col-xs-12 col-md-9 col-md-offset-2 col-sm-offset-1 col-sm-10 list-group-item">
                     <div class="row">
@@ -39,8 +43,29 @@
                         <label class="col-xs-12 col-sm-3 ">Username:</label>
                         <div class="col-xs-12 col-sm-6">{{selectedUSER[0].username}}</div>
                     </div>
-                    <div class="row">                        
-                        <button class=" row col-xs-10 col-xs-offset-1 btn btn-primary " ng-click="excel(selectedUSER[0].name,vragenlist, selectedUSER[0],scorelist)">Download</button> 
+                    <div class="row">
+                        <label class="col-xs-12 col-sm-3 ">Geslacht:</label>
+                        <div class="col-xs-12 col-sm-6">{{selectedUSER[0].geslacht}}</div>
+                    </div>
+                    <div class="row">
+                        <label class="col-xs-12 col-sm-3 ">Burgelijke status:</label>
+                        <div class="col-xs-12 col-sm-6">{{selectedUSER[0].burg_statuut}}</div>
+                    </div>
+                    <div class="row">
+                        <label class="col-xs-12 col-sm-3 ">Diploma:</label>
+                        <div class="col-xs-12 col-sm-6">{{selectedUSER[0].diploma}}</div>
+                    </div>
+                    <div class="row">
+                        <label class="col-xs-12 col-sm-3 ">origine:</label>
+                        <div class="col-xs-12 col-sm-6">{{selectedUSER[0].huidskleur}}</div>
+                    </div>
+                    <div class="row">
+                        <label class="col-xs-12 col-sm-3 ">Kinderen:</label>
+                        <div class="col-xs-12 col-sm-6">{{selectedUSER[0].kinderen}}</div>
+                    </div>
+                    <div class="row">
+                        <label class="col-xs-12 col-sm-3 ">Werkstatus:</label>
+                        <div class="col-xs-12 col-sm-6">{{selectedUSER[0].werkstatus}}</div>
                     </div>
                 </div>
             </div>
@@ -85,34 +110,34 @@
             </div>
         </div>
         <div class="paddingTop50 row col-sm-7 col-sm-offset-1 col-xs-12">
-                <div class="transparant list-group">
-                    <div class="answerlist">
-                        <div class="list-group-item" ng-repeat="item in vragenlist[0].vragen">
-                            <div>{{item.vraagnummer}}. {{item.text}}</div>
-                            <div class="row">
-                                <div>
-                                    <div class="col-xs-1 col-xs-offset-1">
-                                        <div ng-if="item.score == null" class="NoAnswer" />
-                                        <div ng-if="item.score == 1 || item.score == 4" class="BadAnswer col-xs-1 " />
-                                        <div ng-if="item.score == 2 || item.score == 5" class="MedAnswer col-xs-1 " />
-                                        <div ng-if="item.score == 3" class="GoodAnswer col-xs-1 " />
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <div ng-if="item.score == null">ONBEANTWOORD</div>
-                                        <div ng-if="item.score == 1">ALTIJD MINDER dan ik wil</div>
-                                        <div ng-if="item.score == 2">SOMS MINDER dan ik wil</div>
-                                        <div ng-if="item.score == 3">ONGEVEER IDEAAL voor mij</div>
-                                        <div ng-if="item.score == 5">SOMS MEER dan ik wil</div>
-                                        <div ng-if="item.score == 4">ALTIJD MEER dan ik wil</div>
-                                    </div>
+            <div class="transparant list-group">
+                <div class="answerlist">
+                    <div class="list-group-item" ng-repeat="item in vragenlist[0].vragen">
+                        <div>{{item.vraagnummer}}. {{item.text}}</div>
+                        <div class="row">
+                            <div>
+                                <div class="col-xs-1 col-xs-offset-1">
+                                    <div ng-if="item.score == null" class="NoAnswer" />
+                                    <div ng-if="item.score == 1 || item.score == 4" class="BadAnswer col-xs-1 " />
+                                    <div ng-if="item.score == 2 || item.score == 5" class="MedAnswer col-xs-1 " />
+                                    <div ng-if="item.score == 3" class="GoodAnswer col-xs-1 " />
                                 </div>
-
+                                <div class="col-sm-10">
+                                    <div ng-if="item.score == null">ONBEANTWOORD</div>
+                                    <div ng-if="item.score == 1">ALTIJD MINDER dan ik wil</div>
+                                    <div ng-if="item.score == 2">SOMS MINDER dan ik wil</div>
+                                    <div ng-if="item.score == 3">ONGEVEER IDEAAL voor mij</div>
+                                    <div ng-if="item.score == 5">SOMS MEER dan ik wil</div>
+                                    <div ng-if="item.score == 4">ALTIJD MEER dan ik wil</div>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
-
             </div>
+
+        </div>
     </div>
 
 </div>
