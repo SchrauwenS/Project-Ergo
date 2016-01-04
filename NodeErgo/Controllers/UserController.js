@@ -1,4 +1,4 @@
-﻿var schema = require('../Mongoose/gebruiker')
+﻿var schema = require('../Mongoose/gebruiker.js')
 var Users = schema.Users;
 var encrypt = require('../Passport/encrypt');
 var auth = require('../Passport/auth.js');
