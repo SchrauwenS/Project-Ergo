@@ -21,6 +21,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
     <Compile Include="public\javascripts\AlgemeneAccountinstellingenController.js" />
+    <Compile Include="public\javascripts\AdminStartscreenController.js" />
     <Compile Include="public\javascripts\StartscreenController.js" />
     <Compile Include="routes\user.js" />
     <Content Include="package.json" />
@@ -49,6 +50,7 @@
     <Content Include="public\views\AlgemeneAccountinstellingen.html" />
     <Content Include="public\views\Endscreen.html" />
     <Content Include="public\views\Login.html" />
+    <Content Include="public\views\AdminStartpage.html" />
     <Content Include="public\views\Startpage.html" />
     <Content Include="public\views\Questions.html" />
     <Content Include="public\views\Register.html" />
