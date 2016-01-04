@@ -27,11 +27,40 @@ var gebruikersSchema = new schema(
         },
         
         telefoon: {
-            type: Number, default: 0
+            type: String, default: "0"
            
            
         },         
-        
+        geslacht: {
+            type: String, default: "/"
+           
+           
+        },
+        burg_statuut: {
+            type: String, default: "/"
+           
+           
+        },
+        diploma: {
+            type: String, default: "/"
+           
+           
+        },
+        huidskleur: {
+            type: String, default: "/"
+           
+           
+        },  
+        kinderen: {
+            type: Number, default: 0
+           
+           
+        },
+        werkstatus: {
+            type: String, default: "/"
+           
+           
+        },    
         salt: {
             type: String,
             required: true
