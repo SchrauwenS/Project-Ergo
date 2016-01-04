@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var auth = require('../Passport/auth.js');
 var UserC = require('../Controllers/UserController');
-
+var isLoggedIn = auth.requiresApiLogin;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -29,7 +29,7 @@ router.post('/adduser',function (req, res) {
  
 });
 
-router.post('/Update', function (req, res, next) {
+router.post('/Update', isLoggedIn, function (req, res, next) {
     return UserC.updateUser(req, res, next);
 });
 
