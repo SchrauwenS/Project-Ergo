@@ -132,7 +132,7 @@ exports.updateUser = function (req, res, next) {
     //burg staat aanpassen
     if (userUpdates.burg_statuut && userUpdates.burg_statuut.length > 0) {
         userdata.burg_statuut = userUpdates.burg_statuut;
-        req.userburg_statuut = userUpdates.burg_statuut;
+        req.user.burg_statuut = userUpdates.burg_statuut;
     }
     //diploma aanpassen
     if (userUpdates.diploma && userUpdates.diploma.length > 0) {
