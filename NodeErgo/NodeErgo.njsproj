@@ -48,8 +48,8 @@
     <Content Include="public\views\Admin.html" />
     <Content Include="public\views\AlgemeneAccountinstellingen.html" />
     <Content Include="public\views\Endscreen.html" />
+    <Content Include="public\views\Login.html" />
     <Content Include="public\views\Startpage.html" />
-    <Content Include="public\views\login.html" />
     <Content Include="public\views\Questions.html" />
     <Content Include="public\views\Register.html" />
     <Content Include="views\Loginwrapper.html" />
