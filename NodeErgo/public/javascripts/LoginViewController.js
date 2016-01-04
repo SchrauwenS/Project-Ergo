@@ -8,7 +8,7 @@
                 templateUrl: "views/Login.html"
         })
         .when("/Register", {
-            templateUrl: "views/register.html"
+            templateUrl: "views/Register.html"
         })
             .otherwise({ redirectTo: "/" });//indien pagina niet gevonden wordt
     });
