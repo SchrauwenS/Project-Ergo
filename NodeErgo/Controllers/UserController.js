@@ -7,7 +7,7 @@ var auth = require('../Passport/auth.js');
 
 exports.create = function (req, res, next) {
     var userdata = req.body;
-    
+    delete userdata.Admin;
     if (
         userdata.APass == "Ergotherapie") {
         userdata.Admin = true;
