@@ -24,7 +24,14 @@ router.get('/userinfo', isLoggedIn, function (req, res) {
             email: result.email,
             telephone: result.telefoon,
             age: result.age,
-            admin: result.Admin
+            admin: result.Admin,
+            geslacht: result.geslacht,
+            burg_statuut: result.burg_statuut,
+            diploma: result.diploma,
+            huidskleur: result.huidskleur,
+            kinderen: result.kinderen,
+            werkstatus: result.werkstatus
+
         }
         
          res.status(200).json(userdata);
