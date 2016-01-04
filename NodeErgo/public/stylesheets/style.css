@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 30px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url("../images/Ergo.png");
   background-repeat: no-repeat;
@@ -20,7 +20,9 @@ a {
     padding-bottom: 20px;
     padding-left: 30px;
 }
-
+.paddingTop20 {
+    padding-top: 20px;
+}
 .paddingTop40 {
     padding-top: 40px;
 }
