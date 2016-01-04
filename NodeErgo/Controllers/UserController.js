@@ -113,6 +113,7 @@ exports.updateUser = function (req, res, next) {
         req.user.telefoon = userUpdates.telefoon;
         userdata.telefoon = userUpdates.telefoon;
     }
+    //kijkt of leeftijd is ingevuld en groter is dan 0
     if (userUpdates.age && userUpdates.age.length > 0) {
         req.user.age = userUpdates.age;
         userdata.age = userUpdates.age;
@@ -122,6 +123,30 @@ exports.updateUser = function (req, res, next) {
     if (userUpdates.email && userUpdates.email.length > 0) {         
             userdata.email = userUpdates.email;      
         req.user.email = userUpdates.email;
+    }
+    //geslacht aanpassen
+    if (userUpdates.geslacht && userUpdates.geslacht.length > 0) {
+        userdata.geslacht = userUpdates.geslacht;
+    }
+    //burg staat aanpassen
+    if (userUpdates.burg_statuut && userUpdates.burg_statuut.length > 0) {
+        userdata.burg_statuut = userUpdates.burg_statuut;
+    }
+    //diploma aanpassen
+    if (userUpdates.diploma && userUpdates.diploma.length > 0) {
+        userdata.diploma = userUpdates.diploma;
+    }
+    // kleur aanpassen
+    if (userUpdates.huidskleur && userUpdates.huidskleur.length > 0) {
+        userdata.huidskleur = userUpdates.huidskleur;
+    }
+    // kinderen aanpassen
+    if (userUpdates.kinderen && userUpdates.kinderen.length > 0) {
+        userdata.kinderen = userUpdates.kinderen;
+    }
+    // werkstatus aanpassen
+    if (userUpdates.werkstatus && userUpdates.werkstatus.length > 0) {
+        userdata.werkstatus = userUpdates.werkstatus;
     }
     req.user.save(function (err) {
         if (err) {
