@@ -10,7 +10,7 @@
                 <label class="col-xs-12">Geef hier een naam of id in van de persoon die u zoekt</label>
                 <input class="col-xs-12" type="text" ng-model="search" />
                 <select class="col-xs-12" ng-change="GetData()" ng-options="item.name for item in Userlist | filter:search | orderBy:'name'" multiple size="10" ng-model="selectedUSER"></select>
-                <div class="paddingTop20 col-xs-12" ng-if="selectedUSER[0] != null" class="row">
+                <div class="paddingTop20 row col-xs-12" ng-if="selectedUSER[0] != null">
                     <label class="col-xs-12">Download rapport van de geselecteerde user</label>
                     <button class=" row col-xs-10 col-xs-offset-1 btn btn-primary " ng-click="excel(selectedUSER[0].name,vragenlist, selectedUSER[0],scorelist)">Download</button>
                 </div>
