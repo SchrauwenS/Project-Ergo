@@ -1,6 +1,6 @@
 ﻿(function () {
     var App = angular.module("App");
-    var AdminCtrl = function ($scope, $window, $routeParams, $location, $http) {
+    var AdminCtrl = function ($scope, $routeParams, $location, $http) {
         
         $http.get('admin/users')
             .then(function (res) {
