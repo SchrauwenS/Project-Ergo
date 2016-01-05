@@ -46,6 +46,7 @@
     <Content Include="public\images\Ergo.png" />
     <Content Include="public\JSON\Answers.json" />
     <Content Include="public\JSON\Questions.json" />
+    <Content Include="public\views\AdminAllusers.html" />
     <Content Include="public\views\Admin.html" />
     <Content Include="public\views\AlgemeneAccountinstellingen.html" />
     <Content Include="public\views\Endscreen.html" />
