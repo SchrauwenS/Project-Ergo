@@ -54,8 +54,8 @@
                                 else {
                                     subUitdagingNietsingevuld++         //als een user geen subtotaal heeft voor deze score mag deze ook niet op geteld worden bij het totaal aantal gebruikers.
                                 }
-                                if ($scope.scorelist.TotaalScore != null) {
-                                    $scope.scorelistAll.TotaalScore += $scope.scorelist.TotaalScore
+                                if ($scope.scorelist.totaalScore != null) {
+                                    $scope.scorelistAll.TotaalScore += $scope.scorelist.totaalScore
                                 }
                                 else {
                                     TotaalScoreNietsingevuld++         //als een user geen subtotaal heeft voor deze score mag deze ook niet op geteld worden bij het totaal aantal gebruikers.
@@ -77,7 +77,7 @@
             $scope.scorelistAll.subGezondheid = Math.round($scope.scorelistAll.subGezondheid / ($scope.Userlist.length - AdminCounter - subGezondheidNietsingevuld)* 100)/ 100;
             $scope.scorelistAll.subIdentiteit = Math.round($scope.scorelistAll.subIdentiteit / ($scope.Userlist.length - AdminCounter - subIdentiteitNietsingevuld) * 100) / 100;
             $scope.scorelistAll.subRelaties = Math.round($scope.scorelistAll.subRelaties / ($scope.Userlist.length - AdminCounter - subRelatiesNietsingevuld) * 100) / 100;
-            $scope.scorelistAll.subUitdaging = Math.round($scope.scorelistAll.subUitdaging / ($scope.Userlist.length - AdminCounter - subUitdagingingevuld) * 100) / 100;
+            $scope.scorelistAll.subUitdaging = Math.round($scope.scorelistAll.subUitdaging / ($scope.Userlist.length - AdminCounter - subUitdagingNietsingevuld) * 100) / 100;
             $scope.scorelistAll.TotaalScore = Math.round($scope.scorelistAll.TotaalScore / ($scope.Userlist.length - AdminCounter - TotaalScoreNietsingevuld) * 100) / 100;
         }
         
