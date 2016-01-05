@@ -2,6 +2,41 @@
     <button class="floatright btn btn-primary" ng-click="back()"><span class="glyphicon glyphicon-circle-arrow-left" /></button>
     <h1>Welkom</h1>
     <div class="row">
+        <div>
+            <div class="transparant list-group-item">
+                <h4>Totaal LBI score:</h4>
+                <div class="row">
+                    <label>Gemiddelde van alle gebruikers voor alle ingevulde activiteiten</label>
+                    <div class="paddingleft30" ng-if="scorelist.totaalScore">{{scorelist.totaalScore}}</div>
+                    <div class="paddingleft30" ng-if="!scorelist.totaalScore">
+                        <div>Geen enkele gebruiker heeft een formulier ingediend</div>
+                    </div>
+                </div>
+            </div>
+            <div class="transparant list-group-item">
+                <h4>LBI subschalen:</h4>
+                <div class="row">
+                    <label>Gemiddelde van alle gebruikers voor Subdomein Gezondheid</label>
+                    <div class="paddingleft30" ng-if="scorelist.subGezondheid">{{scorelist.subGezondheid}}</div>
+                    <div class="paddingleft30" ng-if="!scorelist.subGezondheid">Geen enkele gebruiker beantwoorde een vraag uit dit subdomein</div>
+                </div>
+                <div class="row">
+                    <label>Gemiddelde van alle gebruikers voor Subdomein Relaties</label>
+                    <div class="paddingleft30" ng-if="scorelist.subRelaties">{{scorelist.subRelaties}}</div>
+                    <div class="paddingleft30" ng-if="!scorelist.subRelaties">Geen enkele gebruiker beantwoorde een vraag uit dit subdomein</div>
+                </div>
+                <div class="row">
+                    <label>Gemiddelde van alle gebruikers voor Subdomein Identiteit</label>
+                    <div class="paddingleft30" ng-if="scorelist.subIdentiteit">{{scorelist.subIdentiteit}}</div>
+                    <div class="paddingleft30" ng-if="!scorelist.subIdentiteit">Geen enkele gebruiker beantwoorde een vraag uit dit subdomein</div>
+                </div>
+                <div class="row">
+                    <label>Gemiddelde van alle gebruikers voor Subdomein UitdagingIntresse</label>
+                    <div class="paddingleft30" ng-if="scorelist.subUitdaging">{{scorelist.subUitdaging}}</div>
+                    <div class="paddingleft30" ng-if="!scorelist.subUitdaging">Geen enkele gebruiker beantwoorde een vraag uit dit subdomein</div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
