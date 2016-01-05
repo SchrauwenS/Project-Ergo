@@ -17,7 +17,8 @@
             controller: "AdminCtrl"
         })
         .when("/AllUsers", {
-            //
+            templateUrl: "views/AdminAllusers.html",
+            controller: "AdminAllusersCtrl"
         })
          .otherwise({ redirectTo: "/" });//indien pagina niet gevonden wordt
     });

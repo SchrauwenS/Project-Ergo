@@ -20,6 +20,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Compile Include="public\javascripts\AdminControllerAllUsers.js" />
     <Compile Include="public\javascripts\AlgemeneAccountinstellingenController.js" />
     <Compile Include="public\javascripts\AdminStartscreenController.js" />
     <Compile Include="public\javascripts\StartscreenController.js" />
