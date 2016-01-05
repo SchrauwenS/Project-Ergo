@@ -7,10 +7,10 @@
             $window.location.href = url;
         }
 
-        $scope.Resultsclick = function () {
+        $scope.AllUsersclick = function () {
              $location.path("/AllUsers");
         }
-        $scope.Startclick = function () {
+        $scope.OneUserclick = function () {
             $location.path("/OneUser");
         }
         
