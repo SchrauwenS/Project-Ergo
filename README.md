@@ -7,6 +7,51 @@ project-cloud-applications-ergo_stijnbart created by Bart and Stijn
 Able to POST, GET , EDIT Users, Questions And Scores in json format from the online database.
 Authentication has been implemented and is working.
 
+####Frontend:
+
+There are 3 views on the server in which client-sided views(containers) will be loaded.
+
+The 3 vieuws each have there own controller.
+
+   The Loginwrapper
+    (controlled by LoginViewController.js)
+    Here shall views to authenticate be displayd, a.k.a. a registerpage and a loginpage.
+    These are named Login.html and Register.html neither one of them had needed a controller.
+ 
+
+   The wrapper
+    (controlled by ViewControl.js)
+    if a user registers or log in he will be redirected to this view.
+    
+       Startpage.html (controlled by StartscreenController.js)
+       initialy the Startpage.html shall be displayed you can route to 3different views by clicking buttons who use te $location
+       service to route locally. the fourth button will log you off.
+       
+       AlgemeneAccountinstellingen.html
+       (controlled by AlgemeneAccountinstellingenController.js)
+       A form where you can adjust your personal data and see you the current values
+       
+       Questions.html
+       (controlled by Questionscontroller.js)
+       Aform where User can answer the question list
+       
+       Endscreen.html
+       (controlled by EndscreenController)
+       User can view his score
+
+Login and signup pages: Self-explanatory
+Adminpanel: The "home" page for the admin (Tim Dams)
+Dashboard with some basic statistics
+Adding questions
+Editing and removing questions
+Able to get a list of answers
+Userpanel: The page for the students
+Will be used to post answers (Work in progress)
+What are we doing now? First the Userpanel is the highest priority because it needs to most work.
+
+The deleting questions in the Adminpanel needs to be finished (drag & drop). Filtering of those questions is also needed! 
+Viewing the answers is far from done and will be our next top priority after the userpanel!
+
 ##Dependencies
 
 Current modules used (NodeJS => Backend): 
@@ -19,6 +64,11 @@ Current modules used (NodeJS => Backend):
 * mongoose
 * passport: user login/signup/authorization and sessions.
 * passport-local: we are using the local method, aka storing it in a database yourself
+
+Frontend:
+
+Bootstrap: easy for making nice and responsive views
+AngularJS: used for client side routing and MVC pattern
 
 ##Mongoose Schema layout
 For a post/edit to be accepted, the information must pass the validation, the following section will explain what is validated and how to pass it.
