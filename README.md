@@ -120,4 +120,8 @@ returns the survey of the specific user
 
 returns the score of the specific user
 
+###Home portal
 
+####GET / 
+
+returns the home page of the user
