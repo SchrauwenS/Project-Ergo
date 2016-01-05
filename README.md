@@ -37,6 +37,11 @@ Defaults:
 * age: number, age of the user
 * telefoon: number, telephone number of the user
 * Admin boolean, set to false when posted 
+* geslacht: sex of the user, default: "/"
+* burg_statuut: current work situation of the user, default: "/"
+* diploma: the highest degree that the user achieved, default: "/"
+* huidskleur: the origin of the user, default: "/"
+* kinderen: the number of children a user has, default: "0"
 
 ###subScore
 Subscore has 6 fields, all 6 are required.
@@ -64,55 +69,54 @@ Required:
 
 ###Index page
 
-###POST /addUser
+####POST /addUser
 
 Users can here be created
 
-###POST /Update
+###user portal
 
-User can update their user info here
+####GET /userinfo
 
-###users portal
+Returns all the info about the current user
 
-###GET /register
+####POST /Update
 
-Shows the register page
-
-###GET /users
-
-shows all the user from the database ( only if you are admin)
-otherwise you will be send to index page
+the edited user info can be posted here
 
 ###results portal
 
-###GET /testResults
+####GET /testResults
 
 returns a Json file with the results on the test of the user
 
-###GET /testScore
+####GET /testScore
 
-returns a Json file with the scors of the user
+returns a Json file with the scores of the user
 
-###POST /testResults
+####POST /testResults
 
 the users answers can be posted here
 
-###POST /testScore
+####POST /testScore
 
 the users Score can be posted here
 
 
-###admin portal
+###admin portal (admin only)
 
-###GET /users/{ID}
+####GET /
+
+returns the admin page 
+
+####GET /users/{ID}
 
 returns the information of a specific user
 
-###GET /users/{ID}/survey
+####GET /users/{ID}/survey
 
 returns the survey of the specific user
 
-###GET /users/{ID}/score
+####GET /users/{ID}/score
 
 returns the score of the specific user
 
