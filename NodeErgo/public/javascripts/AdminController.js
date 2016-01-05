@@ -33,7 +33,7 @@
             var CSV = "Gebruikersrapport " + name + '\r\n\n';         
             
             for (var index in userinfo) {
-                if (index != "_id" && index != "salt" && index != "hashed_pwd" && index != "__v" && index != "$$hashKey") {
+                if (index != "_id" && index != "salt" && index != "Admin" && index != "hashed_pwd" && index != "__v" && index != "$$hashKey") {
                     row = index + " " + userinfo[index];
                     //add a line break after each row
                     CSV += row + '\r\n';
