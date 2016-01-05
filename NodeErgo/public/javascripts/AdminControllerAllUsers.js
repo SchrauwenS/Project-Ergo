@@ -73,12 +73,12 @@
         }
         
 
-        function F3() {          
-            $scope.scorelistAll.subGezondheid = $scope.scorelistAll.subGezondheid / ($scope.Userlist.length - AdminCounter - subGezondheidNietsingevuld);
-            $scope.scorelistAll.subIdentiteit = $scope.scorelistAll.subIdentiteit / ($scope.Userlist.length - AdminCounter - subIdentiteitNietsingevuld);
-            $scope.scorelistAll.subRelaties = $scope.scorelistAll.subRelaties / ($scope.Userlist.length - AdminCounter - subRelatiesNietsingevuld);
-            $scope.scorelistAll.subUitdaging = $scope.scorelistAll.subUitdaging / ($scope.Userlist.length - AdminCounter - subUitdagingingevuld);
-            $scope.scorelistAll.TotaalScore = $scope.scorelistAll.TotaalScore / ($scope.Userlist.length - AdminCounter - TotaalScoreNietsingevuld);
+        function F3() {             
+            $scope.scorelistAll.subGezondheid = Math.round($scope.scorelistAll.subGezondheid / ($scope.Userlist.length - AdminCounter - subGezondheidNietsingevuld)* 100)/ 100;
+            $scope.scorelistAll.subIdentiteit = Math.round($scope.scorelistAll.subIdentiteit / ($scope.Userlist.length - AdminCounter - subIdentiteitNietsingevuld) * 100) / 100;
+            $scope.scorelistAll.subRelaties = Math.round($scope.scorelistAll.subRelaties / ($scope.Userlist.length - AdminCounter - subRelatiesNietsingevuld) * 100) / 100;
+            $scope.scorelistAll.subUitdaging = Math.round($scope.scorelistAll.subUitdaging / ($scope.Userlist.length - AdminCounter - subUitdagingingevuld) * 100) / 100;
+            $scope.scorelistAll.TotaalScore = Math.round($scope.scorelistAll.TotaalScore / ($scope.Userlist.length - AdminCounter - TotaalScoreNietsingevuld) * 100) / 100;
         }
         
        
