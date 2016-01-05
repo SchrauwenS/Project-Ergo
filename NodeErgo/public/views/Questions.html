@@ -12,7 +12,7 @@
                     <div class="row" ng-repeat="choice in item.Question">
                         <div ng-if="NextStepBool == false || choice.checked == true">
                             <input class="col-xs-1" ng-if="NextStepBool == false" ng-model="choice.checked" ng-required="CheckboxChecked(choice.checked)" type="checkbox">
-                            <div class="col-xs-11" ng-click="choice.checked = !choice.checked">{{choice.Text}}</div>
+                            <div class="col-xs-11">{{choice.Text}}</div>
                             <div ng-if="NextStepBool == true">
                                 <div ng-repeat="radio in radioData">
                                     <div class="col-xs-12 paddingleft30">
