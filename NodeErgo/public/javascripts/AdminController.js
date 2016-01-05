@@ -23,14 +23,10 @@
             });
         }
         
-        $scope.AlgemeneAccountinstellingen = function () {
-            $location.path("/AlgemeneAccountinstellingen");
+        $scope.back = function () {
+            $location.path("/");
         }
-        
-        $scope.logout = function () {
-            var url = "http://" + $window.location.host + "/logout";
-            $window.location.href = url;
-        }
+
         
         $scope.excel = function (name, vragenlist, userinfo, scorelist) {
             
