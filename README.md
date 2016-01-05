@@ -17,6 +17,7 @@ The 3 vieuws each have there own controller.
     (controlled by LoginViewController.js)
     Here shall views to authenticate be displayd, a.k.a. a registerpage and a loginpage.
     These are named Login.html and Register.html neither one of them had needed a controller.
+    Client side routing with href Attribute
  
 
    The wrapper
