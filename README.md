@@ -20,25 +20,25 @@ The 3 vieuws each have there own controller.
     Client side routing with href Attribute
  
 
-   The wrapper
+    The wrapper
     (controlled by ViewControl.js)
     if a user registers or log in he will be redirected to this view.
     
-	   	Startpage.html (controlled by StartscreenController.js)
-	   	initialy the Startpage.html shall be displayed you can route to 3different views by clicking buttons who use te $location
-	   	service to route locally. the fourth button will log you off.
-		   
-		AlgemeneAccountinstellingen.html
-		(controlled by AlgemeneAccountinstellingenController.js)
-		A form where you can adjust your personal data and see you the current values
-		     
-		Questions.html
-		(controlled by Questionscontroller.js)
-		Aform where User can answer the question list
-		     
-		Endscreen.html
-		(controlled by EndscreenController)
-	  	User can view his score
+   	* Startpage.html (controlled by StartscreenController.js)
+   	initialy the Startpage.html shall be displayed you can route to 3different views by clicking buttons who use te $location
+   	service to route locally. the fourth button will log you off.
+	   
+	* AlgemeneAccountinstellingen.html
+	(controlled by AlgemeneAccountinstellingenController.js)
+	A form where you can adjust your personal data and see you the current values
+	     
+	* Questions.html
+	(controlled by Questionscontroller.js)
+	Aform where User can answer the question list
+	     
+	* Endscreen.html
+	(controlled by EndscreenController)
+  	User can view his score
 
 ##Dependencies
 
