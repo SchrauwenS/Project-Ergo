@@ -23,34 +23,21 @@ The 3 vieuws each have there own controller.
     (controlled by ViewControl.js)
     if a user registers or log in he will be redirected to this view.
     
-       Startpage.html (controlled by StartscreenController.js)
-       initialy the Startpage.html shall be displayed you can route to 3different views by clicking buttons who use te $location
-       service to route locally. the fourth button will log you off.
-       
-       AlgemeneAccountinstellingen.html
-       (controlled by AlgemeneAccountinstellingenController.js)
-       A form where you can adjust your personal data and see you the current values
-       
-       Questions.html
-       (controlled by Questionscontroller.js)
-       Aform where User can answer the question list
-       
-       Endscreen.html
-       (controlled by EndscreenController)
-       User can view his score
-
-Login and signup pages: Self-explanatory
-Adminpanel: The "home" page for the admin (Tim Dams)
-Dashboard with some basic statistics
-Adding questions
-Editing and removing questions
-Able to get a list of answers
-Userpanel: The page for the students
-Will be used to post answers (Work in progress)
-What are we doing now? First the Userpanel is the highest priority because it needs to most work.
-
-The deleting questions in the Adminpanel needs to be finished (drag & drop). Filtering of those questions is also needed! 
-Viewing the answers is far from done and will be our next top priority after the userpanel!
+   	Startpage.html (controlled by StartscreenController.js)
+   	initialy the Startpage.html shall be displayed you can route to 3different views by clicking buttons who use te $location
+   	service to route locally. the fourth button will log you off.
+	     
+	   AlgemeneAccountinstellingen.html
+	   (controlled by AlgemeneAccountinstellingenController.js)
+	   A form where you can adjust your personal data and see you the current values
+	     
+	   Questions.html
+	   (controlled by Questionscontroller.js)
+	   Aform where User can answer the question list
+	     
+	   Endscreen.html
+   	(controlled by EndscreenController)
+   	User can view his score
 
 ##Dependencies
 
