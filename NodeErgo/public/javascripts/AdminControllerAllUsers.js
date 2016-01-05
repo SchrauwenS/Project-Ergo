@@ -18,8 +18,7 @@
             .then(function (res) {
                 $scope.Userlist = res.data;
                 r.resolve();
-            });
-        
+            });  
         
         function F2() {
             $scope.scorelistAll = { subGezondheid: 0, subIdentiteit: 0, subRelaties: 0, subUitdaging: 0, TotaalScore: 0 };             
@@ -71,8 +70,6 @@
                 }
             }
         }
-        
-
         function F3() {             
             $scope.scorelistAll.subGezondheid = Math.round($scope.scorelistAll.subGezondheid / ($scope.Userlist.length - AdminCounter - subGezondheidNietsingevuld)* 100)/ 100;
             $scope.scorelistAll.subIdentiteit = Math.round($scope.scorelistAll.subIdentiteit / ($scope.Userlist.length - AdminCounter - subIdentiteitNietsingevuld) * 100) / 100;
