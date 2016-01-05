@@ -2,16 +2,16 @@
     <div class="row">
         <form class="col-md-6 col-md-offset-3 col-ol-sm-offset-2" name="form" action="/adduser" role="form" method="POST">
             <div>
-                <label for="username">Username</label>
+                <label for="username">Gebruikersnaam</label>
                 <input type="text" name="username" class="form-control" ng-model="Username" required />
             </div>
             <div>
-                <label for="password">Password</label>
+                <label for="password">Passwoord</label>
                 <i class="fa fa-lock"></i>
                 <input type="password" name="password" class="form-control" ng-model="Password" required />
             </div>
             <div>
-                <label for="name">name</label>
+                <label for="name">naam</label>
                 <input type="text" name="name" class="form-control" ng-model="name" required />
             </div>
             <div>
@@ -20,7 +20,7 @@
                 <span ng-show="form.email.$dirty && form.email.$error.email" class="help-block">Een email adres moet volgende structuur hebben me@example.com</span>
             </div>
             <div>
-                <label for="age">Age</label>
+                <label for="age">Leeftijd</label>
                 <input type="number" name="age" class="form-control" ng-model="Age" required />
             </div>
             <div>
@@ -32,7 +32,7 @@
                 <input type="number" name="kinderen" class="form-control" ng-model="kinderen" required />
             </div>
             <div>
-                <label for="Sex">Sex</label>
+                <label for="Sex">Geslacht</label>
                 <div class="row results">
                     <div class="col-xs-4">
                         <input class="" type="radio" value="Unisex" name="geslacht" ng-model="Sex" required />
