@@ -2,6 +2,11 @@
     <button class="floatright btn btn-primary" ng-click="back()"><span class="glyphicon glyphicon-circle-arrow-left" /></button>
         <h1>Welkom</h1>
     <div class="row">
+        <button class="floatright btn btn-primary" ng-model="ALL"><span class=""/>one</button>
+        <button class="floatright btn btn-primary" ng-model="MALE"><span class=""/>two</button>
+
+    </div>
+    <div class="row">
         <div>
             <div class="transparant list-group-item">
                 <h4>Totaal LBI score:</h4>
@@ -33,6 +38,43 @@
                 <div class="row">
                     <label>Gemiddelde van alle gebruikers voor Subdomein UitdagingIntresse</label>
                     <div class="paddingleft30" ng-if="scorelistAll.subUitdaging">{{scorelistAll.subUitdaging}}</div>
+                    <div class="paddingleft30" ng-if="!scorelistAll.subUitdaging">Geen enkele gebruiker beantwoorde een vraag uit dit subdomein</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <div class="transparant list-group-item">
+                <h4>Totaal LBI score:</h4>
+                <div class="row">
+                    <label>Gemiddelde van alle gebruikers voor alle ingevulde activiteiten</label>
+                    <div class="paddingleft30" ng-if="scorelistMale.TotaalScore">{{scorelistMale.TotaalScore}}</div>
+                    <div class="paddingleft30" ng-if="!scorelistMale.TotaalScore">
+                        <div>Geen enkele gebruiker heeft een formulier ingediend</div>
+                    </div>
+                </div>
+            </div>
+            <div class="transparant list-group-item">
+                <h4>LBI subschalen:</h4>
+                <div class="row">
+                    <label>Gemiddelde van alle gebruikers voor Subdomein Gezondheid</label>
+                    <div class="paddingleft30" ng-if="scorelistMale.subGezondheid">{{scorelistMale.subGezondheid}}</div>
+                    <div class="paddingleft30" ng-if="!scorelistMale.subGezondheid">Geen enkele gebruiker beantwoorde een vraag uit dit subdomein</div>
+                </div>
+                <div class="row">
+                    <label>Gemiddelde van alle gebruikers voor Subdomein Relaties</label>
+                    <div class="paddingleft30" ng-if="scorelistMale.subRelaties">{{scorelistMale.subRelaties}}</div>
+                    <div class="paddingleft30" ng-if="!scorelistMale.subRelaties">Geen enkele gebruiker beantwoorde een vraag uit dit subdomein</div>
+                </div>
+                <div class="row">
+                    <label>Gemiddelde van alle gebruikers voor Subdomein Identiteit</label>
+                    <div class="paddingleft30" ng-if="scorelistMale.subIdentiteit">{{scorelistMale.subIdentiteit}}</div>
+                    <div class="paddingleft30" ng-if="!scorelistMale.subIdentiteit">Geen enkele gebruiker beantwoorde een vraag uit dit subdomein</div>
+                </div>
+                <div class="row">
+                    <label>Gemiddelde van alle gebruikers voor Subdomein UitdagingIntresse</label>
+                    <div class="paddingleft30" ng-if="scorelistMale.subUitdaging">{{scorelistMale.subUitdaging}}</div>
                     <div class="paddingleft30" ng-if="!scorelistAll.subUitdaging">Geen enkele gebruiker beantwoorde een vraag uit dit subdomein</div>
                 </div>
             </div>
