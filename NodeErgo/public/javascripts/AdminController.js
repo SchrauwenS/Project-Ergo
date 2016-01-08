@@ -27,6 +27,9 @@
             $location.path("/");
         }
 
+        $scope.isNoAdmin = function (item) {
+            return item.Admin === false;
+        };        
         
         $scope.excel = function (name, vragenlist, userinfo, scorelist) {
             
