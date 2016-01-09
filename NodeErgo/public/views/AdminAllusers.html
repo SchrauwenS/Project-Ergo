@@ -1,10 +1,21 @@
 ﻿<div class="container">
     <button class="floatright btn btn-primary" ng-click="back()"><span class="glyphicon glyphicon-circle-arrow-left" /></button>
-    <button class="floatright btn btn-primary" ng-click="test()"><span class="" /></button>
 
         <h1>Welkom</h1>
-    <div class="row">
-        <div class="row col-lg-2">
+    <div class="transparant list-group-item row">
+        <h4>Filter</h4>
+        <div class="row" >
+            <button class="btn btn-primary" ng-click=""></button>
+            <button class="btn btn-primary" ng-click=""></button>
+            <button class="btn btn-primary" ng-click=""></button>
+            <button class="btn btn-primary" ng-click=""></button>
+            <button class="btn btn-primary" ng-click=""></button>
+            <button class="btn btn-primary" ng-click=""></button>
+            <button class="btn btn-primary" ng-click=""></button>
+            <button class="btn btn-primary" ng-click=""></button>
+        </div>
+
+        <div class="row col-lg-3">
             <div class="row">
                 <input type="radio" ng-model="gender" value="NoFilter" ng-change="Filter()" />
                 <label>Deze filter niet gebruiken</label>
@@ -18,7 +29,7 @@
                 <label>vrouw</label>
             </div>
         </div>
-        <div class="row col-lg-2">
+        <div class="row col-lg-3">
             <div class="row">
                 <input type="radio" ng-model="diploma" value="NoFilter" ng-change="Filter()" />
                 <label>Deze filter niet gebruiken</label>
@@ -44,7 +55,7 @@
                 <label>Geen diploma</label>
             </div>
         </div>
-        <div class="row col-lg-2">
+        <div class="row col-lg-3">
             <div class="row">
                 <input type="radio" ng-model="BurgS" value="NoFilter" ng-change="Filter()" />
                 <label>Deze filter niet gebruiken</label>
@@ -78,7 +89,7 @@
                 <label>Andere</label>
             </div>
         </div>
-        <div class="row col-lg-2">
+        <div class="row col-lg-3">
             <div class="row">
                 <input type="radio" ng-model="Origine" value="NoFilter" ng-change="Filter()" />
                 <label>Deze filter niet gebruiken</label>
@@ -116,7 +127,7 @@
                 <label>Inuit</label>
             </div>
         </div>
-        <div class="row col-lg-2">
+        <div class="row col-lg-3">
             <div class="row">
                 <input type="radio" ng-model="werkstatus" value="NoFilter" ng-change="Filter()" />
                 <label>Deze filter niet gebruiken</label>
@@ -150,10 +161,31 @@
                 <label>Andere</label>
             </div>
         </div>
-        <div class="row col-lg-2">
+        <div class="row margin5  col-lg-3">
             <input type="checkbox" ng-change="Filter()" ng-model="Kinderen" /><label>Op kinderen filteren</label>
-            <input type="number" ng-change="Filter()" ng-model="KinderenMin" />
-            <input type="number" ng-change="Filter()" ng-model="KinderenMax" />
+            <div>U filterd momenteel op min. {{KinderenPrevMin}} en max. {{KinderenPrevMax}} kinderend. </div>
+            <div class="paddingTop40">
+                Minimum aantal kinderen
+                <input class="col-xs-12 " ng-disabled="!Kinderen" min="0" type="number" ng-model="KinderenMin"/>
+            </div>
+            <div>
+                Maximum aantal kinderen
+                <input class="col-xs-12 " ng-disabled="!Kinderen" min="0" type="number" ng-model="KinderenMax" />
+            </div>
+            <button ng-disabled="!Kinderen || KinderenMin == null ||KinderenMax == null " type="button" class="col-xs-12 btn margintop5 btn-primary" ng-click="Filter()">Aanpassen</button>
+        </div>
+        <div class="row margin5  col-lg-3">
+            <input type="checkbox" ng-change="Filter()" ng-model="Leeftijd" /><label>Op Leeftijd filteren</label>
+            <div>U filterd momenteel op min. Leeftijd: {{KinderenPrevMin}} en max. Leeftijd {{KinderenPrevMax}}.</div>
+            <div class="paddingTop40">
+                Minimum leeftijd
+                <input class="col-xs-12 " ng-disabled="!Leeftijd" min="0" type="number" ng-model="LeeftijdMin" />
+            </div>
+            <div>
+                Maximum leeftijd
+                <input class="col-xs-12 " ng-disabled="!Leeftijd" min="0" type="number" ng-model="LeeftijdMax" />
+            </div>
+            <button ng-disabled="!Leeftijd || LeeftijdMin == null ||LeeftijdMax == null " type="button" class="col-xs-12 btn margintop5 btn-primary" ng-click="Filter()">Aanpassen</button>
         </div>
     </div>
     <div class="row">
