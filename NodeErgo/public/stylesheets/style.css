@@ -8,6 +8,9 @@ body {
   background-size: 80% auto;
 }
 
+.padding5 {
+    padding: 5px
+}
 .margin5 {
     margin: 5px
 }

@@ -7,7 +7,10 @@
         $scope.BurgS = "NoFilter";
         $scope.Origine = "NoFilter";
         $scope.werkstatus = "NoFilter";
+        
         $scope.Kinderen = false;
+        $scope.Leeftijd = false;
+
         $scope.KinderenMax = 5;
         $scope.KinderenMin = 0;
         $scope.KinderenPrevMax = 5;
@@ -16,6 +19,17 @@
         $scope.LeeftijdMin = 0;
         $scope.LeeftijdPrevMax = 100;
         $scope.LeeftijdPrevMin = 0;
+        
+        $scope.UserAfterfilter = 0;
+        
+        $scope.ShowGeslacht = false;
+        $scope.ShowDiploma = false;
+        $scope.ShowBurgS = false;
+        $scope.ShowOrigine = false;
+        $scope.ShowWerkS = false;
+        $scope.ShowKind = false;
+        $scope.ShowAge = false;
+
 
         var Signal = signals.Signal;
         var myObject2 = {
@@ -42,10 +56,6 @@
         var scorelistCalc = { subGezondheid: 0, subIdentiteit: 0, subRelaties: 0, subUitdaging: 0, TotaalScore: 0 };
         var scorelistCalcNietsingevuld = { subGezondheid: 0, subIdentiteit: 0, subRelaties: 0, subUitdaging: 0, TotaalScore: 0 };
         $scope.scorelistAll = { subGezondheid: 0, subIdentiteit: 0, subRelaties: 0, subUitdaging: 0, TotaalScore: 0 };
-        
-        ShowGeslacht = false; 
-        
-        
 
         $http.get('admin/users')
             .then(function (res) {
@@ -53,7 +63,7 @@
             myObject2.started.dispatch();
             });  
         
-         $scope.Filter = function()
+        $scope.Filter = function ()
         {
             var count = 0;
             scorelistCalcNietsingevuld = { subGezondheid: 0, subIdentiteit: 0, subRelaties: 0, subUitdaging: 0, TotaalScore: 0 };
@@ -138,36 +148,52 @@
             }      
         }
         
-        function ToScreen(scorelistCalc, scorelistCalcNietsingevuld) {                              
-            $scope.scorelistAll.subGezondheid = Math.round(scorelistCalc.subGezondheid / (filterlist.length - scorelistCalcNietsingevuld.subGezondheid)* 100)/ 100;
+        function ToScreen(scorelistCalc, scorelistCalcNietsingevuld) {
+            $scope.UserAfterfilter = filterlist.length;
+            $scope.scorelistAll.subGezondheid = Math.round(scorelistCalc.subGezondheid / (filterlist.length - scorelistCalcNietsingevuld.subGezondheid) * 100) / 100;
             $scope.scorelistAll.subIdentiteit = Math.round(scorelistCalc.subIdentiteit / (filterlist.length - scorelistCalcNietsingevuld.subIdentiteit) * 100) / 100;
             $scope.scorelistAll.subRelaties = Math.round(scorelistCalc.subRelaties / (filterlist.length - scorelistCalcNietsingevuld.subRelaties) * 100) / 100;
             $scope.scorelistAll.subUitdaging = Math.round(scorelistCalc.subUitdaging / (filterlist.length -scorelistCalcNietsingevuld.subUitdaging) * 100) / 100;
             $scope.scorelistAll.TotaalScore = Math.round(scorelistCalc.TotaalScore / (filterlist.length - scorelistCalcNietsingevuld.TotaalScore) * 100) / 100;
         }
         
-        //$scope.ToggleShowGeslacht() = function () {
-        //    ShowGeslacht = !ShowGeslacht;
-        //}
-        //$scope.ToggleShowDiploma() = function () {
-        //    ShowDiploma = !ShowDiploma;
-        //}
-        //$scope.ToggleShowBurgS() = function () {
-        //    ShowBurgS = !ShowBurgS;
-        //}
-        //$scope.ToggleShowOrigine() = function () {
-        //    ShowOrigine= !ShowOrigine;
-        //}
-        //$scope.ToggleShowWerkS() = function () {
-        //    ShowWerkS = !ShowWerkS;
-        //}
-        //$scope.ToggleShowGeslacht() = function () {
-        //    ShowBurgS = !ShowBurgS;
-        //}
+        
+        
+        $scope.ToggleShowGeslacht = function () {
+            $scope.ShowGeslacht = !$scope.ShowGeslacht;
+        }
+        $scope.ToggleShowDiploma = function () {
+            $scope.ShowDiploma = !$scope.ShowDiploma;
+        }
+        $scope.ToggleShowBurgS = function () {
+            $scope.ShowBurgS = !$scope.ShowBurgS;
+        }
+        $scope.ToggleShowOrigine = function () {
+            $scope.ShowOrigine= !$scope.ShowOrigine;
+        }
+        $scope.ToggleShowWerkS = function () {
+            $scope.ShowWerkS = !$scope.ShowWerkS;
+        }
+        $scope.ToggleShowKind = function () {
+            $scope.ShowKind = !$scope.ShowKind;
+        }
+        $scope.ToggleShowAge = function () {
+            $scope.ShowAge = !$scope.ShowAge;
+        }
+        $scope.ToggleShowAll = function () {
+            $scope.ShowAge = !$scope.ShowAge;
+            $scope.ShowKind = !$scope.ShowKind;
+            $scope.ShowWerkS = !$scope.ShowWerkS;
+            $scope.ShowOrigine = !$scope.ShowOrigine;
+            $scope.ShowBurgS = !$scope.ShowBurgS;
+            $scope.ShowDiploma = !$scope.ShowDiploma;
+            $scope.ShowGeslacht = !$scope.ShowGeslacht;
+        }
 
         $scope.back = function () {
             $location.path("/");
         }
+
     };
     App.controller("AdminAllusersCtrl", AdminAllusersCtrl);
 })();
