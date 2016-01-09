@@ -29,7 +29,8 @@
         $scope.ShowWerkS = false;
         $scope.ShowKind = false;
         $scope.ShowAge = false;
-
+        
+        var Togglefilters = false;
 
         var Signal = signals.Signal;
         var myObject2 = {
@@ -181,13 +182,27 @@
             $scope.ShowAge = !$scope.ShowAge;
         }
         $scope.ToggleShowAll = function () {
-            $scope.ShowAge = !$scope.ShowAge;
-            $scope.ShowKind = !$scope.ShowKind;
-            $scope.ShowWerkS = !$scope.ShowWerkS;
-            $scope.ShowOrigine = !$scope.ShowOrigine;
-            $scope.ShowBurgS = !$scope.ShowBurgS;
-            $scope.ShowDiploma = !$scope.ShowDiploma;
-            $scope.ShowGeslacht = !$scope.ShowGeslacht;
+            if (Togglefilters == true) {
+                Togglefilters = false;
+                $scope.ShowAge = false;
+                $scope.ShowKind = false;
+                $scope.ShowWerkS = false;
+                $scope.ShowOrigine = false;
+                $scope.ShowBurgS = false;
+                $scope.ShowDiploma = false;
+                $scope.ShowGeslacht = false;
+            }
+            else {
+                Togglefilters = true;
+                $scope.ShowAge = true;
+                $scope.ShowKind = true;
+                $scope.ShowWerkS = true;
+                $scope.ShowOrigine = true;
+                $scope.ShowBurgS = true;
+                $scope.ShowDiploma = true;
+                $scope.ShowGeslacht = true;
+            }
+
         }
 
         $scope.back = function () {
