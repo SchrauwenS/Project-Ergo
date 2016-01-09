@@ -10,7 +10,21 @@
             .then(function (res) {
             $scope.results  = res.data;
         });
-                 
+        
+        $scope.checkAll = function () {
+            if ($scope.selectedAll) {
+                $scope.selectedAll = true;
+            } else {
+                $scope.selectedAll = false;
+            }
+            angular.forEach($scope.questionlist, function (item) {
+                angular.forEach(item.Question, function (choice) {
+                    choice.checked = $scope.selectedAll;
+                });
+            });
+        }
+        
+
         $scope.NextStepBool = false;
         $scope.ISChecked = function (Sub) 
         {

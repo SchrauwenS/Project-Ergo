@@ -5,6 +5,10 @@
             Na elke vraag die u wou beantwoorden te hebben beantwoord, kan u de vragen lijst indienen.
         </div>
         <form name="form">
+            <div class="paddingTop40" >
+                <input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" />
+                <label>Check alle checkboxen</label>
+            </div>
             <div ng-repeat="item in questionlist">
                 <div class="row">
                     <h1 class="row" ng-if="NextStepBool == false || ISChecked(item.Subdomain)">{{item.Subdomain}}</h1>
