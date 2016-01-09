@@ -8,6 +8,10 @@ body {
   background-size: 80% auto;
 }
 
+.margin5 {
+    margin: 5px
+}
+
 a {
   color: #00B7FF;
 }
