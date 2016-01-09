@@ -60,6 +60,29 @@ Frontend:
 Bootstrap: easy for making nice and responsive views
 AngularJS: used for client side routing and MVC pattern
 
+To connect to our database you will need a connectionstring. U need to put this in a environment variable. We used the db (process.env.Link) variable. U need to set this on your server machine (e.g. Heroku, Azure, Local, ...). This can easily be done by defining it in the cmd windows where you will start your node server (for heroku see below).
+
+![](http://imgur.com/5KLTEGG.jpg "")
+
+Reference-style: 
+If you use Visual Studio and Node.JS tools you can also change the env variabeles in the properties of the project! This is a better way of starting a node project.
+
+##How does it work
+
+When the client goes to the website the first thing they will be connected to the root route, in our case this is called *index*. The route will check if you are logged in or not. If you are not logged the Loggin.html page will be rendered. If you wish to register a new user then you have to press the register button. When pressed the Register.html page is loaded on the screen. On this page the user can fill in the information about himself and POST it on this route to the server to make a new account. The server will process the request and checks for double usernames or emails, passports are encrypted by passport and Crypto. This can be found in the folder *passport*.  When this is successful the user is automatically rerouted to the *Home* route. If any error occurred the Registerpage.html reappears on your screen.
+
+A user with admin rights (for the doctors and therapists) can be created in the same register page as the users. With the exception that they have to check a checkbox and enter a password that is only given to persons with the rights to become and admin. 
+
+When someone logs in or is already logged in they are redirected to the *home* route. Here the route will check if the user that logged in is an admin or a normal user. In case if an admin logged in he will be redirected to the *admin* route. Here the AdminStartPage.html will be shown. The admin can choose do a few things on this page. 
+
+First he can choose to look at individual users and their results, this is done by pressing on the top arrow button in the list. When pressed the Admin.html page is loaded. On this page the admin can select a user from the list by pressing on it with the left mouse button. This will to a Get request on the *admin* route containing the *id* of the user to get specific details of this user. When a user is selected from the list his information is shown in a table on the right side of the screen. The scores of the user are shown on the bottom left of the screen and next to it are the questions and answers that the user submitted. If the admin wishes to download the user information he can do so by pressing the download button. This will download a .csv file containing the user information and the test results he achieved.
+![](http://i66.tinypic.com/mkdgkl.png "")
+
+Second he is able to access all user results at the same time and filter them to see specific results on selected groups.
+The page is accessed by pressing the second arrow in the list. This will load the AdminAllusers.html . Here he can select the wanted filters and see the results in the bottom of the screen. 
+![](http://i64.tinypic.com/ndo8aw.png "") 
+  
+
 ##Mongoose Schema layout
 For a post/edit to be accepted, the information must pass the validation, the following section will explain what is validated and how to pass it.
 
