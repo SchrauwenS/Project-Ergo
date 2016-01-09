@@ -5,7 +5,7 @@
             Na elke vraag die u wou beantwoorden te hebben beantwoord, kan u de vragen lijst indienen.
         </div>
         <form name="form">
-            <div class="paddingTop40" >
+            <div ng-show="NextStepBool == false" class="paddingTop40" >
                 <input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" />
                 <label>Check alle checkboxen</label>
             </div>
