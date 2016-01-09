@@ -8,8 +8,14 @@
         $scope.Origine = "NoFilter";
         $scope.werkstatus = "NoFilter";
         $scope.Kinderen = false;
-        $scope.KinderenMax = 10;
+        $scope.KinderenMax = 5;
         $scope.KinderenMin = 0;
+        $scope.KinderenPrevMax = 5;
+        $scope.KinderenPrevMin = 0;
+        $scope.LeeftijdMax = 100;
+        $scope.LeeftijdMin = 0;
+        $scope.LeeftijdPrevMax = 100;
+        $scope.LeeftijdPrevMin = 0;
 
         var Signal = signals.Signal;
         var myObject2 = {
@@ -19,6 +25,7 @@
         myObject2.started.add(function () {
             $scope.Filter();
         });
+
         var myObject = {
             started: new Signal(),
             stopped: new Signal()
@@ -36,7 +43,10 @@
         var scorelistCalcNietsingevuld = { subGezondheid: 0, subIdentiteit: 0, subRelaties: 0, subUitdaging: 0, TotaalScore: 0 };
         $scope.scorelistAll = { subGezondheid: 0, subIdentiteit: 0, subRelaties: 0, subUitdaging: 0, TotaalScore: 0 };
         
+        ShowGeslacht = false; 
         
+        
+
         $http.get('admin/users')
             .then(function (res) {
             Userlist = res.data;
@@ -61,8 +71,17 @@
                 filterlist = $(filterlist).filter(function (i, n) { return n.huidskleur === $scope.Origine });
             if ($scope.werkstatus != "NoFilter")
                 filterlist = $(filterlist).filter(function (i, n) { return n.werkstatus === $scope.werkstatus });
-            if ($scope.Kinderen != false)
-                filterlist = $(filterlist).filter(function (i, n) { return $scope.KinderenMin < n.kinderen < $scope.KinderenMax });
+            if ($scope.Kinderen != false) {
+                $scope.KinderenPrevMax = $scope.KinderenMax;
+                $scope.KinderenPrevMin = $scope.KinderenMin;
+                filterlist = $(filterlist).filter(function (i, n) { return $scope.KinderenMin <= n.kinderen && n.kinderen <= $scope.KinderenMax });
+            }
+            if ($scope.Leeftijd != false) {
+                $scope.LeeftijdPrevMax = $scope.LeeftijdMax;
+                $scope.LeeftijdPrevMin = $scope.LeeftijdMin;
+                filterlist = $(filterlist).filter(function (i, n) { return $scope.LeeftijdMin <= n.age && n.age <= $scope.LeeftijdMax });
+            }
+                
 
 
         for (var i = 0; i < filterlist.length; i++) {
@@ -127,9 +146,24 @@
             $scope.scorelistAll.TotaalScore = Math.round(scorelistCalc.TotaalScore / (filterlist.length - scorelistCalcNietsingevuld.TotaalScore) * 100) / 100;
         }
         
-        $scope.back = function () {
-            
-        }
+        //$scope.ToggleShowGeslacht() = function () {
+        //    ShowGeslacht = !ShowGeslacht;
+        //}
+        //$scope.ToggleShowDiploma() = function () {
+        //    ShowDiploma = !ShowDiploma;
+        //}
+        //$scope.ToggleShowBurgS() = function () {
+        //    ShowBurgS = !ShowBurgS;
+        //}
+        //$scope.ToggleShowOrigine() = function () {
+        //    ShowOrigine= !ShowOrigine;
+        //}
+        //$scope.ToggleShowWerkS() = function () {
+        //    ShowWerkS = !ShowWerkS;
+        //}
+        //$scope.ToggleShowGeslacht() = function () {
+        //    ShowBurgS = !ShowBurgS;
+        //}
 
         $scope.back = function () {
             $location.path("/");
