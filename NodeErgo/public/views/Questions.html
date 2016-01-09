@@ -5,7 +5,7 @@
             Na elke vraag die u wou beantwoorden te hebben beantwoord, kan u de vragen lijst indienen.
         </div>
         <form name="form">
-            <div ng-show="NextStepBool == false" class="paddingTop40" >
+            <div ng-show="NextStepBool == false" class="paddingTop40">
                 <input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" />
                 <label>Check alle checkboxen</label>
             </div>
@@ -19,8 +19,10 @@
                             <div ng-if="NextStepBool == true">
                                 <div ng-repeat="radio in radioData">
                                     <div class="col-xs-12 paddingleft30">
-                                        <input class="col-xs-1" type="radio" name="{{choice.ID}}" ng-model="choice.Quoting" ng-required="!choice.Quoting" id="radio_{{$index}}" ng-value="radio.value" />
-                                        <label class="col-xs-11" for="radio_{{$index}}">{{radio.Rating}}</label>
+                                        <label>
+                                            <input type="radio" name="{{choice.ID}}" ng-model="choice.Quoting" ng-required="!choice.Quoting" id="radio_{{$index}}" ng-value="radio.value" />
+                                            {{radio.Rating}}
+                                        </label>
                                     </div>
                                 </div>
                             </div>
