@@ -1,10 +1,160 @@
 ﻿<div class="container">
     <button class="floatright btn btn-primary" ng-click="back()"><span class="glyphicon glyphicon-circle-arrow-left" /></button>
+    <button class="floatright btn btn-primary" ng-click="test()"><span class="" /></button>
+
         <h1>Welkom</h1>
     <div class="row">
-        <button class="floatright btn btn-primary" ng-model="ALL"><span class=""/>one</button>
-        <button class="floatright btn btn-primary" ng-model="MALE"><span class=""/>two</button>
-
+        <div class="row col-lg-2">
+            <div class="row">
+                <input type="radio" ng-model="gender" value="NoFilter" ng-change="Filter()" />
+                <label>Deze filter niet gebruiken</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="gender" value="Male" ng-change="Filter()" />
+                <label>Man</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="gender" value="Female" ng-change="Filter()" />
+                <label>vrouw</label>
+            </div>
+        </div>
+        <div class="row col-lg-2">
+            <div class="row">
+                <input type="radio" ng-model="diploma" value="NoFilter" ng-change="Filter()" />
+                <label>Deze filter niet gebruiken</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="diploma" value="Universitair" ng-change="Filter()" />
+                <label>Universitair</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="diploma" value="Hoger Onderwijs" ng-change="Filter()" />
+                <label>Hoger Onderwijs</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="diploma" value="Secundair Onderwijs" ng-change="Filter()" />
+                <label>Secundair Onderwijs</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="diploma" value="Lager Onderwijs" ng-change="Filter()" />
+                <label>Lager Onderwijs</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="diploma" value="Geen" ng-change="Filter()" />
+                <label>Geen diploma</label>
+            </div>
+        </div>
+        <div class="row col-lg-2">
+            <div class="row">
+                <input type="radio" ng-model="BurgS" value="NoFilter" ng-change="Filter()" />
+                <label>Deze filter niet gebruiken</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="BurgS" value="Gehuwd" ng-change="Filter()" />
+                <label>Gehuwd</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="BurgS" value="Vrijgezel" ng-change="Filter()" />
+                <label>Vrijgezel</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="BurgS" value="InEenRelatie" ng-change="Filter()" />
+                <label>In een relatie</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="BurgS" value="Verloofd" ng-change="Filter()" />
+                <label>Verloofd</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="BurgS" value="Weduw(e)/(naar)" ng-change="Filter()" />
+                <label>Weduw(e)/(naar)</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="BurgS" value="Gescheiden" ng-change="Filter()" />
+                <label>Gescheiden</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="BurgS" value="Andere" ng-change="Filter()" />
+                <label>Andere</label>
+            </div>
+        </div>
+        <div class="row col-lg-2">
+            <div class="row">
+                <input type="radio" ng-model="Origine" value="NoFilter" ng-change="Filter()" />
+                <label>Deze filter niet gebruiken</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="Origine" value="Blank" ng-change="Filter()" />
+                <label>Blank</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="Origine" value="Zwart" ng-change="Filter()" />
+                <label>Zwart</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="Origine" value="Aziatisch" ng-change="Filter()" />
+                <label>Aziatisch</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="Origine" value="Latijns-Amerikaans" ng-change="Filter()" />
+                <label>Latijns-Amerikaans</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="Origine" value="Afro-Amerikaans" ng-change="Filter()" />
+                <label>Afro-Amerikaans</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="Origine" value="Indiaans" ng-change="Filter()" />
+                <label>Indiaans</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="Origine" value="Arabisch" ng-change="Filter()" />
+                <label>Arabisch</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="Origine" value="Inuit" ng-change="Filter()" />
+                <label>Inuit</label>
+            </div>
+        </div>
+        <div class="row col-lg-2">
+            <div class="row">
+                <input type="radio" ng-model="werkstatus" value="NoFilter" ng-change="Filter()" />
+                <label>Deze filter niet gebruiken</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="werkstatus" value="Student" ng-change="Filter()" />
+                <label>Student</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="werkstatus" value="Voltijds in dienst" ng-change="Filter()" />
+                <label>Voltijds in dienst</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="werkstatus" value="deeltijds in dienst" ng-change="Filter()" />
+                <label>deeltijds in dienst</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="werkstatus" value="Zelfstandig" ng-change="Filter()" />
+                <label>Zelfstandig</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="werkstatus" value="Werkzoekend" ng-change="Filter()" />
+                <label>Werkzoekend</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="werkstatus" value="Gepensioneerd" ng-change="Filter()" />
+                <label>Gepensioneerd</label>
+            </div>
+            <div class="row">
+                <input type="radio" ng-model="werkstatus" value="Andere" ng-change="Filter()" />
+                <label>Andere</label>
+            </div>
+        </div>
+        <div class="row col-lg-2">
+            <input type="checkbox" ng-change="Filter()" ng-model="Kinderen" /><label>Op kinderen filteren</label>
+            <input type="number" ng-change="Filter()" ng-model="KinderenMin" />
+            <input type="number" ng-change="Filter()" ng-model="KinderenMax" />
+        </div>
     </div>
     <div class="row">
         <div>
@@ -43,7 +193,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+     <!---  <div class="row">
         <div>
             <div class="transparant list-group-item">
                 <h4>Totaal LBI score:</h4>
@@ -79,6 +229,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --->
 </div>
+
 
