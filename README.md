@@ -89,10 +89,12 @@ First he can choose to look at individual users and their results, this is done 
 
 Second he is able to access all user results at the same time and filter them to see specific results of selected groups.
 The page is accessed by pressing the second arrow in the list. This will load the AdminAllusers.html . Here he can select the wanted filters and see the results in the bottom of the screen. 
+
 ![](http://i64.tinypic.com/ndo8aw.png "") 
 
 ###(USER)
 The user homepage looks a lot like the homepage of the admin. The only things that are different are  the 2 first buttons of the list.
+
 ![](http://i63.tinypic.com/15yis14.png "") 
 
 First thing a user can do is fill in a question list. By pressing the top button *start* the Questions.html is loaded on screen. This view contains 53 questions with checkboxes. All checkboxes can be checked with the *check alle checkboxen* checkbox. Checking the checkbox means that you are willing to answer the question on the next page.
