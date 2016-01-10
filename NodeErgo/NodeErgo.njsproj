@@ -45,6 +45,7 @@
     <Compile Include="routes\index.js" />
     <Compile Include="routes\results.js" />
     <Content Include="public\images\Ergo.png" />
+    <Content Include="public\images\favicon.png" />
     <Content Include="public\JSON\Answers.json" />
     <Content Include="public\JSON\Questions.json" />
     <Content Include="public\views\AdminAllusers.html" />
