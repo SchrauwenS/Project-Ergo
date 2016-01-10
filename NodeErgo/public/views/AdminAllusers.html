@@ -1,33 +1,33 @@
 ﻿<div class="container">
-    <button class="floatright btn btn-primary" ng-click="back()"><span class="glyphicon glyphicon-circle-arrow-left" /></button>
+    <button class="floatright btn-primary" ng-click="back()"><span class="glyphicon glyphicon-circle-arrow-left" /></button>
 
     <h1>Welkom</h1>
     <div class="transparant list-group-item row">
         <h4>Filter</h4>
         <div class="row">
             <div class="padding5 col-xs-12 col-sm-4 col-md-3">
-            <button  class="btn btn-primary col-xs-12" ng-click="ToggleShowGeslacht()">Geslacht</button>
+            <button  class="btn-primary col-xs-12" ng-click="ToggleShowGeslacht()">Geslacht</button>
             </div>
             <div class="padding5 col-xs-12 col-sm-4 col-md-3">
-                <button  class="btn btn-primary col-xs-12" ng-click="ToggleShowDiploma()">Diploma</button>
+                <button  class="btn-primary col-xs-12" ng-click="ToggleShowDiploma()">Diploma</button>
             </div>
             <div class="padding5 col-xs-12 col-sm-4 col-md-3">
-                <button  class="btn btn-primary col-xs-12" ng-click="ToggleShowBurgS()">Burgerlijke staat</button>
+                <button  class="btn-primary col-xs-12" ng-click="ToggleShowBurgS()">Burgerlijke staat</button>
             </div>
             <div class="padding5 col-xs-12 col-sm-4 col-md-3">
-                <button  class="btn btn-primary col-xs-12" ng-click="ToggleShowOrigine()">Origine</button>
+                <button  class="btn-primary col-xs-12" ng-click="ToggleShowOrigine()">Origine</button>
             </div>
             <div class="padding5 col-xs-12 col-sm-4 col-md-3">
-                <button  class="btn btn-primary col-xs-12" ng-click="ToggleShowWerkS()">Werkstatuut</button>
+                <button  class="btn-primary col-xs-12" ng-click="ToggleShowWerkS()">Werkstatuut</button>
             </div>
             <div class="padding5 col-xs-12 col-sm-4 col-md-3">
-                <button  class="btn btn-primary col-xs-12" ng-click="ToggleShowKind()">Kinderen</button>
+                <button  class="btn-primary col-xs-12" ng-click="ToggleShowKind()">Kinderen</button>
             </div>
             <div class="padding5 col-xs-12 col-sm-4 col-md-3">
-                <button  class="btn btn-primary col-xs-12" ng-click="ToggleShowAge()">Leeftijd</button>
+                <button  class="btn-primary col-xs-12" ng-click="ToggleShowAge()">Leeftijd</button>
             </div>
             <div class="padding5 col-xs-12 col-sm-4 col-md-3">
-                <button  class="btn btn-primary col-xs-12" ng-click="ToggleShowAll()">AlleFilters</button>
+                <button  class="btn-primary col-xs-12" ng-click="ToggleShowAll()">AlleFilters</button>
             </div>
         </div>
         <div class="col-md-12 paddingTop40">
@@ -188,7 +188,7 @@
                     Maximum aantal kinderen
                     <input class="col-xs-12 " ng-disabled="!Kinderen" min="0" type="number" ng-model="KinderenMax" />
                 </div>
-                <button ng-disabled="!Kinderen || KinderenMin == null ||KinderenMax == null " type="button" class="col-xs-12 btn margintop5 btn-primary" ng-click="Filter()">Aanpassen</button>
+                <button ng-disabled="!Kinderen || KinderenMin == null ||KinderenMax == null " type="button" class="col-xs-12 margintop5 btn-primary" ng-click="Filter()">Aanpassen</button>
             </div>
             <div ng-show="ShowAge" class="margin5  col-sm-4">
                 <input type="checkbox" ng-change="Filter()" ng-model="Leeftijd" /><label>Op Leeftijd filteren</label>
@@ -201,7 +201,7 @@
                     Maximum leeftijd
                     <input class="col-xs-12 " ng-disabled="!Leeftijd" min="0" type="number" ng-model="LeeftijdMax" />
                 </div>
-                <button ng-disabled="!Leeftijd || LeeftijdMin == null ||LeeftijdMax == null " type="button" class="col-xs-12 btn margintop5 btn-primary" ng-click="Filter()">Aanpassen</button>
+                <button ng-disabled="!Leeftijd || LeeftijdMin == null ||LeeftijdMax == null " type="button" class="col-xs-12 margintop5 btn-primary" ng-click="Filter()">Aanpassen</button>
             </div>
         </div>
     </div>

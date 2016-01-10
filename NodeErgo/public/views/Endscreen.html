@@ -23,13 +23,13 @@
                 <div ng-if="results.subGezondheid" class="results">{{results.subGezondheid}}</div>
                 <label class="paddingleft30" ng-if="!results.subGezondheid">U hebt geen enkele vraag van dit subdomein ingevuld</label>
                 <h5>Gemiddelde Subdomein Relaties</h5>
-                <div class="results.subRelaties">{{results.subRelaties}}</div>
+                <div ng-if="results.subRelaties" class="results">{{results.subRelaties}}</div>
                 <label class="paddingleft30" ng-if="!results.subRelaties">U hebt geen enkele vraag van dit subdomein ingevuld</label>
                 <h5>Gemiddelde Subdomein Identiteit</h5>
-                <div class="results.subIdentiteit">{{results.subIdentiteit}}</div>
+                <div ng-if="results.subIdentiteit" class="results">{{results.subIdentiteit}}</div>
                 <label class="paddingleft30" ng-if="!results.subIdentiteit">U hebt geen enkele vraag van dit subdomein ingevuld</label>
                 <h5>Gemiddelde Subdomein UitdagingIntresse</h5>
-                <div class="results.subUitdaging">{{results.subUitdaging}}</div>
+                <div ng-if="results.subUitdaging" class="results">{{results.subUitdaging}}</div>
                 <label class="paddingleft30" ng-if="!results.subUitdaging">U hebt geen enkele vraag van dit subdomein ingevuld</label>
             </div>
         </div>
@@ -37,7 +37,7 @@
     
 
     <div class="row paddingTop50">
-            <button class="btn btn-primary" ng-click="Button4click()">{{button4}}</button>
+            <button class="btn-primary" ng-click="Button4click()">{{button4}}</button>
     </div>
 </div>
 
