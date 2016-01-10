@@ -11,11 +11,11 @@ Authentication has been implemented and is working.
 
 There are 3 views on the server in which client-sided views(containers) will be loaded.
 
-The 3 vieuws each have there own controller.
+The 3 views each have their own controller.
 
    The Loginwrapper
     (controlled by LoginViewController.js)
-    Here shall views to authenticate be displayd, a.k.a. a registerpage and a loginpage.
+    Here shall views to authenticate be displayed, a.k.a. a register page and a login page.
     These are named Login.html and Register.html neither one of them had needed a controller.
     Client side routing with href Attribute
     
@@ -26,7 +26,7 @@ The 3 vieuws each have there own controller.
     
    * Startpage.html 
     	(controlled by StartscreenController.js)
-   	initialy the Startpage.html shall be displayed you can route to 3different views by clicking buttons who use te $location
+   	initially the Startpage.html shall be displayed you can route to 3different views by clicking buttons who use the $location
    	service to route locally. the fourth button will log you off.
 	   
    * AlgemeneAccountinstellingen.html
@@ -35,7 +35,7 @@ The 3 vieuws each have there own controller.
 	     
    * Questions.html
 	(controlled by Questionscontroller.js)
-	Aform where User can answer the question list
+	A form where User can answer the question list
 	     
    * Endscreen.html
 	(controlled by EndscreenController)
@@ -48,7 +48,7 @@ Current modules used (NodeJS => Backend):
 * nodemon: needs to be installed globally to work, if you want to use the regular node.exe delete the 'Node.exe path' string in the project properties.
 * body-parser: parsing json posted information.
 * connect-mongo: user session storage.
-* express: REST API-fication of NodeJS.
+* express: REST API-fiction of NodeJS.
 * express-session: for user sessions.
 * jade: view engine.
 * mongoose
@@ -69,19 +69,57 @@ If you use Visual Studio and Node.JS tools you can also change the env variabele
 
 ##How does it work
 
-When the client goes to the website the first thing they will be connected to the root route, in our case this is called *index*. The route will check if you are logged in or not. If you are not logged the Loggin.html page will be rendered. If you wish to register a new user then you have to press the register button. When pressed the Register.html page is loaded on the screen. On this page the user can fill in the information about himself and POST it on this route to the server to make a new account. The server will process the request and checks for double usernames or emails, passports are encrypted by passport and Crypto. This can be found in the folder *passport*.  When this is successful the user is automatically rerouted to the *Home* route. If any error occurred the Registerpage.html reappears on your screen.
+When the client goes to the website the first thing they will be connected to the root route, in our case this is called *index*.
+![](http://i67.tinypic.com/2z6xxf9.png.png "")
+The route will check if you are logged in or not. If you are not logged the Loggin.html page will be rendered. If you wish to register a new user then you have to press the register button. When pressed the Register.html page is loaded on the screen. On this page the user can fill in the information about himself and POST it on this route to the server to make a new account. 
+![](http://i66.tinypic.com/33lguxh.png "")
+
+The server will process the request and checks for double usernames or emails, passports are encrypted by passport and Crypto. This can be found in the folder *passport*.  When this is successful the user is automatically rerouted to the *Home* route. If any error occurred the Registerpage.html reappears on your screen.
 
 A user with admin rights (for the doctors and therapists) can be created in the same register page as the users. With the exception that they have to check a checkbox and enter a password that is only given to persons with the rights to become and admin. 
 
-When someone logs in or is already logged in they are redirected to the *home* route. Here the route will check if the user that logged in is an admin or a normal user. In case if an admin logged in he will be redirected to the *admin* route. Here the AdminStartPage.html will be shown. The admin can choose do a few things on this page. 
+When someone logs in or is already logged in they are redirected to the *home* route. Here the route will check if the user that logged in is an admin or a normal user. In case if an admin logged in he will be redirected to the *admin* route. Here the AdminStartPage.html will be shown. The admin can do more than a normal user. Functions for admin (ADMIN) and user(USER) are marked in this report and so are Common functions (COMMON). 
 
-First he can choose to look at individual users and their results, this is done by pressing on the top arrow button in the list. When pressed the Admin.html page is loaded. On this page the admin can select a user from the list by pressing on it with the left mouse button. This will to a Get request on the *admin* route containing the *id* of the user to get specific details of this user. When a user is selected from the list his information is shown in a table on the right side of the screen. The scores of the user are shown on the bottom left of the screen and next to it are the questions and answers that the user submitted. If the admin wishes to download the user information he can do so by pressing the download button. This will download a .csv file containing the user information and the test results he achieved.
+###(ADMIN)
+
+![](http://i64.tinypic.com/256w7eb.png "")
+
+First he can choose to look at individual users and their results, this is done by pressing on the top arrow button in the list. When pressed the Admin.html page is loaded. On this page the admin can select a user from the list by pressing on it with the left mouse button. This will to a GET request on the *admin* route containing the *id* of the user to get specific details of this user. When a user is selected from the list his information is shown in a table on the right side of the screen. The scores of the user are shown on the bottom left of the screen and next to it are the questions and answers that the user submitted. If the admin wishes to download the user information he can do so by pressing the download button. This will download a .csv file containing the user information and the test results he achieved.
 ![](http://i66.tinypic.com/mkdgkl.png "")
 
-Second he is able to access all user results at the same time and filter them to see specific results on selected groups.
+Second he is able to access all user results at the same time and filter them to see specific results of selected groups.
 The page is accessed by pressing the second arrow in the list. This will load the AdminAllusers.html . Here he can select the wanted filters and see the results in the bottom of the screen. 
 ![](http://i64.tinypic.com/ndo8aw.png "") 
+
+###(USER)
+The user homepage looks a lot like the homepage of the admin. The only things that are different are  the 2 first buttons of the list.
+![](http://i63.tinypic.com/15yis14.png "") 
+
+First thing a user can do is fill in a question list. By pressing the top button *start* the Questions.html is loaded on screen. This view contains 53 questions with checkboxes. All checkboxes can be checked with the *check alle checkboxen* checkbox. Checking the checkbox means that you are willing to answer the question on the next page.
+
+![](http://i68.tinypic.com/11avdvm.png "") 
+
+When the user has checked all the questions that he/she wishes to answer they can proceed by pressing the *volgende stap* button. At least 1 question has to be checked in order to proceed. This will save which questions  were checked and load a different view of the same html page. 
+
+![](http://i64.tinypic.com/2u9obiv.png "") 
+
+Here the user can select the answer to the question. When all questions are answered you can submit your answers by pressing the *indienen* button. 
+
+![](http://i63.tinypic.com/2hp3nyf.png "") 
+
+When the button is pressed a couple of actions are performed in the background. First the program calculates the score that was achieved by filling in the answers. Then 2 POSTs are made to the server on the same *results*:  POST testResults and POST testScore. testResults saves the questions and the answers that are filled in by the user. testscore saves the score of the user. Both are done by the *vragencontroller* found in the *Controllers(node)* map. The user is redirected to Endscreen.html which thanks him/her for participating. Here they can return to the home screen by pressing the *naar start* button.
+
+![](http://i66.tinypic.com/2mgv2gj.png "") 
+
+###(COMMON)
+Third option is to access and edit your personal information. This can be done by pressing the third button in the list that says *config*. This will do load the AlgemeneAccountinstellingen.html . This view contains all the information of the admin/user displayed in the correct fields.
+
+  ![](http://i65.tinypic.com/216a1z.png "") 
   
+Any changes made inside of the fields will only be send to the server when the update button is pressed. Pressing the button sends a POST *Update* to the *user* route. The information filled in inside the fields is checked by a controller named *usercontroller* . This controller is found inside the *Controllers(node)* map. But before this is done one check is performed inside the *user* route. This check is to see of the email that has been updated isn't in use by another account except the current one. If not then the rest is checked inside the *usercontroller*. 
+
+The fourth option is to logout. When this button is pressed a GET *logout* is done to the *index* route. When processed it destroys the current session with the admin/user. When this is successful the admin/user is logged out and redirected to the *index* route. This results in seeing the login screen.
+
 
 ##Mongoose Schema layout
 For a post/edit to be accepted, the information must pass the validation, the following section will explain what is validated and how to pass it.
