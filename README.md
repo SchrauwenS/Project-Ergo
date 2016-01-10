@@ -26,7 +26,7 @@ The 3 views each have their own controller.
     
    * Startpage.html 
     	(controlled by StartscreenController.js)
-   	initially the Startpage.html shall be displayed you can route to 3different views by clicking buttons who use the $location
+   	initially the Startpage.html shall be displayed you can route to 3 different views by clicking buttons who use the $location
    	service to route locally. the fourth button will log you off.
 	   
    * AlgemeneAccountinstellingen.html
@@ -60,7 +60,7 @@ Frontend:
 Bootstrap: easy for making nice and responsive views
 AngularJS: used for client side routing and MVC pattern
 
-To connect to our database you will need a connectionstring. U need to put this in a environment variable. We used the db (process.env.Link) variable. U need to set this on your server machine (e.g. Heroku, Azure, Local, ...). This can easily be done by defining it in the cmd windows where you will start your node server (for heroku see below).
+To connect to our database you will need a connectionstring. U need to put this in a environment variable. We used the Link (process.env.Link) variable. U need to set this on your server machine (e.g. Heroku, Azure, Local, ...). This can easily be done by defining it in the cmd windows where you will start your node server (for heroku see below).
 
 ![](http://imgur.com/5KLTEGG.jpg "")
 
