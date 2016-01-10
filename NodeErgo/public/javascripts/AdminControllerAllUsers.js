@@ -31,6 +31,7 @@
         $scope.ShowAge = false;
         
         var Togglefilters = false;
+        var Admincount = 0;
 
         var Signal = signals.Signal;
         var myObject2 = {
@@ -72,6 +73,7 @@
             
 
             filterlist = $(Userlist).filter(function (i, n) { return n.Admin === false });
+            Admincount = Userlist.length - filterlist.length;
             if($scope.gender != "NoFilter")
                 filterlist = $(filterlist).filter(function (i, n) { return n.geslacht === $scope.gender });
             if ($scope.diploma != "NoFilter")
@@ -150,6 +152,7 @@
         }
         
         function ToScreen(scorelistCalc, scorelistCalcNietsingevuld) {
+            $scope.Precent = filterlist.length / (Userlist.length - Admincount)* 100;
             $scope.UserAfterfilter = filterlist.length;
             $scope.scorelistAll.subGezondheid = Math.round(scorelistCalc.subGezondheid / (filterlist.length - scorelistCalcNietsingevuld.subGezondheid) * 100) / 100;
             $scope.scorelistAll.subIdentiteit = Math.round(scorelistCalc.subIdentiteit / (filterlist.length - scorelistCalcNietsingevuld.subIdentiteit) * 100) / 100;
