@@ -156,7 +156,7 @@ The fourth option is to logout. When this button is pressed a GET *logout* is do
 For a post/edit to be accepted, the information must pass the validation, the following section will explain what is validated and how to pass it.
 
 ###Users
-Users have 8 fields, 5 of which are required and 3 which have a default.
+Users have 13 fields, 5 of which are required and 8 which have a default.
 
 Required: 
 * username: string, username to log in with *is unique field*
