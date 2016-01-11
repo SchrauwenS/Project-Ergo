@@ -26,21 +26,41 @@ The 3 views each have their own controller.
     
    * Startpage.html 
     	(controlled by StartscreenController.js)
-   	initially the Startpage.html shall be displayed you can route to 3 different views by clicking buttons who use the $location
+   	initially the Startpage.html shall be displayed. You can route to 3 different views by clicking buttons who use the $location
    	service to route locally. the fourth button will log you off.
 	   
    * AlgemeneAccountinstellingen.html
    	(controlled by AlgemeneAccountinstellingenController.js)
-	A form where you can adjust your personal data and see you the current values
+	A form where you can adjust your personal data and see you the current values.
 	     
    * Questions.html
 	(controlled by Questionscontroller.js)
-	A form where User can answer the question list
+	A form where User can answer the question list.
 	     
    * Endscreen.html
 	(controlled by EndscreenController)
-  	User can view his score
+  	User can view his score.
  
+   The Adminwrapper
+    (controlled by ViewControl.js)
+    if a Admin registers or log in he will be redirected to this view.
+    
+   * AdminStartpage.html 
+    	(controlled by AdminStartscreenController.js)
+   	initially the Startpage.html shall be displayed. You can route to 3 different views by clicking buttons who use the $location
+   	service to route locally. the fourth button will log you off.
+	   
+   * AlgemeneAccountinstellingen.html
+   	(controlled by AlgemeneAccountinstellingenController.js)
+	A form where you can adjust your personal data and see you the current values.
+	     
+   * Admin.html
+	(controlled by Admincontroller.js)
+	Here a admin can search persons on there name/username. He is able to watch there personal data, there LBI-scores and Watch 		there anwsers. Also He is able to download A user Report
+	     
+   * AdminAllUsers.html
+	(controlled by AdminAllUsersController)
+  	A admin can filter on user properties like sex,origin,age,kids,grade,... He can view wat the mean score for this group is and 	he can watch how much percent of the database they represent. 
 
 ##Dependencies
 
