@@ -85,6 +85,8 @@ Current modules used (NodeJS => Backend):
 Frontend:
 
 Bootstrap: easy for making nice and responsive views
+
+
 AngularJS: used for client side routing and MVC pattern
 
 To connect to our database you will need a connectionstring. U need to put this in a environment variable. We used the Link (process.env.Link) variable. U need to set this on your server machine (e.g. Heroku, Azure, Local, ...). This can easily be done by defining it in the cmd windows where you will start your node server (for heroku see below).
