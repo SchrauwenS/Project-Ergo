@@ -13,14 +13,14 @@ There are 3 views on the server in which client-sided views(containers) will be 
 
 The 3 views each have their own controller.
 
-   The Loginwrapper
+######   The Loginwrapper
     (controlled by LoginViewController.js)
     Here shall views to authenticate be displayed, a.k.a. a register page and a login page.
     These are named Login.html and Register.html neither one of them had needed a controller.
     Client side routing with href Attribute
     
     
-   The wrapper
+######   The wrapper
     (controlled by ViewControl.js)
     if a user registers or log in he will be redirected to this view.
     
@@ -41,7 +41,7 @@ The 3 views each have their own controller.
 	(controlled by EndscreenController)
   	User can view his score.
  
-   The Adminwrapper
+######   The Adminwrapper
     (controlled by ViewControl.js)
     if a Admin registers or log in he will be redirected to this view.
     
