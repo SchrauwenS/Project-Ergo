@@ -7,15 +7,14 @@ project-cloud-applications-ergo_stijnbart created by Bart and Stijn
 Able to POST, GET , EDIT Users, Questions And Scores in json format from the online database.
 Authentication has been implemented and is working.
 
+
 ####Frontend:
 
 There are 3 views on the server in which client-sided views(containers) will be loaded.
 
 The 3 views each have their own controller.
 
-
-
-The Loginwrapper (controlled by LoginViewController.js)
+######The Loginwrapper (controlled by LoginViewController.js)
     
    * Here shall views to authenticate be displayed, a.k.a. a register page and a login page.
     These are named Login.html and Register.html neither one of them had needed a controller.
@@ -23,8 +22,8 @@ The Loginwrapper (controlled by LoginViewController.js)
 
 
 
-    
-The wrapper (controlled by ViewControl.js)
+
+######The wrapper (controlled by ViewControl.js)
     
 if a user registers or log in he will be redirected to this view.
     
@@ -44,11 +43,10 @@ if a user registers or log in he will be redirected to this view.
    * Endscreen.html
 	(controlled by EndscreenController)
   	User can view his score.
- 
 
 
 
-The Adminwrapper (controlled by ViewControl.js)
+######The Adminwrapper (controlled by ViewControl.js)
 
 
 if a Admin registers or log in he will be redirected to this view.
@@ -69,6 +67,7 @@ if a Admin registers or log in he will be redirected to this view.
    * AdminAllUsers.html
 	(controlled by AdminAllUsersController)
   	A admin can filter on user properties like sex,origin,age,kids,grade,... He can view wat the mean score for this group is and 	he can watch how much percent of the database they represent. 
+
 
 ##Dependencies
 
