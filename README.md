@@ -1,4 +1,6 @@
-Despite the fact I wrote this code With Bart Kerstens. I do not own the right to this code. The rights belong to AP
+#Despite the fact I wrote this code With Bart Kerstens. I do not own the right to this code. The rights belong to AP
+
+
 
 
 # project-cloud-applications-ergo_stijnbart
